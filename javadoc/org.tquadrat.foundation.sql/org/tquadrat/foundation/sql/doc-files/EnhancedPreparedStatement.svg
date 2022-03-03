@@ -1,0 +1,747 @@
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:cc="http://creativecommons.org/ns#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:svg="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     version='1.1'
+     baseProfile='full'
+     width='1044.000'
+     height='2725.000'>
+    <defs>
+        <style><![CDATA[
+            line
+            {
+              stroke: black;
+            }
+            line.separator
+            {
+              stroke:       black;
+              stroke-width: 1;
+            }
+            marker
+            {
+              fill: white;
+            }
+            path
+            {
+              fill:   white;
+              stroke: black;
+            }
+            path.implementation
+            {
+              fill:             none;
+              stroke-dasharray: 5,5;
+              stroke-width:     3;
+            }
+            path.inheritance
+            {
+              fill:         none;
+              stroke-width: 3;
+            }
+            rect
+            {
+              fill:         none;
+              stroke:       black;
+              stroke-width: 2;
+            }
+            rect.externalClass
+            {
+              fill:         #D0D0D0;
+              fill-opacity: 0.8;
+            }
+            rect.focusClass
+            {
+              fill:         #FFFFF9;
+              fill-opacity: 0.8;
+            }
+            rect.otherClass
+            {
+              fill:         #F0E68C;
+              fill-opacity: 0.8;
+            }
+            rect.template
+            {
+              fill:             #FFFFFF;
+              fill-opacity:     1.0;
+              stroke-dasharray: 3,3;
+            }
+            text
+            {
+              font-family: monospace;
+              font-size:   10px;
+              font-weight: bold;
+            }
+            text.abstract
+            {
+              font-style: italic;
+            }
+            text.final
+            {
+              text-decoration: underline;
+            }
+            text.static
+            {
+              font-weight: normal;
+            }
+            text.stereotype
+            {
+              font-size:   8px;
+              font-weight: normal;
+            }
+            ]]></style>
+        <marker id='inheritance'
+                viewBox='0,0,40,40'
+                markerUnits='strokeWidth'
+                refX='40'
+                refY='20'
+                markerWidth='6'
+                markerHeight='6'
+                orient='auto'>
+            <path d='M40,20 l-40,-20 v40 Z'
+                  fill='#ffffff'
+                  stroke='#000000'
+                  stroke-width='3'/>
+        </marker>
+        <marker id='implementation'
+                viewBox='0,0,40,40'
+                markerUnits='strokeWidth'
+                refX='40'
+                refY='20'
+                markerWidth='6'
+                markerHeight='6'
+                orient='auto'>
+            <path d='M40,20 l-40,-20 v40 Z'
+                  fill='#ffffff'
+                  stroke='#000000'
+                  stroke-width='3'/>
+        </marker>
+        <clipPath id='ID000001'>
+            <rect class='focusClass'
+                  height='1107.000'
+                  width='994.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='org.tquadrat.foundation.sql.EnhancedPreparedStatement'>
+            <g>
+                <g class='focusClass'
+                   clip-path='url(#ID000001)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='994.000'
+                          height='1107.000'
+                          class='focusClass'/>
+                    <line x1='0.000'
+                          y1='28.000'
+                          x2='994.000'
+                          y2='28.000'
+                          class='separator'/>
+                    <text x='470.600'
+                          y='13.000'
+                          class='stereotype'>&#xAB;Interface&#xBB;</text>
+                    <text x='422.000'
+                          y='24.000'
+                          class='abstract'>EnhancedPreparedStatement</text>
+                    <line x1='0.000'
+                          y1='45.000'
+                          x2='994.000'
+                          y2='45.000'
+                          class='separator'/>
+                    <text y='41.000'
+                          class='static final'>+ VARIABLE_PATTERN:java.lang.String</text>
+                    <text x='5.000'
+                          y='58.000'
+                          class='abstract'>+ addBatch():void</text>
+                    <text x='5.000'
+                          y='69.000'
+                          class='abstract'>+ cancel():void</text>
+                    <text x='5.000'
+                          y='80.000'
+                          class='abstract'>+ clearBatch():void</text>
+                    <text x='5.000'
+                          y='91.000'
+                          class='abstract'>+ clearParameters():void</text>
+                    <text x='5.000'
+                          y='102.000'
+                          class='abstract'>+ clearWarnings():void</text>
+                    <text x='5.000'
+                          y='113.000'
+                          class='abstract'>+ close():void</text>
+                    <text x='5.000'
+                          y='124.000'
+                          class='abstract'>+ closeOnCompletion():void</text>
+                    <text x='5.000'
+                          y='135.000'
+                          class='abstract static'>+ enableLogging(logger:org.tquadrat.foundation.sql.EnhancedPreparedStatement.StatementLogger,logCheck:java.util.function.BooleanSupplier,addStacktrace:boolean):void</text>
+                    <text x='5.000'
+                          y='146.000'
+                          class='abstract'>+ enquoteIdentifier(identifier:java.lang.String,alwaysQuote:boolean):java.lang.String</text>
+                    <text x='5.000'
+                          y='157.000'
+                          class='abstract'>+ enquoteLiteral(value:java.lang.String):java.lang.String</text>
+                    <text x='5.000'
+                          y='168.000'
+                          class='abstract'>+ enquoteNCharLiteral(s:java.lang.String):java.lang.String</text>
+                    <text x='5.000'
+                          y='179.000'
+                          class='abstract'>+ execute():boolean</text>
+                    <text x='5.000'
+                          y='190.000'
+                          class='abstract'>+ executeBatch():int[]</text>
+                    <text x='5.000'
+                          y='201.000'
+                          class='abstract'>+ executeLargeBatch():long[]</text>
+                    <text x='5.000'
+                          y='212.000'
+                          class='abstract'>+ executeLargeUpdate():long</text>
+                    <text x='5.000'
+                          y='223.000'
+                          class='abstract'>+ executeQuery():java.sql.ResultSet</text>
+                    <text x='5.000'
+                          y='234.000'
+                          class='abstract'>+ executeUpdate():int</text>
+                    <text x='5.000'
+                          y='245.000'
+                          class='abstract'>+ getConnection():java.sql.Connection</text>
+                    <text x='5.000'
+                          y='256.000'
+                          class='abstract'>+ getFetchDirection():int</text>
+                    <text x='5.000'
+                          y='267.000'
+                          class='abstract'>+ getFetchSize():int</text>
+                    <text x='5.000'
+                          y='278.000'
+                          class='abstract'>+ getGeneratedKeys():java.sql.ResultSet</text>
+                    <text x='5.000'
+                          y='289.000'
+                          class='abstract'>+ getLargeMaxRows():long</text>
+                    <text x='5.000'
+                          y='300.000'
+                          class='abstract'>+ getLargeUpdateCount():long</text>
+                    <text x='5.000'
+                          y='311.000'
+                          class='abstract'>+ getMaxFieldSize():int</text>
+                    <text x='5.000'
+                          y='322.000'
+                          class='abstract'>+ getMaxRows():int</text>
+                    <text x='5.000'
+                          y='333.000'
+                          class='abstract'>+ getMetaData():java.sql.ResultSetMetaData</text>
+                    <text x='5.000'
+                          y='344.000'
+                          class='abstract'>+ getMoreResults():boolean</text>
+                    <text x='5.000'
+                          y='355.000'
+                          class='abstract'>+ getMoreResults(current:int):boolean</text>
+                    <text x='5.000'
+                          y='366.000'
+                          class='abstract'>+ getParameterMetaData():org.tquadrat.foundation.sql.ParameterMetaData</text>
+                    <text x='5.000'
+                          y='377.000'
+                          class='abstract'>+ getQueryTimeout():int</text>
+                    <text x='5.000'
+                          y='388.000'
+                          class='abstract'>+ getResultSet():java.sql.ResultSet</text>
+                    <text x='5.000'
+                          y='399.000'
+                          class='abstract'>+ getResultSetConcurrency():int</text>
+                    <text x='5.000'
+                          y='410.000'
+                          class='abstract'>+ getResultSetHoldability():int</text>
+                    <text x='5.000'
+                          y='421.000'
+                          class='abstract'>+ getResultSetType():int</text>
+                    <text x='5.000'
+                          y='432.000'
+                          class='abstract'>+ getUpdateCount():int</text>
+                    <text x='5.000'
+                          y='443.000'
+                          class='abstract'>+ getWarnings():java.sql.SQLWarning</text>
+                    <text x='5.000'
+                          y='454.000'
+                          class='abstract'>+ isClosed():boolean</text>
+                    <text x='5.000'
+                          y='465.000'
+                          class='abstract'>+ isCloseOnCompletion():boolean</text>
+                    <text x='5.000'
+                          y='476.000'
+                          class='abstract'>+ isLoggingEnabled():boolean</text>
+                    <text x='5.000'
+                          y='487.000'
+                          class='abstract'>+ isPoolable():boolean</text>
+                    <text x='5.000'
+                          y='498.000'
+                          class='abstract'>+ isSimpleIdentifier(identifier:java.lang.String):boolean</text>
+                    <text x='5.000'
+                          y='509.000'
+                          class='abstract static'>+ prepareStatement(connection:java.sql.Connection,sql:java.lang.String):org.tquadrat.foundation.sql.EnhancedPreparedStatement</text>
+                    <text x='5.000'
+                          y='520.000'
+                          class='abstract'>+ setArray(parameterName:java.lang.String,value:java.sql.Array):void</text>
+                    <text x='5.000'
+                          y='531.000'
+                          class='abstract'>+ setAsciiStream(parameterName:java.lang.String,value:java.io.InputStream,length:int):void</text>
+                    <text x='5.000'
+                          y='542.000'
+                          class='abstract'>+ setAsciiStream(parameterName:java.lang.String,value:java.io.InputStream,length:long):void</text>
+                    <text x='5.000'
+                          y='553.000'
+                          class='abstract'>+ setAsciiStream(parameterName:java.lang.String,value:java.io.InputStream):void</text>
+                    <text x='5.000'
+                          y='564.000'
+                          class='abstract'>+ setBinaryStream(parameterName:java.lang.String,value:java.io.InputStream,length:int):void</text>
+                    <text x='5.000'
+                          y='575.000'
+                          class='abstract'>+ setBinaryStream(parameterName:java.lang.String,value:java.io.InputStream,length:long):void</text>
+                    <text x='5.000'
+                          y='586.000'
+                          class='abstract'>+ setBinaryStream(parameterName:java.lang.String,value:java.io.InputStream):void</text>
+                    <text x='5.000'
+                          y='597.000'
+                          class='abstract'>+ setBigDecimal(parameterName:java.lang.String,value:java.math.BigDecimal):void</text>
+                    <text x='5.000'
+                          y='608.000'
+                          class='abstract'>+ setBlob(parameterName:java.lang.String,value:java.sql.Blob):void</text>
+                    <text x='5.000'
+                          y='619.000'
+                          class='abstract'>+ setBlob(parameterName:java.lang.String,value:java.io.InputStream,length:long):void</text>
+                    <text x='5.000'
+                          y='630.000'
+                          class='abstract'>+ setBlob(parameterName:java.lang.String,value:java.io.InputStream):void</text>
+                    <text x='5.000'
+                          y='641.000'
+                          class='abstract'>+ setBoolean(parameterName:java.lang.String,value:boolean):void</text>
+                    <text x='5.000'
+                          y='652.000'
+                          class='abstract'>+ setByte(parameterName:java.lang.String,value:byte):void</text>
+                    <text x='5.000'
+                          y='663.000'
+                          class='abstract'>+ setBytes(parameterName:java.lang.String,value:byte[]):void</text>
+                    <text x='5.000'
+                          y='674.000'
+                          class='abstract'>+ setCharacterStream(parameterName:java.lang.String,value:java.io.Reader,length:int):void</text>
+                    <text x='5.000'
+                          y='685.000'
+                          class='abstract'>+ setCharacterStream(parameterName:java.lang.String,value:java.io.Reader,length:long):void</text>
+                    <text x='5.000'
+                          y='696.000'
+                          class='abstract'>+ setCharacterStream(parameterName:java.lang.String,value:java.io.Reader):void</text>
+                    <text x='5.000'
+                          y='707.000'
+                          class='abstract'>+ setClob(parameterName:java.lang.String,value:java.sql.Clob):void</text>
+                    <text x='5.000'
+                          y='718.000'
+                          class='abstract'>+ setClob(parameterName:java.lang.String,value:java.io.Reader,length:long):void</text>
+                    <text x='5.000'
+                          y='729.000'
+                          class='abstract'>+ setClob(parameterName:java.lang.String,value:java.io.Reader):void</text>
+                    <text x='5.000'
+                          y='740.000'
+                          class='abstract'>+ setCursorName(name:java.lang.String):void</text>
+                    <text x='5.000'
+                          y='751.000'
+                          class='abstract'>+ setDate(parameterName:java.lang.String,value:java.sql.Date):void</text>
+                    <text x='5.000'
+                          y='762.000'
+                          class='abstract'>+ setDate(parameterName:java.lang.String,value:java.sql.Date,calendar:java.util.Calendar):void</text>
+                    <text x='5.000'
+                          y='773.000'
+                          class='abstract'>+ setDouble(parameterName:java.lang.String,value:double):void</text>
+                    <text x='5.000'
+                          y='784.000'
+                          class='abstract'>+ setFetchDirection(direction:int):void</text>
+                    <text x='5.000'
+                          y='795.000'
+                          class='abstract'>+ setFetchSize(rows:int):void</text>
+                    <text x='5.000'
+                          y='806.000'
+                          class='abstract'>+ setFloat(parameterName:java.lang.String,value:float):void</text>
+                    <text x='5.000'
+                          y='817.000'
+                          class='abstract'>+ setInt(parameterName:java.lang.String,value:int):void</text>
+                    <text x='5.000'
+                          y='828.000'
+                          class='abstract'>+ setLargeMaxRows(max:long):void</text>
+                    <text x='5.000'
+                          y='839.000'
+                          class='abstract'>+ setLong(parameterName:java.lang.String,value:long):void</text>
+                    <text x='5.000'
+                          y='850.000'
+                          class='abstract'>+ setMaxFieldSize(max:int):void</text>
+                    <text x='5.000'
+                          y='861.000'
+                          class='abstract'>+ setMaxRows(max:int):void</text>
+                    <text x='5.000'
+                          y='872.000'
+                          class='abstract'>+ setNCharacterStream(parameterName:java.lang.String,value:java.io.Reader,length:long):void</text>
+                    <text x='5.000'
+                          y='883.000'
+                          class='abstract'>+ setNCharacterStream(parameterName:java.lang.String,value:java.io.Reader):void</text>
+                    <text x='5.000'
+                          y='894.000'
+                          class='abstract'>+ setNClob(parameterName:java.lang.String,value:java.sql.NClob):void</text>
+                    <text x='5.000'
+                          y='905.000'
+                          class='abstract'>+ setNClob(parameterName:java.lang.String,value:java.io.Reader,length:long):void</text>
+                    <text x='5.000'
+                          y='916.000'
+                          class='abstract'>+ setNClob(parameterName:java.lang.String,value:java.io.Reader):void</text>
+                    <text x='5.000'
+                          y='927.000'
+                          class='abstract'>+ setNString(parameterName:java.lang.String,value:java.lang.String):void</text>
+                    <text x='5.000'
+                          y='938.000'
+                          class='abstract'>+ setNull(parameterName:java.lang.String,sqlType:java.sql.SQLType):void</text>
+                    <text x='5.000'
+                          y='949.000'
+                          class='abstract'>+ setNull(parameterName:java.lang.String,sqlType:java.sql.SQLType,typeName:java.lang.String):void</text>
+                    <text x='5.000'
+                          y='960.000'
+                          class='abstract'>+ setObject(parameterName:java.lang.String,value:java.lang.Object):void</text>
+                    <text x='5.000'
+                          y='971.000'
+                          class='abstract'>+ setObject(parameterName:java.lang.String,value:java.lang.Object,targetSqlType:java.sql.SQLType,scaleOrLength:int):void</text>
+                    <text x='5.000'
+                          y='982.000'
+                          class='abstract'>+ setObject(parameterName:java.lang.String,value:java.lang.Object,targetSqlType:java.sql.SQLType):void</text>
+                    <text x='5.000'
+                          y='993.000'
+                          class='abstract'>+ setQueryTimeout(timeout:int):void</text>
+                    <text x='5.000'
+                          y='1004.000'
+                          class='abstract'>+ setRef(parameterName:java.lang.String,value:java.sql.Ref):void</text>
+                    <text x='5.000'
+                          y='1015.000'
+                          class='abstract'>+ setRowId(parameterName:java.lang.String,value:java.sql.RowId):void</text>
+                    <text x='5.000'
+                          y='1026.000'
+                          class='abstract'>+ setShort(parameterName:java.lang.String,value:short):void</text>
+                    <text x='5.000'
+                          y='1037.000'
+                          class='abstract'>+ setSQLXML(parameterName:java.lang.String,value:java.sql.SQLXML):void</text>
+                    <text x='5.000'
+                          y='1048.000'
+                          class='abstract'>+ setString(parameterName:java.lang.String,value:java.lang.String):void</text>
+                    <text x='5.000'
+                          y='1059.000'
+                          class='abstract'>+ setTime(parameterName:java.lang.String,value:java.sql.Time):void</text>
+                    <text x='5.000'
+                          y='1070.000'
+                          class='abstract'>+ setTime(parameterName:java.lang.String,value:java.sql.Time,calendar:java.util.Calendar):void</text>
+                    <text x='5.000'
+                          y='1081.000'
+                          class='abstract'>+ setTimestamp(parameterName:java.lang.String,value:java.sql.Timestamp):void</text>
+                    <text x='5.000'
+                          y='1092.000'
+                          class='abstract'>+ setTimestamp(parameterName:java.lang.String,value:java.sql.Timestamp,calendar:java.util.Calendar):void</text>
+                    <text x='5.000'
+                          y='1103.000'
+                          class='abstract'>+ setURL(parameterName:java.lang.String,value:java.net.URL):void</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000002'>
+            <rect class='otherClass'
+                  height='1206.000'
+                  width='988.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='org.tquadrat.foundation.sql.internal.EnhancedPreparedStatementBase'>
+            <g>
+                <g clip-path='url(#ID000002)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='988.000'
+                          height='1206.000'
+                          class='otherClass'/>
+                    <line x1='0.000'
+                          y1='28.000'
+                          x2='988.000'
+                          y2='28.000'
+                          class='separator'/>
+                    <text x='479.600'
+                          y='13.000'
+                          class='stereotype'>&#xAB;Type&#xBB;</text>
+                    <text x='407.000'
+                          y='24.000'
+                          class='abstract'>EnhancedPreparedStatementBase</text>
+                    <line x1='0.000'
+                          y1='89.000'
+                          x2='988.000'
+                          y2='89.000'
+                          class='separator'/>
+                    <text y='41.000'>- m_BatchCounter:int</text>
+                    <text y='52.000'
+                          class='final'>- m_ParameterIndex:java.util.Map&lt;java.lang.String,int[]&gt;</text>
+                    <text y='63.000'
+                          class='final'>- m_PreparedStatement:java.sql.PreparedStatement</text>
+                    <text y='74.000'
+                          class='final'>- m_SourceStatement:java.lang.String</text>
+                    <text y='85.000'
+                          class='final'>- m_Values:org.tquadrat.foundation.util.LazyMap&lt;java.lang.String,org.tquadrat.foundation.sql.internal.StatementValue&gt;</text>
+                    <text x='5.000'
+                          y='102.000'># EnhancedPreparedStatementBase(sourceStatement:java.lang.String,preparedStatement:java.sql.PreparedStatement,parameterIndex:java.util.Map&lt;java.lang.String,int[]&gt;)</text>
+                    <text x='5.000'
+                          y='113.000'>+ addBatch():void</text>
+                    <text x='5.000'
+                          y='124.000'
+                          class='abstract'># addStacktrace():boolean</text>
+                    <text x='5.000'
+                          y='135.000'>+ cancel():void</text>
+                    <text x='5.000'
+                          y='146.000'>+ clearBatch():void</text>
+                    <text x='5.000'
+                          y='157.000'>+ clearParameters():void</text>
+                    <text x='5.000'
+                          y='168.000'>+ clearWarnings():void</text>
+                    <text x='5.000'
+                          y='179.000'>+ close():void</text>
+                    <text x='5.000'
+                          y='190.000'>+ closeOnCompletion():void</text>
+                    <text x='5.000'
+                          y='201.000'
+                          class='abstract'># doLogging(operation:java.lang.String,stackTrace:java.lang.StackTraceElement[]):void</text>
+                    <text x='5.000'
+                          y='212.000'>+ enquoteIdentifier(identifier:java.lang.String,alwaysQuote:boolean):java.lang.String</text>
+                    <text x='5.000'
+                          y='223.000'>+ enquoteLiteral(value:java.lang.String):java.lang.String</text>
+                    <text x='5.000'
+                          y='234.000'>+ enquoteNCharLiteral(s:java.lang.String):java.lang.String</text>
+                    <text x='5.000'
+                          y='245.000'>+ execute():boolean</text>
+                    <text x='5.000'
+                          y='256.000'>+ executeBatch():int[]</text>
+                    <text x='5.000'
+                          y='267.000'>+ executeLargeBatch():long[]</text>
+                    <text x='5.000'
+                          y='278.000'>+ executeLargeUpdate():long</text>
+                    <text x='5.000'
+                          y='289.000'>+ executeQuery():java.sql.ResultSet</text>
+                    <text x='5.000'
+                          y='300.000'>+ executeUpdate():int</text>
+                    <text x='5.000'
+                          y='311.000'># getCurrentValues():java.util.Collection&lt;org.tquadrat.foundation.sql.internal.StatementValue&gt;</text>
+                    <text x='5.000'
+                          y='322.000'>+ getConnection():java.sql.Connection</text>
+                    <text x='5.000'
+                          y='333.000'>+ getFetchDirection():int</text>
+                    <text x='5.000'
+                          y='344.000'>+ getFetchSize():int</text>
+                    <text x='5.000'
+                          y='355.000'>+ getGeneratedKeys():java.sql.ResultSet</text>
+                    <text x='5.000'
+                          y='366.000'>+ getLargeMaxRows():long</text>
+                    <text x='5.000'
+                          y='377.000'>+ getLargeUpdateCount():long</text>
+                    <text x='5.000'
+                          y='388.000'>+ getMaxFieldSize():int</text>
+                    <text x='5.000'
+                          y='399.000'>+ getMaxRows():int</text>
+                    <text x='5.000'
+                          y='410.000'>+ getMetaData():java.sql.ResultSetMetaData</text>
+                    <text x='5.000'
+                          y='421.000'>+ getMoreResults():boolean</text>
+                    <text x='5.000'
+                          y='432.000'>+ getMoreResults(current:int):boolean</text>
+                    <text x='5.000'
+                          y='443.000'># getParameterIndexes(parameterName:java.lang.String):int[]</text>
+                    <text x='5.000'
+                          y='454.000'>+ getParameterMetaData():org.tquadrat.foundation.sql.ParameterMetaData</text>
+                    <text x='5.000'
+                          y='465.000'># getParameterNames():java.util.Collection&lt;java.lang.String&gt;</text>
+                    <text x='5.000'
+                          y='476.000'>+ getQueryTimeout():int</text>
+                    <text x='5.000'
+                          y='487.000'>+ getResultSet():java.sql.ResultSet</text>
+                    <text x='5.000'
+                          y='498.000'>+ getResultSetConcurrency():int</text>
+                    <text x='5.000'
+                          y='509.000'>+ getResultSetHoldability():int</text>
+                    <text x='5.000'
+                          y='520.000'>+ getResultSetType():int</text>
+                    <text x='5.000'
+                          y='531.000'># getSourceStatement():java.lang.String</text>
+                    <text x='5.000'
+                          y='542.000'>+ getUpdateCount():int</text>
+                    <text x='5.000'
+                          y='553.000'>+ getWarnings():java.sql.SQLWarning</text>
+                    <text x='5.000'
+                          y='564.000'>+ isClosed():boolean</text>
+                    <text x='5.000'
+                          y='575.000'>+ isCloseOnCompletion():boolean</text>
+                    <text x='5.000'
+                          y='586.000'
+                          class='abstract'>+ isLoggingEnabled():boolean</text>
+                    <text x='5.000'
+                          y='597.000'>+ isPoolable():boolean</text>
+                    <text x='5.000'
+                          y='608.000'>+ isSimpleIdentifier(identifier:java.lang.String):boolean</text>
+                    <text x='5.000'
+                          y='619.000'>+ setArray(parameterName:java.lang.String,value:java.sql.Array):void</text>
+                    <text x='5.000'
+                          y='630.000'>+ setAsciiStream(parameterName:java.lang.String,value:java.io.InputStream,length:int):void</text>
+                    <text x='5.000'
+                          y='641.000'>+ setAsciiStream(parameterName:java.lang.String,value:java.io.InputStream,length:long):void</text>
+                    <text x='5.000'
+                          y='652.000'>+ setAsciiStream(parameterName:java.lang.String,value:java.io.InputStream):void</text>
+                    <text x='5.000'
+                          y='663.000'>+ setBinaryStream(parameterName:java.lang.String,value:java.io.InputStream,length:int):void</text>
+                    <text x='5.000'
+                          y='674.000'>+ setBinaryStream(parameterName:java.lang.String,value:java.io.InputStream,length:long):void</text>
+                    <text x='5.000'
+                          y='685.000'>+ setBinaryStream(parameterName:java.lang.String,value:java.io.InputStream):void</text>
+                    <text x='5.000'
+                          y='696.000'>+ setBigDecimal(parameterName:java.lang.String,value:java.math.BigDecimal):void</text>
+                    <text x='5.000'
+                          y='707.000'>+ setBlob(parameterName:java.lang.String,value:java.sql.Blob):void</text>
+                    <text x='5.000'
+                          y='718.000'>+ setBlob(parameterName:java.lang.String,value:java.io.InputStream,length:long):void</text>
+                    <text x='5.000'
+                          y='729.000'>+ setBlob(parameterName:java.lang.String,value:java.io.InputStream):void</text>
+                    <text x='5.000'
+                          y='740.000'>+ setBoolean(parameterName:java.lang.String,value:boolean):void</text>
+                    <text x='5.000'
+                          y='751.000'>+ setByte(parameterName:java.lang.String,value:byte):void</text>
+                    <text x='5.000'
+                          y='762.000'>+ setBytes(parameterName:java.lang.String,value:byte[]):void</text>
+                    <text x='5.000'
+                          y='773.000'>+ setCharacterStream(parameterName:java.lang.String,value:java.io.Reader,length:int):void</text>
+                    <text x='5.000'
+                          y='784.000'>+ setCharacterStream(parameterName:java.lang.String,value:java.io.Reader,length:long):void</text>
+                    <text x='5.000'
+                          y='795.000'>+ setCharacterStream(parameterName:java.lang.String,value:java.io.Reader):void</text>
+                    <text x='5.000'
+                          y='806.000'>+ setClob(parameterName:java.lang.String,value:java.sql.Clob):void</text>
+                    <text x='5.000'
+                          y='817.000'>+ setClob(parameterName:java.lang.String,value:java.io.Reader,length:long):void</text>
+                    <text x='5.000'
+                          y='828.000'>+ setCursorName(name:java.lang.String):void</text>
+                    <text x='5.000'
+                          y='839.000'>+ setClob(parameterName:java.lang.String,value:java.io.Reader):void</text>
+                    <text x='5.000'
+                          y='850.000'>+ setDate(parameterName:java.lang.String,value:java.sql.Date):void</text>
+                    <text x='5.000'
+                          y='861.000'>+ setDate(parameterName:java.lang.String,value:java.sql.Date,calendar:java.util.Calendar):void</text>
+                    <text x='5.000'
+                          y='872.000'>+ setDouble(parameterName:java.lang.String,value:double):void</text>
+                    <text x='5.000'
+                          y='883.000'>+ setFetchDirection(direction:int):void</text>
+                    <text x='5.000'
+                          y='894.000'>+ setFetchSize(rows:int):void</text>
+                    <text x='5.000'
+                          y='905.000'>+ setFloat(parameterName:java.lang.String,value:float):void</text>
+                    <text x='5.000'
+                          y='916.000'>+ setInt(parameterName:java.lang.String,value:int):void</text>
+                    <text x='5.000'
+                          y='927.000'>+ setLargeMaxRows(max:long):void</text>
+                    <text x='5.000'
+                          y='938.000'>+ setLong(parameterName:java.lang.String,value:long):void</text>
+                    <text x='5.000'
+                          y='949.000'>+ setMaxFieldSize(max:int):void</text>
+                    <text x='5.000'
+                          y='960.000'>+ setMaxRows(max:int):void</text>
+                    <text x='5.000'
+                          y='971.000'>+ setNCharacterStream(parameterName:java.lang.String,value:java.io.Reader,length:long):void</text>
+                    <text x='5.000'
+                          y='982.000'>+ setNCharacterStream(parameterName:java.lang.String,value:java.io.Reader):void</text>
+                    <text x='5.000'
+                          y='993.000'>+ setNClob(parameterName:java.lang.String,value:java.sql.NClob):void</text>
+                    <text x='5.000'
+                          y='1004.000'>+ setNClob(parameterName:java.lang.String,value:java.io.Reader,length:long):void</text>
+                    <text x='5.000'
+                          y='1015.000'>+ setNClob(parameterName:java.lang.String,value:java.io.Reader):void</text>
+                    <text x='5.000'
+                          y='1026.000'>+ setNString(parameterName:java.lang.String,value:java.lang.String):void</text>
+                    <text x='5.000'
+                          y='1037.000'>+ setNull(parameterName:java.lang.String,sqlType:java.sql.SQLType):void</text>
+                    <text x='5.000'
+                          y='1048.000'>+ setNull(parameterName:java.lang.String,sqlType:java.sql.SQLType,typeName:java.lang.String):void</text>
+                    <text x='5.000'
+                          y='1059.000'>+ setObject(parameterName:java.lang.String,value:java.lang.Object):void</text>
+                    <text x='5.000'
+                          y='1070.000'>+ setObject(parameterName:java.lang.String,value:java.lang.Object,targetSqlType:java.sql.SQLType,scaleOrLength:int):void</text>
+                    <text x='5.000'
+                          y='1081.000'>+ setObject(parameterName:java.lang.String,value:java.lang.Object,targetSqlType:java.sql.SQLType):void</text>
+                    <text x='5.000'
+                          y='1092.000'>+ setQueryTimeout(timeout:int):void</text>
+                    <text x='5.000'
+                          y='1103.000'>+ setRef(parameterName:java.lang.String,value:java.sql.Ref):void</text>
+                    <text x='5.000'
+                          y='1114.000'>+ setRowId(parameterName:java.lang.String,value:java.sql.RowId):void</text>
+                    <text x='5.000'
+                          y='1125.000'>+ setShort(parameterName:java.lang.String,value:short):void</text>
+                    <text x='5.000'
+                          y='1136.000'>+ setSQLXML(parameterName:java.lang.String,value:java.sql.SQLXML):void</text>
+                    <text x='5.000'
+                          y='1147.000'>+ setString(parameterName:java.lang.String,value:java.lang.String):void</text>
+                    <text x='5.000'
+                          y='1158.000'>+ setTime(parameterName:java.lang.String,value:java.sql.Time):void</text>
+                    <text x='5.000'
+                          y='1169.000'>+ setTime(parameterName:java.lang.String,value:java.sql.Time,calendar:java.util.Calendar):void</text>
+                    <text x='5.000'
+                          y='1180.000'>+ setTimestamp(parameterName:java.lang.String,value:java.sql.Timestamp):void</text>
+                    <text x='5.000'
+                          y='1191.000'>+ setTimestamp(parameterName:java.lang.String,value:java.sql.Timestamp,calendar:java.util.Calendar):void</text>
+                    <text x='5.000'
+                          y='1202.000'>+ setURL(parameterName:java.lang.String,value:java.net.URL):void</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000003'>
+            <rect class='externalClass'
+                  height='62.000'
+                  width='94.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='java.lang.AutoCloseable'>
+            <g>
+                <g clip-path='url(#ID000003)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='94.000'
+                          height='62.000'
+                          class='externalClass'/>
+                    <line x1='0.000'
+                          y1='28.000'
+                          x2='94.000'
+                          y2='28.000'
+                          class='separator'/>
+                    <text x='20.600'
+                          y='13.000'
+                          class='stereotype'>&#xAB;Interface&#xBB;</text>
+                    <text x='8.000'
+                          y='24.000'
+                          class='abstract'>AutoCloseable</text>
+                    <line x1='0.000'
+                          y1='45.000'
+                          x2='94.000'
+                          y2='45.000'
+                          class='separator'/>
+                    <text x='5.000'
+                          y='41.000'/>
+                    <text x='5.000'
+                          y='58.000'
+                          class='abstract'>+ close():void</text>
+                </g>
+            </g>
+        </symbol>
+    </defs>
+    <path class='implementation'
+          d='M522.000,1394.000 L522.000,1294.000'
+          marker-end='url(#implementation)'/>
+    <path class='inheritance'
+          d='M522.000,187.000 L522.000,87.000'
+          marker-end='url(#inheritance)'/>
+    <use x='475.000'
+         y='25.000'
+         xlink:href='#java.lang.AutoCloseable'/>
+    <use x='25.000'
+         y='187.000'
+         xlink:href='#org.tquadrat.foundation.sql.EnhancedPreparedStatement'/>
+    <use x='28.000'
+         y='1394.000'
+         xlink:href='#org.tquadrat.foundation.sql.internal.EnhancedPreparedStatementBase'/>
+</svg>
