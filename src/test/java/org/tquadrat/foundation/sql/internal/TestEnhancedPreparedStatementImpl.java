@@ -43,11 +43,11 @@ import org.tquadrat.foundation.testutil.TestBaseClass;
  *  Some tests for the methods in
  *  {@link EnhancedPreparedStatementImpl}.
  *
- *  @version $Id: TestEnhancedPreparedStatementImpl.java 1020 2022-02-27 21:26:03Z tquadrat $
+ *  @version $Id: TestEnhancedPreparedStatementImpl.java 1022 2022-03-03 23:03:40Z tquadrat $
  *  @author Thomas Thrien - thomas.thrien@tquadrat.org
  *  @since 0.1.0
  */
-@ClassVersion( sourceVersion = "$Id: TestEnhancedPreparedStatementImpl.java 1020 2022-02-27 21:26:03Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestEnhancedPreparedStatementImpl.java 1022 2022-03-03 23:03:40Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.sql.internal.TestEnhancedPreparedStatementImpl" )
 public class TestEnhancedPreparedStatementImpl extends TestBaseClass
 {

@@ -29,7 +29,7 @@ import org.tquadrat.foundation.annotation.ClassVersion;
 /**
  *  <p>{@summary An instance of an implementation of this interface can be used
  *  to get information about the types and properties for each named parameter
- *  in a
+ *  in an
  *  {@link EnhancedPreparedStatement}
  *  instance.} For some queries and driver implementations, the data that would
  *  be returned by a
@@ -44,14 +44,14 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  occurrences
  *  {@linkplain #isNullable(String) will be checked}.</p>
  *
- *  @version $Id: ParameterMetaData.java 1020 2022-02-27 21:26:03Z tquadrat $
+ *  @version $Id: ParameterMetaData.java 1022 2022-03-03 23:03:40Z tquadrat $
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @UMLGraph.link
  *  @since 0.1.0
  *
  *  @see java.sql.ParameterMetaData
  */
-@ClassVersion( sourceVersion = "$Id: ParameterMetaData.java 1020 2022-02-27 21:26:03Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ParameterMetaData.java 1022 2022-03-03 23:03:40Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public sealed interface ParameterMetaData
     permits org.tquadrat.foundation.sql.internal.ParameterMetaDataBase
