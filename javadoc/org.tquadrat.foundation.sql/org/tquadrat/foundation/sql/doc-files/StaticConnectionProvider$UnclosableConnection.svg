@@ -1,0 +1,651 @@
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:cc="http://creativecommons.org/ns#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:svg="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     version='1.1'
+     baseProfile='full'
+     width='870.000'
+     height='1966.000'>
+    <defs>
+        <style><![CDATA[
+            line
+            {
+              stroke: black;
+            }
+            line.separator
+            {
+              stroke:       black;
+              stroke-width: 1;
+            }
+            marker
+            {
+              fill: white;
+            }
+            path
+            {
+              fill:   white;
+              stroke: black;
+            }
+            path.implementation
+            {
+              fill:             none;
+              stroke-dasharray: 5,5;
+              stroke-width:     3;
+            }
+            path.inheritance
+            {
+              fill:         none;
+              stroke-width: 3;
+            }
+            rect
+            {
+              fill:         none;
+              stroke:       black;
+              stroke-width: 2;
+            }
+            rect.externalClass
+            {
+              fill:         #D0D0D0;
+              fill-opacity: 0.8;
+            }
+            rect.focusClass
+            {
+              fill:         #FFFFF9;
+              fill-opacity: 0.8;
+            }
+            rect.otherClass
+            {
+              fill:         #F0E68C;
+              fill-opacity: 0.8;
+            }
+            rect.template
+            {
+              fill:             #FFFFFF;
+              fill-opacity:     1.0;
+              stroke-dasharray: 3,3;
+            }
+            text
+            {
+              font-family: monospace;
+              font-size:   10px;
+              font-weight: bold;
+            }
+            text.abstract
+            {
+              font-style: italic;
+            }
+            text.final
+            {
+              text-decoration: underline;
+            }
+            text.static
+            {
+              font-weight: normal;
+            }
+            text.stereotype
+            {
+              font-size:   8px;
+              font-weight: normal;
+            }
+            ]]></style>
+        <marker id='inheritance'
+                viewBox='0,0,40,40'
+                markerUnits='strokeWidth'
+                refX='40'
+                refY='20'
+                markerWidth='6'
+                markerHeight='6'
+                orient='auto'>
+            <path d='M40,20 l-40,-20 v40 Z'
+                  fill='#ffffff'
+                  stroke='#000000'
+                  stroke-width='3'/>
+        </marker>
+        <marker id='implementation'
+                viewBox='0,0,40,40'
+                markerUnits='strokeWidth'
+                refX='40'
+                refY='20'
+                markerWidth='6'
+                markerHeight='6'
+                orient='auto'>
+            <path d='M40,20 l-40,-20 v40 Z'
+                  fill='#ffffff'
+                  stroke='#000000'
+                  stroke-width='3'/>
+        </marker>
+        <clipPath id='ID000001'>
+            <rect class='focusClass'
+                  height='711.000'
+                  width='820.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='org.tquadrat.foundation.sql.StaticConnectionProvider.UnclosableConnection'>
+            <g>
+                <g class='focusClass'
+                   clip-path='url(#ID000001)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='820.000'
+                          height='711.000'
+                          class='focusClass'/>
+                    <line x1='0.000'
+                          y1='17.000'
+                          x2='820.000'
+                          y2='17.000'
+                          class='separator'/>
+                    <text x='350.000'
+                          y='13.000'>UnclosableConnection</text>
+                    <line x1='0.000'
+                          y1='34.000'
+                          x2='820.000'
+                          y2='34.000'
+                          class='separator'/>
+                    <text x='5.000'
+                          y='30.000'/>
+                    <text x='5.000'
+                          y='47.000'>- UnclosableConnection()</text>
+                    <text x='5.000'
+                          y='58.000'>+ abort(executor:java.util.concurrent.Executor):void</text>
+                    <text x='5.000'
+                          y='69.000'>+ beginRequest():void</text>
+                    <text x='5.000'
+                          y='80.000'>+ clearWarnings():void</text>
+                    <text x='5.000'
+                          y='91.000'>+ close():void</text>
+                    <text x='5.000'
+                          y='102.000'>+ commit():void</text>
+                    <text x='5.000'
+                          y='113.000'>+ createArrayOf(typeName:java.lang.String,elements:java.lang.Object[]):java.sql.Array</text>
+                    <text x='5.000'
+                          y='124.000'>+ createBlob():java.sql.Blob</text>
+                    <text x='5.000'
+                          y='135.000'>+ createClob():java.sql.Clob</text>
+                    <text x='5.000'
+                          y='146.000'>+ createNClob():java.sql.NClob</text>
+                    <text x='5.000'
+                          y='157.000'>+ createSQLXML():java.sql.SQLXML</text>
+                    <text x='5.000'
+                          y='168.000'>+ createStatement():java.sql.Statement</text>
+                    <text x='5.000'
+                          y='179.000'>+ createStatement(resultSetType:int,resultSetConcurrency:int):java.sql.Statement</text>
+                    <text x='5.000'
+                          y='190.000'>+ createStatement(resultSetType:int,resultSetConcurrency:int,resultSetHoldability:int):java.sql.Statement</text>
+                    <text x='5.000'
+                          y='201.000'>+ createStruct(typeName:java.lang.String,attributes:java.lang.Object[]):java.sql.Struct</text>
+                    <text x='5.000'
+                          y='212.000'>+ endRequest():void</text>
+                    <text x='5.000'
+                          y='223.000'>+ getAutoCommit():boolean</text>
+                    <text x='5.000'
+                          y='234.000'>+ getCatalog():java.lang.String</text>
+                    <text x='5.000'
+                          y='245.000'>+ getClientInfo(name:java.lang.String):java.lang.String</text>
+                    <text x='5.000'
+                          y='256.000'>+ getClientInfo():java.util.Properties</text>
+                    <text x='5.000'
+                          y='267.000'>+ getHoldability():int</text>
+                    <text x='5.000'
+                          y='278.000'>+ getMetaData():java.sql.DatabaseMetaData</text>
+                    <text x='5.000'
+                          y='289.000'>+ getNetworkTimeout():int</text>
+                    <text x='5.000'
+                          y='300.000'>+ getSchema():java.lang.String</text>
+                    <text x='5.000'
+                          y='311.000'>+ getTransactionIsolation():int</text>
+                    <text x='5.000'
+                          y='322.000'>+ getTypeMap():java.util.Map&lt;java.lang.String,java.lang.Class&lt;?&gt;&gt;</text>
+                    <text x='5.000'
+                          y='333.000'>+ getWarnings():java.sql.SQLWarning</text>
+                    <text x='5.000'
+                          y='344.000'>+ isClosed():boolean</text>
+                    <text x='5.000'
+                          y='355.000'>+ isReadOnly():boolean</text>
+                    <text x='5.000'
+                          y='366.000'>+ isValid(timeout:int):boolean</text>
+                    <text x='5.000'
+                          y='377.000'>+ isWrapperFor(iface:java.lang.Class&lt;?&gt;):boolean</text>
+                    <text x='5.000'
+                          y='388.000'>+ nativeSQL(sql:java.lang.String):java.lang.String</text>
+                    <text x='5.000'
+                          y='399.000'>+ prepareCall(sql:java.lang.String):java.sql.CallableStatement</text>
+                    <text x='5.000'
+                          y='410.000'>+ prepareCall(sql:java.lang.String,resultSetType:int,resultSetConcurrency:int):java.sql.CallableStatement</text>
+                    <text x='5.000'
+                          y='421.000'>+ prepareCall(sql:java.lang.String,resultSetType:int,resultSetConcurrency:int,resultSetHoldability:int):java.sql.CallableStatement</text>
+                    <text x='5.000'
+                          y='432.000'>+ prepareStatement(sql:java.lang.String):java.sql.PreparedStatement</text>
+                    <text x='5.000'
+                          y='443.000'>+ prepareStatement(sql:java.lang.String,resultSetType:int,resultSetConcurrency:int):java.sql.PreparedStatement</text>
+                    <text x='5.000'
+                          y='454.000'>+ prepareStatement(sql:java.lang.String,resultSetType:int,resultSetConcurrency:int,resultSetHoldability:int):java.sql.PreparedStatement</text>
+                    <text x='5.000'
+                          y='465.000'>+ prepareStatement(sql:java.lang.String,autoGeneratedKeys:int):java.sql.PreparedStatement</text>
+                    <text x='5.000'
+                          y='476.000'>+ prepareStatement(sql:java.lang.String,columnIndexes:int[]):java.sql.PreparedStatement</text>
+                    <text x='5.000'
+                          y='487.000'>+ prepareStatement(sql:java.lang.String,columnNames:java.lang.String[]):java.sql.PreparedStatement</text>
+                    <text x='5.000'
+                          y='498.000'>+ releaseSavepoint(savepoint:java.sql.Savepoint):void</text>
+                    <text x='5.000'
+                          y='509.000'>+ rollback():void</text>
+                    <text x='5.000'
+                          y='520.000'>+ rollback(savepoint:java.sql.Savepoint):void</text>
+                    <text x='5.000'
+                          y='531.000'>+ setAutoCommit(autoCommit:boolean):void</text>
+                    <text x='5.000'
+                          y='542.000'>+ setCatalog(catalog:java.lang.String):void</text>
+                    <text x='5.000'
+                          y='553.000'>+ setClientInfo(name:java.lang.String,value:java.lang.String):void</text>
+                    <text x='5.000'
+                          y='564.000'>+ setClientInfo(properties:java.util.Properties):void</text>
+                    <text x='5.000'
+                          y='575.000'>+ setHoldability(holdability:int):void</text>
+                    <text x='5.000'
+                          y='586.000'>+ setNetworkTimeout(executor:java.util.concurrent.Executor,milliseconds:int):void</text>
+                    <text x='5.000'
+                          y='597.000'>+ setReadOnly(readOnly:boolean):void</text>
+                    <text x='5.000'
+                          y='608.000'>+ setSavepoint():java.sql.Savepoint</text>
+                    <text x='5.000'
+                          y='619.000'>+ setSavepoint(name:java.lang.String):java.sql.Savepoint</text>
+                    <text x='5.000'
+                          y='630.000'>+ setSchema(schema:java.lang.String):void</text>
+                    <text x='5.000'
+                          y='641.000'>+ setShardingKey(shardingKey:java.sql.ShardingKey,superShardingKey:java.sql.ShardingKey):void</text>
+                    <text x='5.000'
+                          y='652.000'>+ setShardingKey(shardingKey:java.sql.ShardingKey):void</text>
+                    <text x='5.000'
+                          y='663.000'>+ setShardingKeyIfValid(shardingKey:java.sql.ShardingKey,superShardingKey:java.sql.ShardingKey,timeout:int):boolean</text>
+                    <text x='5.000'
+                          y='674.000'>+ setShardingKeyIfValid(shardingKey:java.sql.ShardingKey,timeout:int):boolean</text>
+                    <text x='5.000'
+                          y='685.000'>+ setTransactionIsolation(level:int):void</text>
+                    <text x='5.000'
+                          y='696.000'>+ setTypeMap(map:java.util.Map&lt;java.lang.String,java.lang.Class&lt;?&gt;&gt;):void</text>
+                    <text x='5.000'
+                          y='707.000'>+ unwrap(iface:java.lang.Class&lt;T&gt;):T</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000002'>
+            <rect class='externalClass'
+                  height='172.000'
+                  width='244.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='java.lang.Object'>
+            <g>
+                <g clip-path='url(#ID000002)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='244.000'
+                          height='172.000'
+                          class='externalClass'/>
+                    <line x1='0.000'
+                          y1='17.000'
+                          x2='244.000'
+                          y2='17.000'
+                          class='separator'/>
+                    <text x='104.000'
+                          y='13.000'>Object</text>
+                    <line x1='0.000'
+                          y1='34.000'
+                          x2='244.000'
+                          y2='34.000'
+                          class='separator'/>
+                    <text x='5.000'
+                          y='30.000'/>
+                    <text x='5.000'
+                          y='47.000'>+ Object()</text>
+                    <text x='5.000'
+                          y='58.000'>+ getClass():java.lang.Class&lt;?&gt;</text>
+                    <text x='5.000'
+                          y='69.000'>+ hashCode():int</text>
+                    <text x='5.000'
+                          y='80.000'>+ equals(arg0:java.lang.Object):boolean</text>
+                    <text x='5.000'
+                          y='91.000'># clone():java.lang.Object</text>
+                    <text x='5.000'
+                          y='102.000'>+ toString():java.lang.String</text>
+                    <text x='5.000'
+                          y='113.000'>+ notify():void</text>
+                    <text x='5.000'
+                          y='124.000'>+ notifyAll():void</text>
+                    <text x='5.000'
+                          y='135.000'>+ wait():void</text>
+                    <text x='5.000'
+                          y='146.000'>+ wait(arg0:long):void</text>
+                    <text x='5.000'
+                          y='157.000'>+ wait(arg0:long,arg1:int):void</text>
+                    <text x='5.000'
+                          y='168.000'># finalize():void</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000003'>
+            <rect class='externalClass'
+                  height='733.000'
+                  width='580.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='java.sql.Connection'>
+            <g>
+                <g clip-path='url(#ID000003)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='580.000'
+                          height='733.000'
+                          class='externalClass'/>
+                    <line x1='0.000'
+                          y1='28.000'
+                          x2='580.000'
+                          y2='28.000'
+                          class='separator'/>
+                    <text x='263.600'
+                          y='13.000'
+                          class='stereotype'>&#xAB;Interface&#xBB;</text>
+                    <text x='260.000'
+                          y='24.000'
+                          class='abstract'>Connection</text>
+                    <line x1='0.000'
+                          y1='89.000'
+                          x2='580.000'
+                          y2='89.000'
+                          class='separator'/>
+                    <text y='41.000'
+                          class='static final'>+ TRANSACTION_NONE:int</text>
+                    <text y='52.000'
+                          class='static final'>+ TRANSACTION_READ_UNCOMMITTED:int</text>
+                    <text y='63.000'
+                          class='static final'>+ TRANSACTION_READ_COMMITTED:int</text>
+                    <text y='74.000'
+                          class='static final'>+ TRANSACTION_REPEATABLE_READ:int</text>
+                    <text y='85.000'
+                          class='static final'>+ TRANSACTION_SERIALIZABLE:int</text>
+                    <text x='5.000'
+                          y='102.000'
+                          class='abstract'>+ createStatement():java.sql.Statement</text>
+                    <text x='5.000'
+                          y='113.000'
+                          class='abstract'>+ prepareStatement(arg0:java.lang.String):java.sql.PreparedStatement</text>
+                    <text x='5.000'
+                          y='124.000'
+                          class='abstract'>+ prepareCall(arg0:java.lang.String):java.sql.CallableStatement</text>
+                    <text x='5.000'
+                          y='135.000'
+                          class='abstract'>+ nativeSQL(arg0:java.lang.String):java.lang.String</text>
+                    <text x='5.000'
+                          y='146.000'
+                          class='abstract'>+ setAutoCommit(arg0:boolean):void</text>
+                    <text x='5.000'
+                          y='157.000'
+                          class='abstract'>+ getAutoCommit():boolean</text>
+                    <text x='5.000'
+                          y='168.000'
+                          class='abstract'>+ commit():void</text>
+                    <text x='5.000'
+                          y='179.000'
+                          class='abstract'>+ rollback():void</text>
+                    <text x='5.000'
+                          y='190.000'
+                          class='abstract'>+ close():void</text>
+                    <text x='5.000'
+                          y='201.000'
+                          class='abstract'>+ isClosed():boolean</text>
+                    <text x='5.000'
+                          y='212.000'
+                          class='abstract'>+ getMetaData():java.sql.DatabaseMetaData</text>
+                    <text x='5.000'
+                          y='223.000'
+                          class='abstract'>+ setReadOnly(arg0:boolean):void</text>
+                    <text x='5.000'
+                          y='234.000'
+                          class='abstract'>+ isReadOnly():boolean</text>
+                    <text x='5.000'
+                          y='245.000'
+                          class='abstract'>+ setCatalog(arg0:java.lang.String):void</text>
+                    <text x='5.000'
+                          y='256.000'
+                          class='abstract'>+ getCatalog():java.lang.String</text>
+                    <text x='5.000'
+                          y='267.000'
+                          class='abstract'>+ setTransactionIsolation(arg0:int):void</text>
+                    <text x='5.000'
+                          y='278.000'
+                          class='abstract'>+ getTransactionIsolation():int</text>
+                    <text x='5.000'
+                          y='289.000'
+                          class='abstract'>+ getWarnings():java.sql.SQLWarning</text>
+                    <text x='5.000'
+                          y='300.000'
+                          class='abstract'>+ clearWarnings():void</text>
+                    <text x='5.000'
+                          y='311.000'
+                          class='abstract'>+ createStatement(arg0:int,arg1:int):java.sql.Statement</text>
+                    <text x='5.000'
+                          y='322.000'
+                          class='abstract'>+ prepareStatement(arg0:java.lang.String,arg1:int,arg2:int):java.sql.PreparedStatement</text>
+                    <text x='5.000'
+                          y='333.000'
+                          class='abstract'>+ prepareCall(arg0:java.lang.String,arg1:int,arg2:int):java.sql.CallableStatement</text>
+                    <text x='5.000'
+                          y='344.000'
+                          class='abstract'>+ getTypeMap():java.util.Map&lt;java.lang.String,java.lang.Class&lt;?&gt;&gt;</text>
+                    <text x='5.000'
+                          y='355.000'
+                          class='abstract'>+ setTypeMap(arg0:java.util.Map&lt;java.lang.String,java.lang.Class&lt;?&gt;&gt;):void</text>
+                    <text x='5.000'
+                          y='366.000'
+                          class='abstract'>+ setHoldability(arg0:int):void</text>
+                    <text x='5.000'
+                          y='377.000'
+                          class='abstract'>+ getHoldability():int</text>
+                    <text x='5.000'
+                          y='388.000'
+                          class='abstract'>+ setSavepoint():java.sql.Savepoint</text>
+                    <text x='5.000'
+                          y='399.000'
+                          class='abstract'>+ setSavepoint(arg0:java.lang.String):java.sql.Savepoint</text>
+                    <text x='5.000'
+                          y='410.000'
+                          class='abstract'>+ rollback(arg0:java.sql.Savepoint):void</text>
+                    <text x='5.000'
+                          y='421.000'
+                          class='abstract'>+ releaseSavepoint(arg0:java.sql.Savepoint):void</text>
+                    <text x='5.000'
+                          y='432.000'
+                          class='abstract'>+ createStatement(arg0:int,arg1:int,arg2:int):java.sql.Statement</text>
+                    <text x='5.000'
+                          y='443.000'
+                          class='abstract'>+ prepareStatement(arg0:java.lang.String,arg1:int,arg2:int,arg3:int):java.sql.PreparedStatement</text>
+                    <text x='5.000'
+                          y='454.000'
+                          class='abstract'>+ prepareCall(arg0:java.lang.String,arg1:int,arg2:int,arg3:int):java.sql.CallableStatement</text>
+                    <text x='5.000'
+                          y='465.000'
+                          class='abstract'>+ prepareStatement(arg0:java.lang.String,arg1:int):java.sql.PreparedStatement</text>
+                    <text x='5.000'
+                          y='476.000'
+                          class='abstract'>+ prepareStatement(arg0:java.lang.String,arg1:int[]):java.sql.PreparedStatement</text>
+                    <text x='5.000'
+                          y='487.000'
+                          class='abstract'>+ prepareStatement(arg0:java.lang.String,arg1:java.lang.String[]):java.sql.PreparedStatement</text>
+                    <text x='5.000'
+                          y='498.000'
+                          class='abstract'>+ createClob():java.sql.Clob</text>
+                    <text x='5.000'
+                          y='509.000'
+                          class='abstract'>+ createBlob():java.sql.Blob</text>
+                    <text x='5.000'
+                          y='520.000'
+                          class='abstract'>+ createNClob():java.sql.NClob</text>
+                    <text x='5.000'
+                          y='531.000'
+                          class='abstract'>+ createSQLXML():java.sql.SQLXML</text>
+                    <text x='5.000'
+                          y='542.000'
+                          class='abstract'>+ isValid(arg0:int):boolean</text>
+                    <text x='5.000'
+                          y='553.000'
+                          class='abstract'>+ setClientInfo(arg0:java.lang.String,arg1:java.lang.String):void</text>
+                    <text x='5.000'
+                          y='564.000'
+                          class='abstract'>+ setClientInfo(arg0:java.util.Properties):void</text>
+                    <text x='5.000'
+                          y='575.000'
+                          class='abstract'>+ getClientInfo(arg0:java.lang.String):java.lang.String</text>
+                    <text x='5.000'
+                          y='586.000'
+                          class='abstract'>+ getClientInfo():java.util.Properties</text>
+                    <text x='5.000'
+                          y='597.000'
+                          class='abstract'>+ createArrayOf(arg0:java.lang.String,arg1:java.lang.Object[]):java.sql.Array</text>
+                    <text x='5.000'
+                          y='608.000'
+                          class='abstract'>+ createStruct(arg0:java.lang.String,arg1:java.lang.Object[]):java.sql.Struct</text>
+                    <text x='5.000'
+                          y='619.000'
+                          class='abstract'>+ setSchema(arg0:java.lang.String):void</text>
+                    <text x='5.000'
+                          y='630.000'
+                          class='abstract'>+ getSchema():java.lang.String</text>
+                    <text x='5.000'
+                          y='641.000'
+                          class='abstract'>+ abort(arg0:java.util.concurrent.Executor):void</text>
+                    <text x='5.000'
+                          y='652.000'
+                          class='abstract'>+ setNetworkTimeout(arg0:java.util.concurrent.Executor,arg1:int):void</text>
+                    <text x='5.000'
+                          y='663.000'
+                          class='abstract'>+ getNetworkTimeout():int</text>
+                    <text x='5.000'
+                          y='674.000'>&#x2A22; beginRequest():void</text>
+                    <text x='5.000'
+                          y='685.000'>&#x2A22; endRequest():void</text>
+                    <text x='5.000'
+                          y='696.000'>&#x2A22; setShardingKeyIfValid(arg0:java.sql.ShardingKey,arg1:java.sql.ShardingKey,arg2:int):boolean</text>
+                    <text x='5.000'
+                          y='707.000'>&#x2A22; setShardingKeyIfValid(arg0:java.sql.ShardingKey,arg1:int):boolean</text>
+                    <text x='5.000'
+                          y='718.000'>&#x2A22; setShardingKey(arg0:java.sql.ShardingKey,arg1:java.sql.ShardingKey):void</text>
+                    <text x='5.000'
+                          y='729.000'>&#x2A22; setShardingKey(arg0:java.sql.ShardingKey):void</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000004'>
+            <rect class='externalClass'
+                  height='73.000'
+                  width='292.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='java.sql.Wrapper'>
+            <g>
+                <g clip-path='url(#ID000004)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='292.000'
+                          height='73.000'
+                          class='externalClass'/>
+                    <line x1='0.000'
+                          y1='28.000'
+                          x2='292.000'
+                          y2='28.000'
+                          class='separator'/>
+                    <text x='119.600'
+                          y='13.000'
+                          class='stereotype'>&#xAB;Interface&#xBB;</text>
+                    <text x='125.000'
+                          y='24.000'
+                          class='abstract'>Wrapper</text>
+                    <line x1='0.000'
+                          y1='45.000'
+                          x2='292.000'
+                          y2='45.000'
+                          class='separator'/>
+                    <text x='5.000'
+                          y='41.000'/>
+                    <text x='5.000'
+                          y='58.000'
+                          class='abstract'>+ unwrap(arg0:java.lang.Class&lt;T&gt;):T</text>
+                    <text x='5.000'
+                          y='69.000'
+                          class='abstract'>+ isWrapperFor(arg0:java.lang.Class&lt;?&gt;):boolean</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000005'>
+            <rect class='externalClass'
+                  height='62.000'
+                  width='94.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='java.lang.AutoCloseable'>
+            <g>
+                <g clip-path='url(#ID000005)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='94.000'
+                          height='62.000'
+                          class='externalClass'/>
+                    <line x1='0.000'
+                          y1='28.000'
+                          x2='94.000'
+                          y2='28.000'
+                          class='separator'/>
+                    <text x='20.600'
+                          y='13.000'
+                          class='stereotype'>&#xAB;Interface&#xBB;</text>
+                    <text x='8.000'
+                          y='24.000'
+                          class='abstract'>AutoCloseable</text>
+                    <line x1='0.000'
+                          y1='45.000'
+                          x2='94.000'
+                          y2='45.000'
+                          class='separator'/>
+                    <text x='5.000'
+                          y='41.000'/>
+                    <text x='5.000'
+                          y='58.000'
+                          class='abstract'>+ close():void</text>
+                </g>
+            </g>
+        </symbol>
+    </defs>
+    <path class='inheritance'
+          d='M410.000,1130.000 c0.000,-918.000,-263.000,0.000,-263.000,-918.000 v-15'
+          marker-end='url(#inheritance)'/>
+    <path class='implementation'
+          d='M460.000,1130.000 c0.000,-85.000,-25.000,0.000,-25.000,-85.000 v-15'
+          marker-end='url(#implementation)'/>
+    <path class='inheritance'
+          d='M410.000,297.000 c0.000,-184.000,55.000,0.000,55.000,-184.000 v-15'
+          marker-end='url(#inheritance)'/>
+    <path class='inheritance'
+          d='M460.000,297.000 c0.000,-195.000,248.000,0.000,248.000,-195.000 v-15'
+          marker-end='url(#inheritance)'/>
+    <use x='25.000'
+         y='25.000'
+         xlink:href='#java.lang.Object'/>
+    <use x='319.000'
+         y='25.000'
+         xlink:href='#java.sql.Wrapper'/>
+    <use x='661.000'
+         y='25.000'
+         xlink:href='#java.lang.AutoCloseable'/>
+    <use x='145.000'
+         y='297.000'
+         xlink:href='#java.sql.Connection'/>
+    <use x='25.000'
+         y='1130.000'
+         xlink:href='#org.tquadrat.foundation.sql.StaticConnectionProvider.UnclosableConnection'/>
+</svg>

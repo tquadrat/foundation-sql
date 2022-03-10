@@ -96,32 +96,53 @@ loadScripts(document, 'script');</script>
 <div class="summary-table two-column-summary" aria-labelledby="class-summary-tab0">
 <div class="table-header col-first">Class</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="DatabaseUtils.html" title="class in org.tquadrat.foundation.sql">DatabaseUtils</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab2">
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="ConnectionProvider.html" title="interface in org.tquadrat.foundation.sql">ConnectionProvider</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab1">
+<div class="block">Returns a database connection.</div>
+</div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="DatabaseUtils.html" title="class in org.tquadrat.foundation.sql">DatabaseUtils</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">Several utilities for the work with databases that will be
   accessed through plain JDBC.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab4"><a href="DatabaseUtils.ExecStatus.html" title="class in org.tquadrat.foundation.sql">DatabaseUtils.ExecStatus</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab4">
+<div class="col-first even-row-color class-summary class-summary-tab4"><a href="DatabaseUtils.ExecStatus.html" title="class in org.tquadrat.foundation.sql">DatabaseUtils.ExecStatus</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab4">
 <div class="block">Instances of this class are used to return the status of a call to
   <a href="DatabaseUtils.html#execute(java.sql.Connection,java.lang.String...)"><code>DatabaseUtils.execute(Connection,String...)</code></a>.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="EnhancedPreparedStatement.html" title="interface in org.tquadrat.foundation.sql">EnhancedPreparedStatement</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab1">
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="EnhancedPreparedStatement.html" title="interface in org.tquadrat.foundation.sql">EnhancedPreparedStatement</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">The definition of an enhanced
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/PreparedStatement.html" title="class or interface in java.sql" class="external-link"><code>PreparedStatement</code></a>.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="EnhancedPreparedStatement.StatementLogger.html" title="interface in org.tquadrat.foundation.sql">EnhancedPreparedStatement.StatementLogger</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab1">
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="EnhancedPreparedStatement.StatementLogger.html" title="interface in org.tquadrat.foundation.sql">EnhancedPreparedStatement.StatementLogger</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">The definition of logger method for a
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/PreparedStatement.html" title="class or interface in java.sql" class="external-link"><code>PreparedStatement</code></a>.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="ParameterMetaData.html" title="interface in org.tquadrat.foundation.sql">ParameterMetaData</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab1">
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="ParameterMetaData.html" title="interface in org.tquadrat.foundation.sql">ParameterMetaData</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">An instance of an implementation of this interface can be used
   to get information about the types and properties for each named parameter
   in an
   <a href="EnhancedPreparedStatement.html" title="interface in org.tquadrat.foundation.sql"><code>EnhancedPreparedStatement</code></a>
+  instance.</div>
+</div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="SimpleConnectionProvider.html" title="class in org.tquadrat.foundation.sql">SimpleConnectionProvider</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab2">
+<div class="block">An implementation of
+  <a href="ConnectionProvider.html" title="interface in org.tquadrat.foundation.sql"><code>ConnectionProvider</code></a>
+  that will just call
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/DriverManager.html#getConnection(java.lang.String,java.util.Properties)" title="class or interface in java.sql" class="external-link"><code>DriverManager.getConnection(String,Properties)</code></a>
+  to obtain a
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/Connection.html" title="class or interface in java.sql" class="external-link"><code>Connection</code></a>.</div>
+</div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="StaticConnectionProvider.html" title="class in org.tquadrat.foundation.sql">StaticConnectionProvider</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab2">
+<div class="block">An implementation of
+  <a href="ConnectionProvider.html" title="interface in org.tquadrat.foundation.sql"><code>ConnectionProvider</code></a>
+  that returns always the same
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/Connection.html" title="class or interface in java.sql" class="external-link"><code>Connection</code></a>
   instance.</div>
 </div>
 </div>
