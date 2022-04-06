@@ -47,12 +47,12 @@ import org.tquadrat.foundation.sql.internal.ResultSetSpliterator;
  *  <p>{@summary Several utilities for the work with databases that will be
  *  accessed through plain JDBC.}
  *
- *  @version $Id: DatabaseUtils.java 1022 2022-03-03 23:03:40Z tquadrat $
+ *  @version $Id: DatabaseUtils.java 1030 2022-04-06 13:42:02Z tquadrat $
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @UMLGraph.link
  *  @since 0.1.0
  */
-@ClassVersion( sourceVersion = "$Id: DatabaseUtils.java 1022 2022-03-03 23:03:40Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: DatabaseUtils.java 1030 2022-04-06 13:42:02Z tquadrat $" )
 @UtilityClass
 @API( status = STABLE, since = "0.1.0" )
 public final class DatabaseUtils
@@ -68,12 +68,12 @@ public final class DatabaseUtils
      *  @param  error   The exception that was thrown to indicate the failure.
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: DatabaseUtils.java 1022 2022-03-03 23:03:40Z tquadrat $
+     *  @version $Id: DatabaseUtils.java 1030 2022-04-06 13:42:02Z tquadrat $
      *  @since 0.0.1
      *
      *  @UMLGraph.link
      */
-    @ClassVersion( sourceVersion = "$Id: DatabaseUtils.java 1022 2022-03-03 23:03:40Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: DatabaseUtils.java 1030 2022-04-06 13:42:02Z tquadrat $" )
     @API( status = STABLE, since = "0.0.1" )
     public record ExecStatus( String command, SQLException error ) implements Serializable
     {
@@ -159,7 +159,7 @@ public final class DatabaseUtils
     {
         final var metaData = connection.getMetaData();
         var retValue = false;
-        final String [] effectiveTypes = nonNull( tableTypes ) && tableTypes.length == 0 ? null : tableTypes;
+        final var effectiveTypes = nonNull( tableTypes ) && tableTypes.length == 0 ? null : tableTypes;
         try( final var resultSet = metaData.getTables( catalog, schemaPattern, tableNamePattern, effectiveTypes ) )
         {
             retValue = resultSet.next();
@@ -288,6 +288,7 @@ public final class DatabaseUtils
      *  @param  script  The script.
      *  @return The separated commands.
      */
+    @SuppressWarnings( {"OverlyLongMethod", "OverlyComplexMethod"} )
     @API( status = STABLE, since = "0.0.1" )
     public static final List<String> parseSQLScript( final CharSequence script )
     {
@@ -349,7 +350,7 @@ public final class DatabaseUtils
                     }
                     if( lastChar == ';' )
                     {
-                        buffer [targetLen++] = lastChar;
+                        buffer [targetLen++] = ';';
                         break AnalyzeSwitch;
                     }
                     buffer [targetLen++] = lastChar;
@@ -447,7 +448,7 @@ public final class DatabaseUtils
                     if( currentChar == ';' )
                     {
                         buffer [targetLen++] = lastChar;
-                        buffer [targetLen++] = currentChar;
+                        buffer [targetLen++] = ';';
                         lastChar = '\n';
                         continue ScanLoop;
                     }

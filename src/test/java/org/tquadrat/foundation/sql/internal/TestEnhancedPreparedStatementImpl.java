@@ -43,11 +43,11 @@ import org.tquadrat.foundation.testutil.TestBaseClass;
  *  Some tests for the methods in
  *  {@link EnhancedPreparedStatementImpl}.
  *
- *  @version $Id: TestEnhancedPreparedStatementImpl.java 1022 2022-03-03 23:03:40Z tquadrat $
+ *  @version $Id: TestEnhancedPreparedStatementImpl.java 1030 2022-04-06 13:42:02Z tquadrat $
  *  @author Thomas Thrien - thomas.thrien@tquadrat.org
  *  @since 0.1.0
  */
-@ClassVersion( sourceVersion = "$Id: TestEnhancedPreparedStatementImpl.java 1022 2022-03-03 23:03:40Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestEnhancedPreparedStatementImpl.java 1030 2022-04-06 13:42:02Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.sql.internal.TestEnhancedPreparedStatementImpl" )
 public class TestEnhancedPreparedStatementImpl extends TestBaseClass
 {
@@ -143,7 +143,7 @@ public class TestEnhancedPreparedStatementImpl extends TestBaseClass
     {
         skipThreadTest();
 
-        Map<String, List<Integer>> indexBuffer;
+        final Map<String, List<Integer>> indexBuffer;
 
         String statement, expected, actual;
 
@@ -163,6 +163,7 @@ public class TestEnhancedPreparedStatementImpl extends TestBaseClass
         assertEquals( expected, actual );
         assertTrue( indexBuffer.isEmpty() );
 
+        //noinspection RedundantOperationOnEmptyContainer
         indexBuffer.clear();
         statement = "SELECT * FROM table WHERE key = :key";
         expected = "SELECT * FROM table WHERE key = ?";

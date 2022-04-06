@@ -96,7 +96,7 @@
 <span class="source-line-no">083</span><span id="line-83"> *  &lt;/ol&gt;</span>
 <span class="source-line-no">084</span><span id="line-84"> *</span>
 <span class="source-line-no">085</span><span id="line-85"> *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org</span>
-<span class="source-line-no">086</span><span id="line-86"> *  @version $Id: EnhancedPreparedStatement.java 1022 2022-03-03 23:03:40Z tquadrat $</span>
+<span class="source-line-no">086</span><span id="line-86"> *  @version $Id: EnhancedPreparedStatement.java 1030 2022-04-06 13:42:02Z tquadrat $</span>
 <span class="source-line-no">087</span><span id="line-87"> *  @since 0.1.0</span>
 <span class="source-line-no">088</span><span id="line-88"> *</span>
 <span class="source-line-no">089</span><span id="line-89"> *  @UMLGraph.link</span>
@@ -104,7 +104,7 @@
 <span class="source-line-no">091</span><span id="line-91"> *  @see    java.sql.PreparedStatement</span>
 <span class="source-line-no">092</span><span id="line-92"> */</span>
 <span class="source-line-no">093</span><span id="line-93">@SuppressWarnings( {"ClassWithTooManyMethods", "OverlyComplexClass"} )</span>
-<span class="source-line-no">094</span><span id="line-94">@ClassVersion( sourceVersion = "$Id: EnhancedPreparedStatement.java 1022 2022-03-03 23:03:40Z tquadrat $" )</span>
+<span class="source-line-no">094</span><span id="line-94">@ClassVersion( sourceVersion = "$Id: EnhancedPreparedStatement.java 1030 2022-04-06 13:42:02Z tquadrat $" )</span>
 <span class="source-line-no">095</span><span id="line-95">@API( status = STABLE, since = "0.1.0" )</span>
 <span class="source-line-no">096</span><span id="line-96">public sealed interface EnhancedPreparedStatement extends AutoCloseable</span>
 <span class="source-line-no">097</span><span id="line-97">    permits org.tquadrat.foundation.sql.internal.EnhancedPreparedStatementBase</span>
@@ -119,7 +119,7 @@
 <span class="source-line-no">106</span><span id="line-106">     *  {@link #log(String,String,List,StackTraceElement[])}.&lt;/p&gt;</span>
 <span class="source-line-no">107</span><span id="line-107">     *</span>
 <span class="source-line-no">108</span><span id="line-108">     *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org</span>
-<span class="source-line-no">109</span><span id="line-109">     *  @version $Id: EnhancedPreparedStatement.java 1022 2022-03-03 23:03:40Z tquadrat $</span>
+<span class="source-line-no">109</span><span id="line-109">     *  @version $Id: EnhancedPreparedStatement.java 1030 2022-04-06 13:42:02Z tquadrat $</span>
 <span class="source-line-no">110</span><span id="line-110">     *  @since 0.1.0</span>
 <span class="source-line-no">111</span><span id="line-111">     *</span>
 <span class="source-line-no">112</span><span id="line-112">     *  @UMLGraph.link</span>
@@ -127,7 +127,7 @@
 <span class="source-line-no">114</span><span id="line-114">     *  @see    java.sql.PreparedStatement</span>
 <span class="source-line-no">115</span><span id="line-115">     */</span>
 <span class="source-line-no">116</span><span id="line-116">    @SuppressWarnings( "InnerClassOfInterface" )</span>
-<span class="source-line-no">117</span><span id="line-117">    @ClassVersion( sourceVersion = "$Id: EnhancedPreparedStatement.java 1022 2022-03-03 23:03:40Z tquadrat $" )</span>
+<span class="source-line-no">117</span><span id="line-117">    @ClassVersion( sourceVersion = "$Id: EnhancedPreparedStatement.java 1030 2022-04-06 13:42:02Z tquadrat $" )</span>
 <span class="source-line-no">118</span><span id="line-118">    @API( status = STABLE, since = "0.1.0" )</span>
 <span class="source-line-no">119</span><span id="line-119">    @FunctionalInterface</span>
 <span class="source-line-no">120</span><span id="line-120">    public interface StatementLogger</span>
@@ -914,7 +914,7 @@
 <span class="source-line-no">901</span><span id="line-901"></span>
 <span class="source-line-no">902</span><span id="line-902">    /**</span>
 <span class="source-line-no">903</span><span id="line-903">     *  Retrieves the number, types and properties of this</span>
-<span class="source-line-no">904</span><span id="line-904">     *  {@link EnhancedPreparedStatement}</span>
+<span class="source-line-no">904</span><span id="line-904">     *  {@code EnhancedPreparedStatement}</span>
 <span class="source-line-no">905</span><span id="line-905">     *  instance's parameters.</span>
 <span class="source-line-no">906</span><span id="line-906">     *</span>
 <span class="source-line-no">907</span><span id="line-907">     *  @return An instance of {@code ParameterMetaData} that contains</span>

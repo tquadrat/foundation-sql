@@ -38,12 +38,12 @@ import org.tquadrat.foundation.lang.Status;
  *  to obtain a
  *  {@link Connection}.
  *
- *  @version $Id: SimpleConnectionProvider.java 1024 2022-03-10 09:57:43Z tquadrat $
+ *  @version $Id: SimpleConnectionProvider.java 1030 2022-04-06 13:42:02Z tquadrat $
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @UMLGraph.link
  *  @since 0.1.0
  */
-@ClassVersion( sourceVersion = "$Id: SimpleConnectionProvider.java 1024 2022-03-10 09:57:43Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: SimpleConnectionProvider.java 1030 2022-04-06 13:42:02Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public final class SimpleConnectionProvider implements ConnectionProvider
 {
@@ -69,6 +69,7 @@ public final class SimpleConnectionProvider implements ConnectionProvider
      *  @param  url The JDBC URL for the database with the calendar.
      *  @param  properties  The properties.
      */
+    @SuppressWarnings( "CollectionDeclaredAsConcreteClass" )
     public SimpleConnectionProvider( final String url, final Properties properties )
     {
         m_URL = requireNotEmptyArgument( url, "url" );
@@ -88,6 +89,7 @@ public final class SimpleConnectionProvider implements ConnectionProvider
         Status<Connection,Throwable> retValue;
         try
         {
+            @SuppressWarnings( "CallToDriverManagerGetConnection" )
             final var connection = DriverManager.getConnection( m_URL, m_Properties );
             retValue = new Status<>( connection, null );
         }

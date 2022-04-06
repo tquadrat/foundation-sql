@@ -123,7 +123,7 @@
                   x='0.000'
                   y='0.000'/>
         </clipPath>
-        <symbol id='org.tquadrat.foundation.sql.StaticConnectionProvider.UnclosableConnection'>
+        <symbol id='org.tquadrat.foundation.sql.StaticConnectionProvider.UncloseableConnection'>
             <g>
                 <g class='focusClass'
                    clip-path='url(#ID000001)'>
@@ -137,8 +137,8 @@
                           x2='820.000'
                           y2='17.000'
                           class='separator'/>
-                    <text x='350.000'
-                          y='13.000'>UnclosableConnection</text>
+                    <text x='347.000'
+                          y='13.000'>UncloseableConnection</text>
                     <line x1='0.000'
                           y1='34.000'
                           x2='820.000'
@@ -147,7 +147,7 @@
                     <text x='5.000'
                           y='30.000'/>
                     <text x='5.000'
-                          y='47.000'>- UnclosableConnection()</text>
+                          y='47.000'>+ UncloseableConnection()</text>
                     <text x='5.000'
                           y='58.000'>+ abort(executor:java.util.concurrent.Executor):void</text>
                     <text x='5.000'
@@ -647,5 +647,5 @@
          xlink:href='#java.sql.Connection'/>
     <use x='25.000'
          y='1130.000'
-         xlink:href='#org.tquadrat.foundation.sql.StaticConnectionProvider.UnclosableConnection'/>
+         xlink:href='#org.tquadrat.foundation.sql.StaticConnectionProvider.UncloseableConnection'/>
 </svg>

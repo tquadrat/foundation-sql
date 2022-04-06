@@ -83,7 +83,7 @@ import org.tquadrat.foundation.sql.internal.EnhancedPreparedStatementImpl;
  *  </ol>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: EnhancedPreparedStatement.java 1022 2022-03-03 23:03:40Z tquadrat $
+ *  @version $Id: EnhancedPreparedStatement.java 1030 2022-04-06 13:42:02Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
@@ -91,7 +91,7 @@ import org.tquadrat.foundation.sql.internal.EnhancedPreparedStatementImpl;
  *  @see    java.sql.PreparedStatement
  */
 @SuppressWarnings( {"ClassWithTooManyMethods", "OverlyComplexClass"} )
-@ClassVersion( sourceVersion = "$Id: EnhancedPreparedStatement.java 1022 2022-03-03 23:03:40Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: EnhancedPreparedStatement.java 1030 2022-04-06 13:42:02Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public sealed interface EnhancedPreparedStatement extends AutoCloseable
     permits org.tquadrat.foundation.sql.internal.EnhancedPreparedStatementBase
@@ -106,7 +106,7 @@ public sealed interface EnhancedPreparedStatement extends AutoCloseable
      *  {@link #log(String,String,List,StackTraceElement[])}.</p>
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: EnhancedPreparedStatement.java 1022 2022-03-03 23:03:40Z tquadrat $
+     *  @version $Id: EnhancedPreparedStatement.java 1030 2022-04-06 13:42:02Z tquadrat $
      *  @since 0.1.0
      *
      *  @UMLGraph.link
@@ -114,7 +114,7 @@ public sealed interface EnhancedPreparedStatement extends AutoCloseable
      *  @see    java.sql.PreparedStatement
      */
     @SuppressWarnings( "InnerClassOfInterface" )
-    @ClassVersion( sourceVersion = "$Id: EnhancedPreparedStatement.java 1022 2022-03-03 23:03:40Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: EnhancedPreparedStatement.java 1030 2022-04-06 13:42:02Z tquadrat $" )
     @API( status = STABLE, since = "0.1.0" )
     @FunctionalInterface
     public interface StatementLogger
@@ -901,7 +901,7 @@ public sealed interface EnhancedPreparedStatement extends AutoCloseable
 
     /**
      *  Retrieves the number, types and properties of this
-     *  {@link EnhancedPreparedStatement}
+     *  {@code EnhancedPreparedStatement}
      *  instance's parameters.
      *
      *  @return An instance of {@code ParameterMetaData} that contains

@@ -39,12 +39,12 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *      {@link org.tquadrat.foundation.lang.CommonConstants#NULL_STRING}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: StatementValue.java 1020 2022-02-27 21:26:03Z tquadrat $
+ *  @version $Id: StatementValue.java 1030 2022-04-06 13:42:02Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: StatementValue.java 1020 2022-02-27 21:26:03Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: StatementValue.java 1030 2022-04-06 13:42:02Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.1" )
 public record StatementValue( String parameterName, SQLType type, String value ) implements Serializable
 {
@@ -68,12 +68,11 @@ public record StatementValue( String parameterName, SQLType type, String value )
     @Override
     public final String toString()
     {
-        final var buffer = getClass().getName() +
+        final var retValue = getClass().getName() +
             " [Parameter: " + parameterName +
             ", Type: " + type.getName() +
             ", Value: " + value +
             "]";
-        final var retValue = buffer;
 
         //---* Done *----------------------------------------------------------
         return retValue;

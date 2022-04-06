@@ -58,12 +58,12 @@ import org.tquadrat.foundation.lang.Status;
  *  <p>It can be used for testing purposes, or when the database access is
  *  needed for a very short period of.</p>
  *
- *  @version $Id: StaticConnectionProvider.java 1024 2022-03-10 09:57:43Z tquadrat $
+ *  @version $Id: StaticConnectionProvider.java 1030 2022-04-06 13:42:02Z tquadrat $
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @UMLGraph.link
  *  @since 0.1.0
  */
-@ClassVersion( sourceVersion = "$Id: StaticConnectionProvider.java 1024 2022-03-10 09:57:43Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: StaticConnectionProvider.java 1030 2022-04-06 13:42:02Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public final class StaticConnectionProvider implements ConnectionProvider
 {
@@ -77,15 +77,23 @@ public final class StaticConnectionProvider implements ConnectionProvider
      *  {@link #close()}
      *  by a dummy that does nothing.
      *
-     *  @version $Id: StaticConnectionProvider.java 1024 2022-03-10 09:57:43Z tquadrat $
+     *  @version $Id: StaticConnectionProvider.java 1030 2022-04-06 13:42:02Z tquadrat $
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
      *  @UMLGraph.link
      *  @since 0.0.1
      */
-    @ClassVersion( sourceVersion = "$Id: StaticConnectionProvider.java 1024 2022-03-10 09:57:43Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: StaticConnectionProvider.java 1030 2022-04-06 13:42:02Z tquadrat $" )
     @API( status = INTERNAL, since = "0.0.1" )
-    private final class UnclosableConnection implements Connection
+    private final class UncloseableConnection implements Connection
     {
+            /*--------------*\
+        ====** Constructors **=====================================================
+            \*--------------*/
+        /**
+         *  Creates an instance of {@code UncloseableConnection}.
+         */
+        public UncloseableConnection() { /* Just exists */ }
+
             /*---------*\
         ====** Methods **======================================================
             \*---------*/
@@ -488,8 +496,9 @@ public final class StaticConnectionProvider implements ConnectionProvider
         try
         {
             //---* Check if connection is (still) open *-----------------------
+            @SuppressWarnings( "unused" )
             final var metaData = m_Connection.getMetaData();
-            retValue = new Status<>( new UnclosableConnection(), null );
+            retValue = new Status<>( new UncloseableConnection(), null );
         }
         catch( final SQLException e )
         {

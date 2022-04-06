@@ -37,12 +37,12 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  {@link ResultSet}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ResultSetSpliterator.java 1020 2022-02-27 21:26:03Z tquadrat $
+ *  @version $Id: ResultSetSpliterator.java 1030 2022-04-06 13:42:02Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: ResultSetSpliterator.java 1020 2022-02-27 21:26:03Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ResultSetSpliterator.java 1030 2022-04-06 13:42:02Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.1" )
 public final class ResultSetSpliterator implements Spliterator<ResultSet>
 {
@@ -54,12 +54,12 @@ public final class ResultSetSpliterator implements Spliterator<ResultSet>
      *  called.
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: ResultSetSpliterator.java 1020 2022-02-27 21:26:03Z tquadrat $
+     *  @version $Id: ResultSetSpliterator.java 1030 2022-04-06 13:42:02Z tquadrat $
      *  @since 0.0.1
      *
      *  @UMLGraph.link
      */
-    @ClassVersion( sourceVersion = "$Id: ResultSetSpliterator.java 1020 2022-02-27 21:26:03Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: ResultSetSpliterator.java 1030 2022-04-06 13:42:02Z tquadrat $" )
     @API( status = INTERNAL, since = "0.0.1" )
     private class InternalResultSet extends ResultSetWrapper
     {
@@ -113,6 +113,7 @@ public final class ResultSetSpliterator implements Spliterator<ResultSet>
     /**
      *  {@inheritDoc}
      */
+    @SuppressWarnings( "ConstantExpression" )
     @Override
     public final int characteristics() { return IMMUTABLE | NONNULL; }
 

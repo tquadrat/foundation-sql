@@ -92,13 +92,13 @@ import org.tquadrat.foundation.util.LazyMap;
  *  The base class for implementations of
  *  {@link EnhancedPreparedStatement}.
  *
- *  @version $Id: EnhancedPreparedStatementBase.java 1020 2022-02-27 21:26:03Z tquadrat $
+ *  @version $Id: EnhancedPreparedStatementBase.java 1030 2022-04-06 13:42:02Z tquadrat $
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @UMLGraph.link
  *  @since 0.1.0
  */
 @SuppressWarnings( "OverlyComplexClass" )
-@ClassVersion( sourceVersion = "$Id: EnhancedPreparedStatementBase.java 1020 2022-02-27 21:26:03Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: EnhancedPreparedStatementBase.java 1030 2022-04-06 13:42:02Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public abstract sealed class EnhancedPreparedStatementBase implements EnhancedPreparedStatement
     permits EnhancedPreparedStatementImpl
@@ -112,13 +112,13 @@ public abstract sealed class EnhancedPreparedStatementBase implements EnhancedPr
      *  that is used by
      *  {@link org.tquadrat.foundation.sql.EnhancedPreparedStatement}.
      *
-     *  @version $Id: EnhancedPreparedStatementBase.java 1020 2022-02-27 21:26:03Z tquadrat $
+     *  @version $Id: EnhancedPreparedStatementBase.java 1030 2022-04-06 13:42:02Z tquadrat $
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
      *  @UMLGraph.link
      *  @since 0.1.0
      */
     @SuppressWarnings( "ProtectedInnerClass" )
-    @ClassVersion( sourceVersion = "$Id: EnhancedPreparedStatementBase.java 1020 2022-02-27 21:26:03Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: EnhancedPreparedStatementBase.java 1030 2022-04-06 13:42:02Z tquadrat $" )
     @API( status = INTERNAL, since = "0.1.0" )
     protected final class ParameterMetaDataImpl extends ParameterMetaDataBase
     {
@@ -702,6 +702,7 @@ public abstract sealed class EnhancedPreparedStatementBase implements EnhancedPr
     /**
      *  {@inheritDoc}
      */
+    @SuppressWarnings( "CallToNumericToString" )
     @Override
     public final void setBigDecimal( final String parameterName, final BigDecimal value ) throws SQLException
     {
