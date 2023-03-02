@@ -110,10 +110,10 @@
 <span class="source-line-no">097</span><span id="line-97">         *  @param  command The failed command.</span>
 <span class="source-line-no">098</span><span id="line-98">         *  @param  error   The exception for the failure.</span>
 <span class="source-line-no">099</span><span id="line-99">         */</span>
-<span class="source-line-no">100</span><span id="line-100">        public ExecStatus( final String command, final SQLException error )</span>
+<span class="source-line-no">100</span><span id="line-100">        public ExecStatus</span>
 <span class="source-line-no">101</span><span id="line-101">        {</span>
-<span class="source-line-no">102</span><span id="line-102">            this.error = requireNonNullArgument( error, "error" );</span>
-<span class="source-line-no">103</span><span id="line-103">            this.command = requireNotEmptyArgument( command, "command" );</span>
+<span class="source-line-no">102</span><span id="line-102">            requireNotEmptyArgument( command, "command" );</span>
+<span class="source-line-no">103</span><span id="line-103">            requireNonNullArgument( error, "error" );</span>
 <span class="source-line-no">104</span><span id="line-104">        }   //  ExecStatus()</span>
 <span class="source-line-no">105</span><span id="line-105">    }</span>
 <span class="source-line-no">106</span><span id="line-106">    //  class ExecStatus</span>
@@ -256,11 +256,11 @@
 <span class="source-line-no">243</span><span id="line-243">        var currentCommand = EMPTY_STRING;</span>
 <span class="source-line-no">244</span><span id="line-244">        try( final var statement = requireNonNullArgument( connection, "connection" ).createStatement() )</span>
 <span class="source-line-no">245</span><span id="line-245">        {</span>
-<span class="source-line-no">246</span><span id="line-246">            ExecLoop: for( final var command : requireNonNullArgument( commands, "commands" ) )</span>
+<span class="source-line-no">246</span><span id="line-246">            ExecLoop: for( final var sql : requireNonNullArgument( commands, "commands" ) )</span>
 <span class="source-line-no">247</span><span id="line-247">            {</span>
-<span class="source-line-no">248</span><span id="line-248">                if( isEmptyOrBlank( command ) ) continue ExecLoop;</span>
-<span class="source-line-no">249</span><span id="line-249">                currentCommand = command;</span>
-<span class="source-line-no">250</span><span id="line-250">                statement.execute( command );</span>
+<span class="source-line-no">248</span><span id="line-248">                if( isEmptyOrBlank( sql ) ) continue ExecLoop;</span>
+<span class="source-line-no">249</span><span id="line-249">                currentCommand = sql;</span>
+<span class="source-line-no">250</span><span id="line-250">                statement.execute( sql );</span>
 <span class="source-line-no">251</span><span id="line-251">            }   //  ExecLoop:</span>
 <span class="source-line-no">252</span><span id="line-252"></span>
 <span class="source-line-no">253</span><span id="line-253">            if( !connection.getAutoCommit() )</span>

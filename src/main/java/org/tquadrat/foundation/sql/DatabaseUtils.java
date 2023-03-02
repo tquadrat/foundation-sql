@@ -97,10 +97,10 @@ public final class DatabaseUtils
          *  @param  command The failed command.
          *  @param  error   The exception for the failure.
          */
-        public ExecStatus( final String command, final SQLException error )
+        public ExecStatus
         {
-            this.error = requireNonNullArgument( error, "error" );
-            this.command = requireNotEmptyArgument( command, "command" );
+            requireNotEmptyArgument( command, "command" );
+            requireNonNullArgument( error, "error" );
         }   //  ExecStatus()
     }
     //  class ExecStatus
@@ -243,11 +243,11 @@ public final class DatabaseUtils
         var currentCommand = EMPTY_STRING;
         try( final var statement = requireNonNullArgument( connection, "connection" ).createStatement() )
         {
-            ExecLoop: for( final var command : requireNonNullArgument( commands, "commands" ) )
+            ExecLoop: for( final var sql : requireNonNullArgument( commands, "commands" ) )
             {
-                if( isEmptyOrBlank( command ) ) continue ExecLoop;
-                currentCommand = command;
-                statement.execute( command );
+                if( isEmptyOrBlank( sql ) ) continue ExecLoop;
+                currentCommand = sql;
+                statement.execute( sql );
             }   //  ExecLoop:
 
             if( !connection.getAutoCommit() )
