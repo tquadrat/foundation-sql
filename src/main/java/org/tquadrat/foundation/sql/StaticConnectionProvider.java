@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2022 by Thomas Thrien.
+ * Copyright © 2002-2023 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  * Licensed to the public under the agreements of the GNU Lesser General Public
@@ -58,12 +58,12 @@ import org.tquadrat.foundation.lang.Status;
  *  <p>It can be used for testing purposes, or when the database access is
  *  needed for a very short period of.</p>
  *
- *  @version $Id: StaticConnectionProvider.java 1030 2022-04-06 13:42:02Z tquadrat $
+ *  @version $Id: StaticConnectionProvider.java 1075 2023-10-02 12:37:07Z tquadrat $
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @UMLGraph.link
  *  @since 0.1.0
  */
-@ClassVersion( sourceVersion = "$Id: StaticConnectionProvider.java 1030 2022-04-06 13:42:02Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: StaticConnectionProvider.java 1075 2023-10-02 12:37:07Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public final class StaticConnectionProvider implements ConnectionProvider
 {
@@ -77,12 +77,12 @@ public final class StaticConnectionProvider implements ConnectionProvider
      *  {@link #close()}
      *  by a dummy that does nothing.
      *
-     *  @version $Id: StaticConnectionProvider.java 1030 2022-04-06 13:42:02Z tquadrat $
+     *  @version $Id: StaticConnectionProvider.java 1075 2023-10-02 12:37:07Z tquadrat $
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
      *  @UMLGraph.link
      *  @since 0.0.1
      */
-    @ClassVersion( sourceVersion = "$Id: StaticConnectionProvider.java 1030 2022-04-06 13:42:02Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: StaticConnectionProvider.java 1075 2023-10-02 12:37:07Z tquadrat $" )
     @API( status = INTERNAL, since = "0.0.1" )
     private final class UncloseableConnection implements Connection
     {
@@ -395,6 +395,7 @@ public final class StaticConnectionProvider implements ConnectionProvider
         /**
          *  {@inheritDoc}
          */
+        @Override
         public final void setReadOnly( final boolean readOnly ) throws SQLException { m_Connection.setReadOnly( readOnly ); }
 
         /**

@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2022 by Thomas Thrien.
+ *  Copyright © 2002-2023 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -17,6 +17,7 @@
 
 package org.tquadrat.foundation.sql.internal;
 
+import static java.lang.String.format;
 import static java.util.regex.Pattern.compile;
 import static org.apiguardian.api.API.Status.INTERNAL;
 import static org.apiguardian.api.API.Status.MAINTAINED;
@@ -24,7 +25,6 @@ import static org.tquadrat.foundation.lang.CommonConstants.NULL_STRING;
 import static org.tquadrat.foundation.lang.Objects.isNull;
 import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
 import static org.tquadrat.foundation.lang.Objects.requireNotEmptyArgument;
-import static org.tquadrat.foundation.util.StringUtils.format;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -46,12 +46,12 @@ import org.tquadrat.foundation.stream.MapStream;
  *  The implementation for
  *  {@link org.tquadrat.foundation.sql.EnhancedPreparedStatement}.
  *
- *  @version $Id: EnhancedPreparedStatementImpl.java 1022 2022-03-03 23:03:40Z tquadrat $
+ *  @version $Id: EnhancedPreparedStatementImpl.java 1075 2023-10-02 12:37:07Z tquadrat $
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @UMLGraph.link
  *  @since 0.1.0
  */
-@ClassVersion( sourceVersion = "$Id: EnhancedPreparedStatementImpl.java 1022 2022-03-03 23:03:40Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: EnhancedPreparedStatementImpl.java 1075 2023-10-02 12:37:07Z tquadrat $" )
 @API( status = INTERNAL, since = "0.1.0" )
 public final class EnhancedPreparedStatementImpl extends EnhancedPreparedStatementBase
 {
@@ -154,7 +154,6 @@ public final class EnhancedPreparedStatementImpl extends EnhancedPreparedStateme
      *  @throws SQLException    Unable to create an instance of an
      *      {@link org.tquadrat.foundation.sql.EnhancedPreparedStatement}.
      */
-    @SuppressWarnings( "UseOfConcreteClass" )
     @API( status = MAINTAINED, since = "0.1.0" )
     public static final EnhancedPreparedStatementImpl create( final Connection connection, final String sql ) throws SQLException
     {

@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2022 by Thomas Thrien.
+ *  Copyright © 2002-2023 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -44,14 +44,14 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  occurrences
  *  {@linkplain #isNullable(String) will be checked}.</p>
  *
- *  @version $Id: ParameterMetaData.java 1022 2022-03-03 23:03:40Z tquadrat $
+ *  @version $Id: ParameterMetaData.java 1075 2023-10-02 12:37:07Z tquadrat $
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @UMLGraph.link
  *  @since 0.1.0
  *
  *  @see java.sql.ParameterMetaData
  */
-@ClassVersion( sourceVersion = "$Id: ParameterMetaData.java 1022 2022-03-03 23:03:40Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ParameterMetaData.java 1075 2023-10-02 12:37:07Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public sealed interface ParameterMetaData
     permits org.tquadrat.foundation.sql.internal.ParameterMetaDataBase
@@ -143,7 +143,7 @@ public sealed interface ParameterMetaData
      *  <p>The returned value represents the maximum column size for the given
      *  parameter. For numeric data, this is the maximum precision. For
      *  character data, this is the length in characters. For datetime
-     *  datatypes, this is the length in characters of the String
+     *  data types, this is the length in characters of the String
      *  representation (assuming the maximum allowed precision of the
      *  fractional seconds component). For binary data, this is the length in
      *  bytes. For the ROWID datatype, this is the length in bytes. 0 is

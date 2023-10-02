@@ -13,7 +13,7 @@
 <div class="source-container">
 <pre><span class="source-line-no">001</span><span id="line-1">/*</span>
 <span class="source-line-no">002</span><span id="line-2"> * ============================================================================</span>
-<span class="source-line-no">003</span><span id="line-3"> * Copyright © 2002-2022 by Thomas Thrien.</span>
+<span class="source-line-no">003</span><span id="line-3"> * Copyright © 2002-2023 by Thomas Thrien.</span>
 <span class="source-line-no">004</span><span id="line-4"> * All Rights Reserved.</span>
 <span class="source-line-no">005</span><span id="line-5"> * ============================================================================</span>
 <span class="source-line-no">006</span><span id="line-6"> * Licensed to the public under the agreements of the GNU Lesser General Public</span>
@@ -71,12 +71,12 @@
 <span class="source-line-no">058</span><span id="line-58"> *  &lt;p&gt;It can be used for testing purposes, or when the database access is</span>
 <span class="source-line-no">059</span><span id="line-59"> *  needed for a very short period of.&lt;/p&gt;</span>
 <span class="source-line-no">060</span><span id="line-60"> *</span>
-<span class="source-line-no">061</span><span id="line-61"> *  @version $Id: StaticConnectionProvider.java 1030 2022-04-06 13:42:02Z tquadrat $</span>
+<span class="source-line-no">061</span><span id="line-61"> *  @version $Id: StaticConnectionProvider.java 1075 2023-10-02 12:37:07Z tquadrat $</span>
 <span class="source-line-no">062</span><span id="line-62"> *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org</span>
 <span class="source-line-no">063</span><span id="line-63"> *  @UMLGraph.link</span>
 <span class="source-line-no">064</span><span id="line-64"> *  @since 0.1.0</span>
 <span class="source-line-no">065</span><span id="line-65"> */</span>
-<span class="source-line-no">066</span><span id="line-66">@ClassVersion( sourceVersion = "$Id: StaticConnectionProvider.java 1030 2022-04-06 13:42:02Z tquadrat $" )</span>
+<span class="source-line-no">066</span><span id="line-66">@ClassVersion( sourceVersion = "$Id: StaticConnectionProvider.java 1075 2023-10-02 12:37:07Z tquadrat $" )</span>
 <span class="source-line-no">067</span><span id="line-67">@API( status = STABLE, since = "0.1.0" )</span>
 <span class="source-line-no">068</span><span id="line-68">public final class StaticConnectionProvider implements ConnectionProvider</span>
 <span class="source-line-no">069</span><span id="line-69">{</span>
@@ -90,12 +90,12 @@
 <span class="source-line-no">077</span><span id="line-77">     *  {@link #close()}</span>
 <span class="source-line-no">078</span><span id="line-78">     *  by a dummy that does nothing.</span>
 <span class="source-line-no">079</span><span id="line-79">     *</span>
-<span class="source-line-no">080</span><span id="line-80">     *  @version $Id: StaticConnectionProvider.java 1030 2022-04-06 13:42:02Z tquadrat $</span>
+<span class="source-line-no">080</span><span id="line-80">     *  @version $Id: StaticConnectionProvider.java 1075 2023-10-02 12:37:07Z tquadrat $</span>
 <span class="source-line-no">081</span><span id="line-81">     *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org</span>
 <span class="source-line-no">082</span><span id="line-82">     *  @UMLGraph.link</span>
 <span class="source-line-no">083</span><span id="line-83">     *  @since 0.0.1</span>
 <span class="source-line-no">084</span><span id="line-84">     */</span>
-<span class="source-line-no">085</span><span id="line-85">    @ClassVersion( sourceVersion = "$Id: StaticConnectionProvider.java 1030 2022-04-06 13:42:02Z tquadrat $" )</span>
+<span class="source-line-no">085</span><span id="line-85">    @ClassVersion( sourceVersion = "$Id: StaticConnectionProvider.java 1075 2023-10-02 12:37:07Z tquadrat $" )</span>
 <span class="source-line-no">086</span><span id="line-86">    @API( status = INTERNAL, since = "0.0.1" )</span>
 <span class="source-line-no">087</span><span id="line-87">    private final class UncloseableConnection implements Connection</span>
 <span class="source-line-no">088</span><span id="line-88">    {</span>
@@ -408,125 +408,126 @@
 <span class="source-line-no">395</span><span id="line-395">        /**</span>
 <span class="source-line-no">396</span><span id="line-396">         *  {@inheritDoc}</span>
 <span class="source-line-no">397</span><span id="line-397">         */</span>
-<span class="source-line-no">398</span><span id="line-398">        public final void setReadOnly( final boolean readOnly ) throws SQLException { m_Connection.setReadOnly( readOnly ); }</span>
-<span class="source-line-no">399</span><span id="line-399"></span>
-<span class="source-line-no">400</span><span id="line-400">        /**</span>
-<span class="source-line-no">401</span><span id="line-401">         *  {@inheritDoc}</span>
-<span class="source-line-no">402</span><span id="line-402">         */</span>
-<span class="source-line-no">403</span><span id="line-403">        @Override</span>
-<span class="source-line-no">404</span><span id="line-404">        public final Savepoint setSavepoint() throws SQLException {return m_Connection.setSavepoint();}</span>
-<span class="source-line-no">405</span><span id="line-405"></span>
-<span class="source-line-no">406</span><span id="line-406">        /**</span>
-<span class="source-line-no">407</span><span id="line-407">         *  {@inheritDoc}</span>
-<span class="source-line-no">408</span><span id="line-408">         */</span>
-<span class="source-line-no">409</span><span id="line-409">        @Override</span>
-<span class="source-line-no">410</span><span id="line-410">        public final Savepoint setSavepoint( final String name ) throws SQLException {return m_Connection.setSavepoint( name );}</span>
-<span class="source-line-no">411</span><span id="line-411"></span>
-<span class="source-line-no">412</span><span id="line-412">        /**</span>
-<span class="source-line-no">413</span><span id="line-413">         *  {@inheritDoc}</span>
-<span class="source-line-no">414</span><span id="line-414">         */</span>
-<span class="source-line-no">415</span><span id="line-415">        @Override</span>
-<span class="source-line-no">416</span><span id="line-416">        public final void setSchema( final String schema ) throws SQLException {m_Connection.setSchema( schema );}</span>
-<span class="source-line-no">417</span><span id="line-417"></span>
-<span class="source-line-no">418</span><span id="line-418">        /**</span>
-<span class="source-line-no">419</span><span id="line-419">         *  {@inheritDoc}</span>
-<span class="source-line-no">420</span><span id="line-420">         */</span>
-<span class="source-line-no">421</span><span id="line-421">        @Override</span>
-<span class="source-line-no">422</span><span id="line-422">        public final void setShardingKey( final ShardingKey shardingKey, final ShardingKey superShardingKey ) throws SQLException {m_Connection.setShardingKey( shardingKey, superShardingKey );}</span>
-<span class="source-line-no">423</span><span id="line-423"></span>
-<span class="source-line-no">424</span><span id="line-424">        /**</span>
-<span class="source-line-no">425</span><span id="line-425">         *  {@inheritDoc}</span>
-<span class="source-line-no">426</span><span id="line-426">         */</span>
-<span class="source-line-no">427</span><span id="line-427">        @Override</span>
-<span class="source-line-no">428</span><span id="line-428">        public final void setShardingKey( final ShardingKey shardingKey ) throws SQLException {m_Connection.setShardingKey( shardingKey );}</span>
-<span class="source-line-no">429</span><span id="line-429"></span>
-<span class="source-line-no">430</span><span id="line-430">        /**</span>
-<span class="source-line-no">431</span><span id="line-431">         *  {@inheritDoc}</span>
-<span class="source-line-no">432</span><span id="line-432">         */</span>
-<span class="source-line-no">433</span><span id="line-433">        @Override</span>
-<span class="source-line-no">434</span><span id="line-434">        public final boolean setShardingKeyIfValid( final ShardingKey shardingKey, final ShardingKey superShardingKey, final int timeout ) throws SQLException {return m_Connection.setShardingKeyIfValid( shardingKey, superShardingKey, timeout );}</span>
-<span class="source-line-no">435</span><span id="line-435"></span>
-<span class="source-line-no">436</span><span id="line-436">        /**</span>
-<span class="source-line-no">437</span><span id="line-437">         *  {@inheritDoc}</span>
-<span class="source-line-no">438</span><span id="line-438">         */</span>
-<span class="source-line-no">439</span><span id="line-439">        @Override</span>
-<span class="source-line-no">440</span><span id="line-440">        public final boolean setShardingKeyIfValid( final ShardingKey shardingKey, final int timeout ) throws SQLException {return m_Connection.setShardingKeyIfValid( shardingKey, timeout );}</span>
-<span class="source-line-no">441</span><span id="line-441"></span>
-<span class="source-line-no">442</span><span id="line-442">        /**</span>
-<span class="source-line-no">443</span><span id="line-443">         *  {@inheritDoc}</span>
-<span class="source-line-no">444</span><span id="line-444">         */</span>
-<span class="source-line-no">445</span><span id="line-445">        @Override</span>
-<span class="source-line-no">446</span><span id="line-446">        public final void setTransactionIsolation( final int level ) throws SQLException { m_Connection.setTransactionIsolation( level ); }</span>
-<span class="source-line-no">447</span><span id="line-447"></span>
-<span class="source-line-no">448</span><span id="line-448">        /**</span>
-<span class="source-line-no">449</span><span id="line-449">         *  {@inheritDoc}</span>
-<span class="source-line-no">450</span><span id="line-450">         */</span>
-<span class="source-line-no">451</span><span id="line-451">        @Override</span>
-<span class="source-line-no">452</span><span id="line-452">        public final void setTypeMap( final Map&lt;String, Class&lt;?&gt;&gt; map ) throws SQLException {m_Connection.setTypeMap( map );}</span>
-<span class="source-line-no">453</span><span id="line-453"></span>
-<span class="source-line-no">454</span><span id="line-454">        /**</span>
-<span class="source-line-no">455</span><span id="line-455">         *  {@inheritDoc}</span>
-<span class="source-line-no">456</span><span id="line-456">         */</span>
-<span class="source-line-no">457</span><span id="line-457">        @Override</span>
-<span class="source-line-no">458</span><span id="line-458">        public final &lt;T&gt; T unwrap( final Class&lt;T&gt; iface ) throws SQLException {return m_Connection.unwrap( iface );}</span>
-<span class="source-line-no">459</span><span id="line-459">    }</span>
-<span class="source-line-no">460</span><span id="line-460">    //  class UncloseableConnection</span>
-<span class="source-line-no">461</span><span id="line-461"></span>
-<span class="source-line-no">462</span><span id="line-462">        /*------------*\</span>
-<span class="source-line-no">463</span><span id="line-463">    ====** Attributes **=======================================================</span>
-<span class="source-line-no">464</span><span id="line-464">        \*------------*/</span>
-<span class="source-line-no">465</span><span id="line-465">    /**</span>
-<span class="source-line-no">466</span><span id="line-466">     *  The connection.</span>
-<span class="source-line-no">467</span><span id="line-467">     */</span>
-<span class="source-line-no">468</span><span id="line-468">    private final Connection m_Connection;</span>
-<span class="source-line-no">469</span><span id="line-469"></span>
-<span class="source-line-no">470</span><span id="line-470">        /*--------------*\</span>
-<span class="source-line-no">471</span><span id="line-471">    ====** Constructors **=====================================================</span>
-<span class="source-line-no">472</span><span id="line-472">        \*--------------*/</span>
-<span class="source-line-no">473</span><span id="line-473">    /**</span>
-<span class="source-line-no">474</span><span id="line-474">     *  &lt;p&gt;{@summary Creates a new instance of</span>
-<span class="source-line-no">475</span><span id="line-475">     *  {@code StaticConnectionProvider}.}&lt;/p&gt;</span>
-<span class="source-line-no">476</span><span id="line-476">     *  &lt;p&gt;The provided connection must be open and valid, although this will</span>
-<span class="source-line-no">477</span><span id="line-477">     *  not be checked here.&lt;/p&gt;</span>
-<span class="source-line-no">478</span><span id="line-478">     *</span>
-<span class="source-line-no">479</span><span id="line-479">     *  @param  connection  The connection that is returned by each call to</span>
-<span class="source-line-no">480</span><span id="line-480">     */</span>
-<span class="source-line-no">481</span><span id="line-481">    public StaticConnectionProvider( final Connection connection )</span>
-<span class="source-line-no">482</span><span id="line-482">    {</span>
-<span class="source-line-no">483</span><span id="line-483">        m_Connection = requireNonNullArgument( connection, "connection" );</span>
-<span class="source-line-no">484</span><span id="line-484">    }   //  StaticConnectionProvider()</span>
-<span class="source-line-no">485</span><span id="line-485"></span>
-<span class="source-line-no">486</span><span id="line-486">        /*---------*\</span>
-<span class="source-line-no">487</span><span id="line-487">    ====** Methods **==========================================================</span>
-<span class="source-line-no">488</span><span id="line-488">        \*---------*/</span>
-<span class="source-line-no">489</span><span id="line-489">    /**</span>
-<span class="source-line-no">490</span><span id="line-490">     *  {@inheritDoc}</span>
-<span class="source-line-no">491</span><span id="line-491">     */</span>
-<span class="source-line-no">492</span><span id="line-492">    @Override</span>
-<span class="source-line-no">493</span><span id="line-493">    public final Status&lt;Connection,Throwable&gt; getConnection()</span>
-<span class="source-line-no">494</span><span id="line-494">    {</span>
-<span class="source-line-no">495</span><span id="line-495">        Status&lt;Connection,Throwable&gt; retValue;</span>
-<span class="source-line-no">496</span><span id="line-496">        try</span>
-<span class="source-line-no">497</span><span id="line-497">        {</span>
-<span class="source-line-no">498</span><span id="line-498">            //---* Check if connection is (still) open *-----------------------</span>
-<span class="source-line-no">499</span><span id="line-499">            @SuppressWarnings( "unused" )</span>
-<span class="source-line-no">500</span><span id="line-500">            final var metaData = m_Connection.getMetaData();</span>
-<span class="source-line-no">501</span><span id="line-501">            retValue = new Status&lt;&gt;( new UncloseableConnection(), null );</span>
-<span class="source-line-no">502</span><span id="line-502">        }</span>
-<span class="source-line-no">503</span><span id="line-503">        catch( final SQLException e )</span>
-<span class="source-line-no">504</span><span id="line-504">        {</span>
-<span class="source-line-no">505</span><span id="line-505">            retValue = new Status&lt;&gt;( null, e );</span>
-<span class="source-line-no">506</span><span id="line-506">        }</span>
-<span class="source-line-no">507</span><span id="line-507"></span>
-<span class="source-line-no">508</span><span id="line-508">        //---* Done *----------------------------------------------------------</span>
-<span class="source-line-no">509</span><span id="line-509">        return retValue;</span>
-<span class="source-line-no">510</span><span id="line-510">    }   //  getConnection()</span>
-<span class="source-line-no">511</span><span id="line-511">}</span>
-<span class="source-line-no">512</span><span id="line-512">//  class StaticConnectionProvider</span>
-<span class="source-line-no">513</span><span id="line-513"></span>
-<span class="source-line-no">514</span><span id="line-514">/*</span>
-<span class="source-line-no">515</span><span id="line-515"> *  End of File</span>
-<span class="source-line-no">516</span><span id="line-516"> */</span>
+<span class="source-line-no">398</span><span id="line-398">        @Override</span>
+<span class="source-line-no">399</span><span id="line-399">        public final void setReadOnly( final boolean readOnly ) throws SQLException { m_Connection.setReadOnly( readOnly ); }</span>
+<span class="source-line-no">400</span><span id="line-400"></span>
+<span class="source-line-no">401</span><span id="line-401">        /**</span>
+<span class="source-line-no">402</span><span id="line-402">         *  {@inheritDoc}</span>
+<span class="source-line-no">403</span><span id="line-403">         */</span>
+<span class="source-line-no">404</span><span id="line-404">        @Override</span>
+<span class="source-line-no">405</span><span id="line-405">        public final Savepoint setSavepoint() throws SQLException {return m_Connection.setSavepoint();}</span>
+<span class="source-line-no">406</span><span id="line-406"></span>
+<span class="source-line-no">407</span><span id="line-407">        /**</span>
+<span class="source-line-no">408</span><span id="line-408">         *  {@inheritDoc}</span>
+<span class="source-line-no">409</span><span id="line-409">         */</span>
+<span class="source-line-no">410</span><span id="line-410">        @Override</span>
+<span class="source-line-no">411</span><span id="line-411">        public final Savepoint setSavepoint( final String name ) throws SQLException {return m_Connection.setSavepoint( name );}</span>
+<span class="source-line-no">412</span><span id="line-412"></span>
+<span class="source-line-no">413</span><span id="line-413">        /**</span>
+<span class="source-line-no">414</span><span id="line-414">         *  {@inheritDoc}</span>
+<span class="source-line-no">415</span><span id="line-415">         */</span>
+<span class="source-line-no">416</span><span id="line-416">        @Override</span>
+<span class="source-line-no">417</span><span id="line-417">        public final void setSchema( final String schema ) throws SQLException {m_Connection.setSchema( schema );}</span>
+<span class="source-line-no">418</span><span id="line-418"></span>
+<span class="source-line-no">419</span><span id="line-419">        /**</span>
+<span class="source-line-no">420</span><span id="line-420">         *  {@inheritDoc}</span>
+<span class="source-line-no">421</span><span id="line-421">         */</span>
+<span class="source-line-no">422</span><span id="line-422">        @Override</span>
+<span class="source-line-no">423</span><span id="line-423">        public final void setShardingKey( final ShardingKey shardingKey, final ShardingKey superShardingKey ) throws SQLException {m_Connection.setShardingKey( shardingKey, superShardingKey );}</span>
+<span class="source-line-no">424</span><span id="line-424"></span>
+<span class="source-line-no">425</span><span id="line-425">        /**</span>
+<span class="source-line-no">426</span><span id="line-426">         *  {@inheritDoc}</span>
+<span class="source-line-no">427</span><span id="line-427">         */</span>
+<span class="source-line-no">428</span><span id="line-428">        @Override</span>
+<span class="source-line-no">429</span><span id="line-429">        public final void setShardingKey( final ShardingKey shardingKey ) throws SQLException {m_Connection.setShardingKey( shardingKey );}</span>
+<span class="source-line-no">430</span><span id="line-430"></span>
+<span class="source-line-no">431</span><span id="line-431">        /**</span>
+<span class="source-line-no">432</span><span id="line-432">         *  {@inheritDoc}</span>
+<span class="source-line-no">433</span><span id="line-433">         */</span>
+<span class="source-line-no">434</span><span id="line-434">        @Override</span>
+<span class="source-line-no">435</span><span id="line-435">        public final boolean setShardingKeyIfValid( final ShardingKey shardingKey, final ShardingKey superShardingKey, final int timeout ) throws SQLException {return m_Connection.setShardingKeyIfValid( shardingKey, superShardingKey, timeout );}</span>
+<span class="source-line-no">436</span><span id="line-436"></span>
+<span class="source-line-no">437</span><span id="line-437">        /**</span>
+<span class="source-line-no">438</span><span id="line-438">         *  {@inheritDoc}</span>
+<span class="source-line-no">439</span><span id="line-439">         */</span>
+<span class="source-line-no">440</span><span id="line-440">        @Override</span>
+<span class="source-line-no">441</span><span id="line-441">        public final boolean setShardingKeyIfValid( final ShardingKey shardingKey, final int timeout ) throws SQLException {return m_Connection.setShardingKeyIfValid( shardingKey, timeout );}</span>
+<span class="source-line-no">442</span><span id="line-442"></span>
+<span class="source-line-no">443</span><span id="line-443">        /**</span>
+<span class="source-line-no">444</span><span id="line-444">         *  {@inheritDoc}</span>
+<span class="source-line-no">445</span><span id="line-445">         */</span>
+<span class="source-line-no">446</span><span id="line-446">        @Override</span>
+<span class="source-line-no">447</span><span id="line-447">        public final void setTransactionIsolation( final int level ) throws SQLException { m_Connection.setTransactionIsolation( level ); }</span>
+<span class="source-line-no">448</span><span id="line-448"></span>
+<span class="source-line-no">449</span><span id="line-449">        /**</span>
+<span class="source-line-no">450</span><span id="line-450">         *  {@inheritDoc}</span>
+<span class="source-line-no">451</span><span id="line-451">         */</span>
+<span class="source-line-no">452</span><span id="line-452">        @Override</span>
+<span class="source-line-no">453</span><span id="line-453">        public final void setTypeMap( final Map&lt;String, Class&lt;?&gt;&gt; map ) throws SQLException {m_Connection.setTypeMap( map );}</span>
+<span class="source-line-no">454</span><span id="line-454"></span>
+<span class="source-line-no">455</span><span id="line-455">        /**</span>
+<span class="source-line-no">456</span><span id="line-456">         *  {@inheritDoc}</span>
+<span class="source-line-no">457</span><span id="line-457">         */</span>
+<span class="source-line-no">458</span><span id="line-458">        @Override</span>
+<span class="source-line-no">459</span><span id="line-459">        public final &lt;T&gt; T unwrap( final Class&lt;T&gt; iface ) throws SQLException {return m_Connection.unwrap( iface );}</span>
+<span class="source-line-no">460</span><span id="line-460">    }</span>
+<span class="source-line-no">461</span><span id="line-461">    //  class UncloseableConnection</span>
+<span class="source-line-no">462</span><span id="line-462"></span>
+<span class="source-line-no">463</span><span id="line-463">        /*------------*\</span>
+<span class="source-line-no">464</span><span id="line-464">    ====** Attributes **=======================================================</span>
+<span class="source-line-no">465</span><span id="line-465">        \*------------*/</span>
+<span class="source-line-no">466</span><span id="line-466">    /**</span>
+<span class="source-line-no">467</span><span id="line-467">     *  The connection.</span>
+<span class="source-line-no">468</span><span id="line-468">     */</span>
+<span class="source-line-no">469</span><span id="line-469">    private final Connection m_Connection;</span>
+<span class="source-line-no">470</span><span id="line-470"></span>
+<span class="source-line-no">471</span><span id="line-471">        /*--------------*\</span>
+<span class="source-line-no">472</span><span id="line-472">    ====** Constructors **=====================================================</span>
+<span class="source-line-no">473</span><span id="line-473">        \*--------------*/</span>
+<span class="source-line-no">474</span><span id="line-474">    /**</span>
+<span class="source-line-no">475</span><span id="line-475">     *  &lt;p&gt;{@summary Creates a new instance of</span>
+<span class="source-line-no">476</span><span id="line-476">     *  {@code StaticConnectionProvider}.}&lt;/p&gt;</span>
+<span class="source-line-no">477</span><span id="line-477">     *  &lt;p&gt;The provided connection must be open and valid, although this will</span>
+<span class="source-line-no">478</span><span id="line-478">     *  not be checked here.&lt;/p&gt;</span>
+<span class="source-line-no">479</span><span id="line-479">     *</span>
+<span class="source-line-no">480</span><span id="line-480">     *  @param  connection  The connection that is returned by each call to</span>
+<span class="source-line-no">481</span><span id="line-481">     */</span>
+<span class="source-line-no">482</span><span id="line-482">    public StaticConnectionProvider( final Connection connection )</span>
+<span class="source-line-no">483</span><span id="line-483">    {</span>
+<span class="source-line-no">484</span><span id="line-484">        m_Connection = requireNonNullArgument( connection, "connection" );</span>
+<span class="source-line-no">485</span><span id="line-485">    }   //  StaticConnectionProvider()</span>
+<span class="source-line-no">486</span><span id="line-486"></span>
+<span class="source-line-no">487</span><span id="line-487">        /*---------*\</span>
+<span class="source-line-no">488</span><span id="line-488">    ====** Methods **==========================================================</span>
+<span class="source-line-no">489</span><span id="line-489">        \*---------*/</span>
+<span class="source-line-no">490</span><span id="line-490">    /**</span>
+<span class="source-line-no">491</span><span id="line-491">     *  {@inheritDoc}</span>
+<span class="source-line-no">492</span><span id="line-492">     */</span>
+<span class="source-line-no">493</span><span id="line-493">    @Override</span>
+<span class="source-line-no">494</span><span id="line-494">    public final Status&lt;Connection,Throwable&gt; getConnection()</span>
+<span class="source-line-no">495</span><span id="line-495">    {</span>
+<span class="source-line-no">496</span><span id="line-496">        Status&lt;Connection,Throwable&gt; retValue;</span>
+<span class="source-line-no">497</span><span id="line-497">        try</span>
+<span class="source-line-no">498</span><span id="line-498">        {</span>
+<span class="source-line-no">499</span><span id="line-499">            //---* Check if connection is (still) open *-----------------------</span>
+<span class="source-line-no">500</span><span id="line-500">            @SuppressWarnings( "unused" )</span>
+<span class="source-line-no">501</span><span id="line-501">            final var metaData = m_Connection.getMetaData();</span>
+<span class="source-line-no">502</span><span id="line-502">            retValue = new Status&lt;&gt;( new UncloseableConnection(), null );</span>
+<span class="source-line-no">503</span><span id="line-503">        }</span>
+<span class="source-line-no">504</span><span id="line-504">        catch( final SQLException e )</span>
+<span class="source-line-no">505</span><span id="line-505">        {</span>
+<span class="source-line-no">506</span><span id="line-506">            retValue = new Status&lt;&gt;( null, e );</span>
+<span class="source-line-no">507</span><span id="line-507">        }</span>
+<span class="source-line-no">508</span><span id="line-508"></span>
+<span class="source-line-no">509</span><span id="line-509">        //---* Done *----------------------------------------------------------</span>
+<span class="source-line-no">510</span><span id="line-510">        return retValue;</span>
+<span class="source-line-no">511</span><span id="line-511">    }   //  getConnection()</span>
+<span class="source-line-no">512</span><span id="line-512">}</span>
+<span class="source-line-no">513</span><span id="line-513">//  class StaticConnectionProvider</span>
+<span class="source-line-no">514</span><span id="line-514"></span>
+<span class="source-line-no">515</span><span id="line-515">/*</span>
+<span class="source-line-no">516</span><span id="line-516"> *  End of File</span>
+<span class="source-line-no">517</span><span id="line-517"> */</span>
 
 
 

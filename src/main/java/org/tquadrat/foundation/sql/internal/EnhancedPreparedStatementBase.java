@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2022 by Thomas Thrien.
+ *  Copyright © 2002-2023 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -17,6 +17,7 @@
 
 package org.tquadrat.foundation.sql.internal;
 
+import static java.lang.String.format;
 import static java.lang.Thread.currentThread;
 import static java.sql.JDBCType.ARRAY;
 import static java.sql.JDBCType.BIGINT;
@@ -50,7 +51,6 @@ import static org.tquadrat.foundation.lang.Objects.isNull;
 import static org.tquadrat.foundation.lang.Objects.nonNull;
 import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
 import static org.tquadrat.foundation.lang.Objects.requireNotEmptyArgument;
-import static org.tquadrat.foundation.util.StringUtils.format;
 
 import java.io.InputStream;
 import java.io.Reader;
@@ -92,13 +92,13 @@ import org.tquadrat.foundation.util.LazyMap;
  *  The base class for implementations of
  *  {@link EnhancedPreparedStatement}.
  *
- *  @version $Id: EnhancedPreparedStatementBase.java 1030 2022-04-06 13:42:02Z tquadrat $
+ *  @version $Id: EnhancedPreparedStatementBase.java 1075 2023-10-02 12:37:07Z tquadrat $
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @UMLGraph.link
  *  @since 0.1.0
  */
 @SuppressWarnings( "OverlyComplexClass" )
-@ClassVersion( sourceVersion = "$Id: EnhancedPreparedStatementBase.java 1030 2022-04-06 13:42:02Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: EnhancedPreparedStatementBase.java 1075 2023-10-02 12:37:07Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public abstract sealed class EnhancedPreparedStatementBase implements EnhancedPreparedStatement
     permits EnhancedPreparedStatementImpl
@@ -112,13 +112,13 @@ public abstract sealed class EnhancedPreparedStatementBase implements EnhancedPr
      *  that is used by
      *  {@link org.tquadrat.foundation.sql.EnhancedPreparedStatement}.
      *
-     *  @version $Id: EnhancedPreparedStatementBase.java 1030 2022-04-06 13:42:02Z tquadrat $
+     *  @version $Id: EnhancedPreparedStatementBase.java 1075 2023-10-02 12:37:07Z tquadrat $
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
      *  @UMLGraph.link
      *  @since 0.1.0
      */
     @SuppressWarnings( "ProtectedInnerClass" )
-    @ClassVersion( sourceVersion = "$Id: EnhancedPreparedStatementBase.java 1030 2022-04-06 13:42:02Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: EnhancedPreparedStatementBase.java 1075 2023-10-02 12:37:07Z tquadrat $" )
     @API( status = INTERNAL, since = "0.1.0" )
     protected final class ParameterMetaDataImpl extends ParameterMetaDataBase
     {
@@ -489,7 +489,7 @@ public abstract sealed class EnhancedPreparedStatementBase implements EnhancedPr
     protected final int [] getParameterIndexes( final String parameterName ) throws SQLException
     {
         final var retValue = m_ParameterIndex.get( requireNotEmptyArgument( parameterName, "parameterName" ) );
-        if( isNull( retValue ) ) throw new SQLException( format( "Parameter name '%1$s' unknown" ) );
+        if( isNull( retValue ) ) throw new SQLException( "Parameter name '%1$s' unknown".formatted( parameterName ) );
 
         //---* Done *----------------------------------------------------------
         return retValue;
