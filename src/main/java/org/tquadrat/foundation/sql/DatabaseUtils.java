@@ -103,7 +103,7 @@ public final class DatabaseUtils
             requireNonNullArgument( error, "error" );
         }   //  ExecStatus()
     }
-    //  class ExecStatus
+    //  record ExecStatus
 
         /*-----------*\
     ====** Constants **========================================================
