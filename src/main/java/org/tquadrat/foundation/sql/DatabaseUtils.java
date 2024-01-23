@@ -61,7 +61,8 @@ public final class DatabaseUtils
     ====** Inner Classes **====================================================
         \*---------------*/
     /**
-     *  <p>{@summary Instances of this class are used to return the status of a call to
+     *  <p>{@summary Instances of this class are used to return the status of
+     *  a call to
      *  {@link DatabaseUtils#execute(Connection,String...)}.}</p>
      *
      *  @param  command The failed command.
