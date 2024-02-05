@@ -32,27 +32,36 @@ import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 import java.util.Optional;
+import java.util.StringJoiner;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
 import org.apiguardian.api.API;
 import org.tquadrat.foundation.annotation.ClassVersion;
 import org.tquadrat.foundation.annotation.UtilityClass;
+import org.tquadrat.foundation.exception.EmptyArgumentException;
+import org.tquadrat.foundation.exception.NullArgumentException;
 import org.tquadrat.foundation.exception.PrivateConstructorForStaticClassCalledError;
+import org.tquadrat.foundation.exception.ValidationException;
 import org.tquadrat.foundation.sql.internal.ResultSetSpliterator;
 
 /**
  *  <p>{@summary Several utilities for the work with databases that will be
  *  accessed through plain JDBC.}
  *
- *  @version $Id: DatabaseUtils.java 1080 2024-01-03 11:05:21Z tquadrat $
+ *  @version $Id: DatabaseUtils.java 1091 2024-01-25 23:10:08Z tquadrat $
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @UMLGraph.link
  *  @since 0.1.0
  */
-@ClassVersion( sourceVersion = "$Id: DatabaseUtils.java 1080 2024-01-03 11:05:21Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: DatabaseUtils.java 1091 2024-01-25 23:10:08Z tquadrat $" )
 @UtilityClass
 @API( status = STABLE, since = "0.1.0" )
 public final class DatabaseUtils
@@ -69,12 +78,12 @@ public final class DatabaseUtils
      *  @param  error   The exception that was thrown to indicate the failure.
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: DatabaseUtils.java 1080 2024-01-03 11:05:21Z tquadrat $
+     *  @version $Id: DatabaseUtils.java 1091 2024-01-25 23:10:08Z tquadrat $
      *  @since 0.0.1
      *
      *  @UMLGraph.link
      */
-    @ClassVersion( sourceVersion = "$Id: DatabaseUtils.java 1080 2024-01-03 11:05:21Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: DatabaseUtils.java 1091 2024-01-25 23:10:08Z tquadrat $" )
     @API( status = STABLE, since = "0.0.1" )
     public record ExecStatus( String command, SQLException error ) implements Serializable
     {
@@ -169,6 +178,42 @@ public final class DatabaseUtils
         //---* Done *----------------------------------------------------------
         return retValue;
     }   //  checkIfTableExists()
+
+    /**
+     *  Dumps the given result set to a
+     *  {@link List}
+     *  of Strings.
+     *
+     *  @param  resultSet   The result set to dump.
+     *  @return The contents of the result set.
+     *  @throws SQLException    Something went wrong when reading the result
+     *      set.
+     *
+     *  @since 0.4.1
+     */
+    @API( status = STABLE, since = "0.4.1" )
+    public static final List<String> dumpResultSet( final ResultSet resultSet ) throws SQLException
+    {
+        final var metaData = requireNonNullArgument( resultSet, "resultSet" ).getMetaData();
+        final var columnCount = metaData.getColumnCount();
+        final List<String> retValue = new ArrayList<>();
+
+        while( resultSet.next() )
+        {
+            final var line = new StringJoiner( "|", "{", "}" );
+            line.setEmptyValue( "{}" );
+            for( var i = 0; i < columnCount; ++i )
+            {
+                final var label = metaData.getColumnLabel( i + 1 );
+                final var value = Objects.toString( resultSet.getObject( i + 1 ) );
+                line.add( "%s='%s'".formatted( label, value ) );
+            }
+            retValue.add( line.toString() );
+        }
+
+        //---* Done *----------------------------------------------------------
+        return retValue;
+    }   //  dumpResultSet()
 
     /**
      *  <p>{@summary Executes the given list of commands on the given database
@@ -467,6 +512,93 @@ public final class DatabaseUtils
         //---* Done *----------------------------------------------------------
         return retValue;
     }   //   parseSQLScript()
+
+    /**
+     *  <p>{@summary This method checks whether the given connection is not
+     *  {@code null} and that it is open.} Otherwise it will throw a
+     *  {@link ValidationException}.</p>
+     *  <p>This method will test the method by calling
+     *  {@link Connection#isValid(int)}.</p>
+     *
+     *  @param  connection  The connection to check; can be {@code null}.
+     *  @param  name    The name of the argument; this is used for the error
+     *      message.
+     *  @param  validationTimeout   The validation timeout in seconds, with -1
+     *      for no validation (in this case, only
+     *      {@link Connection#isClosed()}
+     *      is called); a value of 0 means no timeout.
+     *  @return The value if the validation succeeds.
+     *  @throws ValidationException The connection is closed or otherwise not
+     *      valid.
+     *  @throws NullArgumentException   {@code name} or the connection is
+     *      {@code null}.
+     *  @throws EmptyArgumentException  {@code name} is the empty String.
+     *
+     *  @since 0.4.1
+     */
+    @API( status = STABLE, since = "0.4.1" )
+    public static final Connection requireValidConnectionArgument( final Connection connection, final String name, final int validationTimeout ) throws ValidationException
+    {
+        final var message = "The connection in argument '%s' is not valid".formatted( requireNotEmptyArgument( name, "name" ) );
+        requireNonNullArgument( connection, "connection" );
+
+        try
+        {
+            final var validationResult = (validationTimeout < 0) ? !connection.isClosed() : connection.isValid( validationTimeout );
+            if( !validationResult ) throw new ValidationException( message );
+        }
+        catch( final SQLException e )
+        {
+            throw new ValidationException( message, e );
+        }
+
+        //---* Done *----------------------------------------------------------
+        return connection;
+    }   //  requireValidConnectionArgument()
+
+    /**
+     *  Reads the records from the given
+     *  {@link ResultSet}
+     *  to a
+     *  {@link Map}
+     *  that uses the
+     *  {@linkplain java.sql.ResultSetMetaData#getColumnLabel(int) column labels}
+     *  as key and stores these to a
+     *  {@link List}.
+     *
+     *  @param  resultSet   The result set to dump.
+     *  @return The contents of the result set; maybe empty, but will never be
+     *      {@code null}.
+     *  @throws SQLException    Something went wrong when reading the result
+     *      set.
+     *
+     *  @since 0.4.1
+     */
+    @API( status = STABLE, since = "0.4.1" )
+    public static final List<Map<String,Object>> resultSetToMap( final ResultSet resultSet ) throws SQLException
+    {
+        final var metaData = requireNonNullArgument( resultSet, "resultSet" ).getMetaData();
+        final var columnCount = metaData.getColumnCount();
+        final var labels = new String [columnCount];
+        for( var i = 0; i < columnCount; ++i ) labels [i] = metaData.getColumnLabel( i + 1 );
+        final Collection<Map<String,Object>> buffer = new ArrayList<>();
+
+        while( resultSet.next() )
+        {
+            final Map<String,Object> record = new HashMap<>();
+            for( var i = 0; i < columnCount; ++i )
+            {
+                final var value = resultSet.getObject( i + 1 );
+                record.put( labels [i], resultSet.wasNull() ? null : value );
+            }
+            buffer.add( Map.copyOf( record ) );
+        }
+
+        final var retValue = List.copyOf( buffer );
+
+        //---* Done *----------------------------------------------------------
+        return retValue;
+    }   //  resultSetToMap()
 
     /**
      *  <p>{@summary Returns a

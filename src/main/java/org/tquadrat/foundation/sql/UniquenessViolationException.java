@@ -33,13 +33,13 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  holds two or more records.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: HexUtils.java 747 2020-12-01 12:40:38Z tquadrat $
- *  @since 0.4.0
+ *  @version $Id: UniquenessViolationException.java 1091 2024-01-25 23:10:08Z tquadrat $
+ *  @since 0.4.1
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: HexUtils.java 747 2020-12-01 12:40:38Z tquadrat $" )
-@API( status = STABLE, since = "0.4.0" )
+@ClassVersion( sourceVersion = "$Id: UniquenessViolationException.java 1091 2024-01-25 23:10:08Z tquadrat $" )
+@API( status = STABLE, since = "0.4.1" )
 public class UniquenessViolationException extends RuntimeException
 {
         /*------------------------*\
