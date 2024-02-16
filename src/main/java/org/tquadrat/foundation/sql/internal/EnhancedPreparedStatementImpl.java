@@ -24,7 +24,7 @@ import static org.apiguardian.api.API.Status.MAINTAINED;
 import static org.tquadrat.foundation.lang.CommonConstants.NULL_STRING;
 import static org.tquadrat.foundation.lang.Objects.isNull;
 import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
-import static org.tquadrat.foundation.lang.Objects.requireNotEmptyArgument;
+import static org.tquadrat.foundation.lang.Objects.requireNotBlankArgument;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -158,7 +158,7 @@ public final class EnhancedPreparedStatementImpl extends EnhancedPreparedStateme
     public static final EnhancedPreparedStatementImpl create( final Connection connection, final String sql ) throws SQLException
     {
         final Map<String, List<Integer>> indexBuffer = new HashMap<>();
-        final var preparedStatement = requireNonNullArgument( connection, "connection" ).prepareStatement( parseSQL( requireNotEmptyArgument( sql, "sql" ), indexBuffer ) );
+        final var preparedStatement = requireNonNullArgument( connection, "connection" ).prepareStatement( parseSQL( sql, indexBuffer ) );
         final var retValue = new EnhancedPreparedStatementImpl( sql, preparedStatement, convertIndexBufferToParameterIndex( indexBuffer ) );
 
         //---* Done *----------------------------------------------------------
@@ -240,7 +240,7 @@ public final class EnhancedPreparedStatementImpl extends EnhancedPreparedStateme
         //---* Parse the statement text *--------------------------------------
         var index = 0;
         final var buffer = new StringBuilder();
-        final var matcher = m_VariablePattern.matcher( requireNotEmptyArgument( sql, "sql" ) );
+        final var matcher = m_VariablePattern.matcher( requireNotBlankArgument( sql, "sql" ) );
         while( matcher.find() )
         {
             final var variableName = matcher.group( 1 );

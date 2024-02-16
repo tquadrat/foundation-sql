@@ -37,7 +37,7 @@
 <span class="source-line-no">024</span><span id="line-24">import static org.tquadrat.foundation.lang.CommonConstants.NULL_STRING;</span>
 <span class="source-line-no">025</span><span id="line-25">import static org.tquadrat.foundation.lang.Objects.isNull;</span>
 <span class="source-line-no">026</span><span id="line-26">import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;</span>
-<span class="source-line-no">027</span><span id="line-27">import static org.tquadrat.foundation.lang.Objects.requireNotEmptyArgument;</span>
+<span class="source-line-no">027</span><span id="line-27">import static org.tquadrat.foundation.lang.Objects.requireNotBlankArgument;</span>
 <span class="source-line-no">028</span><span id="line-28"></span>
 <span class="source-line-no">029</span><span id="line-29">import java.sql.Connection;</span>
 <span class="source-line-no">030</span><span id="line-30">import java.sql.PreparedStatement;</span>
@@ -171,7 +171,7 @@
 <span class="source-line-no">158</span><span id="line-158">    public static final EnhancedPreparedStatementImpl create( final Connection connection, final String sql ) throws SQLException</span>
 <span class="source-line-no">159</span><span id="line-159">    {</span>
 <span class="source-line-no">160</span><span id="line-160">        final Map&lt;String, List&lt;Integer&gt;&gt; indexBuffer = new HashMap&lt;&gt;();</span>
-<span class="source-line-no">161</span><span id="line-161">        final var preparedStatement = requireNonNullArgument( connection, "connection" ).prepareStatement( parseSQL( requireNotEmptyArgument( sql, "sql" ), indexBuffer ) );</span>
+<span class="source-line-no">161</span><span id="line-161">        final var preparedStatement = requireNonNullArgument( connection, "connection" ).prepareStatement( parseSQL( sql, indexBuffer ) );</span>
 <span class="source-line-no">162</span><span id="line-162">        final var retValue = new EnhancedPreparedStatementImpl( sql, preparedStatement, convertIndexBufferToParameterIndex( indexBuffer ) );</span>
 <span class="source-line-no">163</span><span id="line-163"></span>
 <span class="source-line-no">164</span><span id="line-164">        //---* Done *----------------------------------------------------------</span>
@@ -253,7 +253,7 @@
 <span class="source-line-no">240</span><span id="line-240">        //---* Parse the statement text *--------------------------------------</span>
 <span class="source-line-no">241</span><span id="line-241">        var index = 0;</span>
 <span class="source-line-no">242</span><span id="line-242">        final var buffer = new StringBuilder();</span>
-<span class="source-line-no">243</span><span id="line-243">        final var matcher = m_VariablePattern.matcher( requireNotEmptyArgument( sql, "sql" ) );</span>
+<span class="source-line-no">243</span><span id="line-243">        final var matcher = m_VariablePattern.matcher( requireNotBlankArgument( sql, "sql" ) );</span>
 <span class="source-line-no">244</span><span id="line-244">        while( matcher.find() )</span>
 <span class="source-line-no">245</span><span id="line-245">        {</span>
 <span class="source-line-no">246</span><span id="line-246">            final var variableName = matcher.group( 1 );</span>

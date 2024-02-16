@@ -50,6 +50,7 @@ import static org.tquadrat.foundation.lang.CommonConstants.NULL_STRING;
 import static org.tquadrat.foundation.lang.Objects.isNull;
 import static org.tquadrat.foundation.lang.Objects.nonNull;
 import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
+import static org.tquadrat.foundation.lang.Objects.requireNotBlankArgument;
 import static org.tquadrat.foundation.lang.Objects.requireNotEmptyArgument;
 
 import java.io.InputStream;
@@ -220,7 +221,7 @@ public abstract sealed class EnhancedPreparedStatementBase implements EnhancedPr
     {
         m_SourceStatement = requireNotEmptyArgument( sourceStatement, "sourceStatement" );
         m_PreparedStatement = requireNonNullArgument( preparedStatement, "preparedStatement" );
-        m_ParameterIndex.putAll( requireNotEmptyArgument( parameterIndex, "parameterIndex" ) );
+        m_ParameterIndex.putAll( requireNonNullArgument( parameterIndex, "parameterIndex" ) );
     }   //  EnhancedPreparedStatementBase()
 
         /*---------*\
@@ -488,7 +489,7 @@ public abstract sealed class EnhancedPreparedStatementBase implements EnhancedPr
      */
     protected final int [] getParameterIndexes( final String parameterName ) throws SQLException
     {
-        final var retValue = m_ParameterIndex.get( requireNotEmptyArgument( parameterName, "parameterName" ) );
+        final var retValue = m_ParameterIndex.get( requireNotBlankArgument( parameterName, "parameterName" ) );
         if( isNull( retValue ) ) throw new SQLException( "Parameter name '%1$s' unknown".formatted( parameterName ) );
 
         //---* Done *----------------------------------------------------------

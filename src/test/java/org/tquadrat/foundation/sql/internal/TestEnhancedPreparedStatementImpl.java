@@ -35,6 +35,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.opentest4j.AssertionFailedError;
 import org.tquadrat.foundation.annotation.ClassVersion;
+import org.tquadrat.foundation.exception.BlankArgumentException;
 import org.tquadrat.foundation.exception.EmptyArgumentException;
 import org.tquadrat.foundation.exception.NullArgumentException;
 import org.tquadrat.foundation.testutil.TestBaseClass;
@@ -148,10 +149,10 @@ public class TestEnhancedPreparedStatementImpl extends TestBaseClass
         String statement, expected, actual;
 
         assertThrows( NullArgumentException.class, () -> parseSQL( null, Map.of() ) );
+        assertThrows( EmptyArgumentException.class, () -> parseSQL( EMPTY_STRING, Map.of() ) );
+        assertThrows( BlankArgumentException.class, () -> parseSQL( " ", Map.of() ) );
 
         assertThrows( NullArgumentException.class, () -> parseSQL( "SELECT * FROM table", null ) );
-
-        assertThrows( EmptyArgumentException.class, () -> parseSQL( EMPTY_STRING, Map.of() ) );
 
         indexBuffer = new HashMap<>();
         statement = "SELECT * FROM table";
