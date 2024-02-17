@@ -142,6 +142,7 @@ public class TestEnhancedPreparedStatement extends TestBaseClass
 
         try( final var connection = createConnection() )
         {
+            //noinspection NestedTryStatement
             try( final var candidate = prepareStatement( connection, selectSQL ) )
             {
                 final var e = assertThrows( SQLException.class, () -> candidate.setString( ":key", key ) );
@@ -169,6 +170,7 @@ public class TestEnhancedPreparedStatement extends TestBaseClass
 
         try( final var connection = createConnection() )
         {
+            //noinspection NestedTryStatement
             try( final var candidate = prepareStatement( connection, selectSQL ) )
             {
                 assertThrows( NullArgumentException.class, () -> candidate.setString( null, key ) );

@@ -93,13 +93,13 @@ import org.tquadrat.foundation.util.LazyMap;
  *  The base class for implementations of
  *  {@link EnhancedPreparedStatement}.
  *
- *  @version $Id: EnhancedPreparedStatementBase.java 1075 2023-10-02 12:37:07Z tquadrat $
+ *  @version $Id: EnhancedPreparedStatementBase.java 1100 2024-02-16 23:33:45Z tquadrat $
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @UMLGraph.link
  *  @since 0.1.0
  */
 @SuppressWarnings( "OverlyComplexClass" )
-@ClassVersion( sourceVersion = "$Id: EnhancedPreparedStatementBase.java 1075 2023-10-02 12:37:07Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: EnhancedPreparedStatementBase.java 1100 2024-02-16 23:33:45Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public abstract sealed class EnhancedPreparedStatementBase implements EnhancedPreparedStatement
     permits EnhancedPreparedStatementImpl
@@ -113,13 +113,13 @@ public abstract sealed class EnhancedPreparedStatementBase implements EnhancedPr
      *  that is used by
      *  {@link org.tquadrat.foundation.sql.EnhancedPreparedStatement}.
      *
-     *  @version $Id: EnhancedPreparedStatementBase.java 1075 2023-10-02 12:37:07Z tquadrat $
+     *  @version $Id: EnhancedPreparedStatementBase.java 1100 2024-02-16 23:33:45Z tquadrat $
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
      *  @UMLGraph.link
      *  @since 0.1.0
      */
     @SuppressWarnings( "ProtectedInnerClass" )
-    @ClassVersion( sourceVersion = "$Id: EnhancedPreparedStatementBase.java 1075 2023-10-02 12:37:07Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: EnhancedPreparedStatementBase.java 1100 2024-02-16 23:33:45Z tquadrat $" )
     @API( status = INTERNAL, since = "0.1.0" )
     protected final class ParameterMetaDataImpl extends ParameterMetaDataBase
     {
