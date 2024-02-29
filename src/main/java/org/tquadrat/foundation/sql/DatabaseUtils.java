@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2022 by Thomas Thrien.
+ *  Copyright © 2002-2024 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -56,12 +56,12 @@ import org.tquadrat.foundation.sql.internal.ResultSetSpliterator;
  *  <p>{@summary Several utilities for the work with databases that will be
  *  accessed through plain JDBC.}
  *
- *  @version $Id: DatabaseUtils.java 1093 2024-02-05 23:04:20Z tquadrat $
+ *  @version $Id: DatabaseUtils.java 1105 2024-02-28 12:58:46Z tquadrat $
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @UMLGraph.link
  *  @since 0.1.0
  */
-@ClassVersion( sourceVersion = "$Id: DatabaseUtils.java 1093 2024-02-05 23:04:20Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: DatabaseUtils.java 1105 2024-02-28 12:58:46Z tquadrat $" )
 @UtilityClass
 @API( status = STABLE, since = "0.1.0" )
 public final class DatabaseUtils
@@ -78,12 +78,12 @@ public final class DatabaseUtils
      *  @param  error   The exception that was thrown to indicate the failure.
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: DatabaseUtils.java 1093 2024-02-05 23:04:20Z tquadrat $
+     *  @version $Id: DatabaseUtils.java 1105 2024-02-28 12:58:46Z tquadrat $
      *  @since 0.0.1
      *
      *  @UMLGraph.link
      */
-    @ClassVersion( sourceVersion = "$Id: DatabaseUtils.java 1093 2024-02-05 23:04:20Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: DatabaseUtils.java 1105 2024-02-28 12:58:46Z tquadrat $" )
     @API( status = STABLE, since = "0.0.1" )
     public record ExecStatus( String command, SQLException error ) implements Serializable
     {
@@ -114,18 +114,6 @@ public final class DatabaseUtils
         }   //  ExecStatus()
     }
     //  record ExecStatus
-
-        /*-----------*\
-    ====** Constants **========================================================
-        \*-----------*/
-
-        /*------------*\
-    ====** Attributes **=======================================================
-        \*------------*/
-
-        /*------------------------*\
-    ====** Static Initialisations **===========================================
-        \*------------------------*/
 
         /*--------------*\
     ====** Constructors **=====================================================

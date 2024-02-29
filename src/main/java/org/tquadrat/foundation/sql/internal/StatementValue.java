@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2022 by Thomas Thrien.
+ * Copyright © 2002-2024 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -39,12 +39,12 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *      {@link org.tquadrat.foundation.lang.CommonConstants#NULL_STRING}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: StatementValue.java 1030 2022-04-06 13:42:02Z tquadrat $
+ *  @version $Id: StatementValue.java 1105 2024-02-28 12:58:46Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: StatementValue.java 1030 2022-04-06 13:42:02Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: StatementValue.java 1105 2024-02-28 12:58:46Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.1" )
 public record StatementValue( String parameterName, SQLType type, String value ) implements Serializable
 {
