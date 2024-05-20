@@ -37,7 +37,6 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import java.util.Optional;
 import java.util.StringJoiner;
 import java.util.stream.Stream;
@@ -50,18 +49,19 @@ import org.tquadrat.foundation.exception.EmptyArgumentException;
 import org.tquadrat.foundation.exception.NullArgumentException;
 import org.tquadrat.foundation.exception.PrivateConstructorForStaticClassCalledError;
 import org.tquadrat.foundation.exception.ValidationException;
+import org.tquadrat.foundation.lang.Objects;
 import org.tquadrat.foundation.sql.internal.ResultSetSpliterator;
 
 /**
  *  <p>{@summary Several utilities for the work with databases that will be
  *  accessed through plain JDBC.}
  *
- *  @version $Id: DatabaseUtils.java 1105 2024-02-28 12:58:46Z tquadrat $
+ *  @version $Id: DatabaseUtils.java 1132 2024-05-08 23:11:24Z tquadrat $
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @UMLGraph.link
  *  @since 0.1.0
  */
-@ClassVersion( sourceVersion = "$Id: DatabaseUtils.java 1105 2024-02-28 12:58:46Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: DatabaseUtils.java 1132 2024-05-08 23:11:24Z tquadrat $" )
 @UtilityClass
 @API( status = STABLE, since = "0.1.0" )
 public final class DatabaseUtils
@@ -78,12 +78,12 @@ public final class DatabaseUtils
      *  @param  error   The exception that was thrown to indicate the failure.
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: DatabaseUtils.java 1105 2024-02-28 12:58:46Z tquadrat $
+     *  @version $Id: DatabaseUtils.java 1132 2024-05-08 23:11:24Z tquadrat $
      *  @since 0.0.1
      *
      *  @UMLGraph.link
      */
-    @ClassVersion( sourceVersion = "$Id: DatabaseUtils.java 1105 2024-02-28 12:58:46Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: DatabaseUtils.java 1132 2024-05-08 23:11:24Z tquadrat $" )
     @API( status = STABLE, since = "0.0.1" )
     public record ExecStatus( String command, SQLException error ) implements Serializable
     {
@@ -194,7 +194,7 @@ public final class DatabaseUtils
             {
                 final var label = metaData.getColumnLabel( i + 1 );
                 final var value = Objects.toString( resultSet.getObject( i + 1 ) );
-                line.add( "%s='%s'".formatted( label, value ) );
+                line.add( resultSet.wasNull() ? "%s=NULL".formatted( label ) : "%s='%s'".formatted( label, value ) );
             }
             retValue.add( line.toString() );
         }
@@ -211,7 +211,7 @@ public final class DatabaseUtils
      *  {@link Connection#commit() commit()}
      *  on the provided connection, otherwise a call to
      *  {@link Connection#rollback() rollback()}
-     *  is issued. In case, the connection is configured for
+     *  is issued. In case the connection is configured for
      *  {@linkplain Connection#getAutoCommit() AutoCommit},
      *  neither call will be made.</p>
      *  <p>In case of an error, the return value is not
@@ -250,7 +250,7 @@ public final class DatabaseUtils
      *  {@link Connection#commit() commit()}
      *  on the provided connection, otherwise a call to
      *  {@link Connection#rollback() rollback()}
-     *  is issued. In case, the connection is configured for
+     *  is issued. In case the connection is configured for
      *  {@linkplain Connection#getAutoCommit() AutoCommit},
      *  neither call will be made.</p>
      *  <p>In case of an error, the return value is not
