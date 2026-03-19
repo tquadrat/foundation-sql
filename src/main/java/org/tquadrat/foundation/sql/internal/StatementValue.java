@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2024 by Thomas Thrien.
+ * Copyright © 2002-2026 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -39,13 +39,18 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *      {@link org.tquadrat.foundation.lang.CommonConstants#NULL_STRING}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: StatementValue.java 1105 2024-02-28 12:58:46Z tquadrat $
+ *  @version $Id: StatementValue.java 1161 2026-03-16 21:00:45Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: StatementValue.java 1105 2024-02-28 12:58:46Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: StatementValue.java 1161 2026-03-16 21:00:45Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.1" )
+@SuppressWarnings( "doclint:missing" )
+/*
+ * Due to a known bug in Javadoc will the fields of the record cause a warning
+ * about a missing @serial tag in the Javadoc comment.
+ */
 public record StatementValue( String parameterName, SQLType type, String value ) implements Serializable
 {
         /*------------------------*\

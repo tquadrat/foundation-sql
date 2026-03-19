@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2024 by Thomas Thrien.
+ *  Copyright © 2002-2025 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -86,7 +86,7 @@ import org.tquadrat.foundation.sql.internal.EnhancedPreparedStatementImpl;
  *      interface {@code java.sql.PreparedStatement}!
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: EnhancedPreparedStatement.java 1091 2024-01-25 23:10:08Z tquadrat $
+ *  @version $Id: EnhancedPreparedStatement.java 1151 2025-10-01 21:32:15Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
@@ -94,7 +94,7 @@ import org.tquadrat.foundation.sql.internal.EnhancedPreparedStatementImpl;
  *  @see    java.sql.PreparedStatement
  */
 @SuppressWarnings( {"ClassWithTooManyMethods", "OverlyComplexClass"} )
-@ClassVersion( sourceVersion = "$Id: EnhancedPreparedStatement.java 1091 2024-01-25 23:10:08Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: EnhancedPreparedStatement.java 1151 2025-10-01 21:32:15Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public sealed interface EnhancedPreparedStatement extends AutoCloseable
     permits org.tquadrat.foundation.sql.internal.EnhancedPreparedStatementBase
@@ -109,7 +109,7 @@ public sealed interface EnhancedPreparedStatement extends AutoCloseable
      *  {@link #log(String,String,List,StackTraceElement[])}.</p>
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: EnhancedPreparedStatement.java 1091 2024-01-25 23:10:08Z tquadrat $
+     *  @version $Id: EnhancedPreparedStatement.java 1151 2025-10-01 21:32:15Z tquadrat $
      *  @since 0.1.0
      *
      *  @UMLGraph.link
@@ -117,7 +117,7 @@ public sealed interface EnhancedPreparedStatement extends AutoCloseable
      *  @see    java.sql.PreparedStatement
      */
     @SuppressWarnings( "InnerClassOfInterface" )
-    @ClassVersion( sourceVersion = "$Id: EnhancedPreparedStatement.java 1091 2024-01-25 23:10:08Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: EnhancedPreparedStatement.java 1151 2025-10-01 21:32:15Z tquadrat $" )
     @API( status = STABLE, since = "0.1.0" )
     @FunctionalInterface
     public interface StatementLogger
@@ -2057,7 +2057,7 @@ public sealed interface EnhancedPreparedStatement extends AutoCloseable
      *  {@code Object} types to SQL types.  The given argument will be
      *  converted to the corresponding SQL type before being sent to the
      *  database.</p>
-     *  <p>Note that this method may be used to pass database- specific
+     *  <p>Note that this method may be used to pass database-specific
      *  abstract data types, by using a driver-specific Java type.</p>
      *  <p>If the object is of a class implementing the interface
      *  {@link java.sql.SQLData},

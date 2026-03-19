@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2022 by Thomas Thrien.
+ * Copyright © 2002-2026 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -35,14 +35,19 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *      {@link java.sql.PreparedStatement}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: StatementVariable.java 1020 2022-02-27 21:26:03Z tquadrat $
+ *  @version $Id: StatementVariable.java 1161 2026-03-16 21:00:45Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: StatementVariable.java 1020 2022-02-27 21:26:03Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: StatementVariable.java 1161 2026-03-16 21:00:45Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.1" )
-public record StatementVariable( String name, int position) implements Serializable
+@SuppressWarnings( "doclint:missing" )
+public record StatementVariable( String name, int position ) implements Serializable
+/*
+ * Due to a known bug in Javadoc will the fields of the record cause a warning
+ * about a missing @serial tag in the Javadoc comment.
+ */
 {
         /*------------------------*\
     ====** Static Initialisations **===========================================

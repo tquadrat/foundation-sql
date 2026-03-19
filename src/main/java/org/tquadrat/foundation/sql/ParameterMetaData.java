@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2023 by Thomas Thrien.
+ *  Copyright © 2002-2025 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -44,14 +44,14 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  occurrences
  *  {@linkplain #isNullable(String) will be checked}.</p>
  *
- *  @version $Id: ParameterMetaData.java 1075 2023-10-02 12:37:07Z tquadrat $
+ *  @version $Id: ParameterMetaData.java 1151 2025-10-01 21:32:15Z tquadrat $
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @UMLGraph.link
  *  @since 0.1.0
  *
  *  @see java.sql.ParameterMetaData
  */
-@ClassVersion( sourceVersion = "$Id: ParameterMetaData.java 1075 2023-10-02 12:37:07Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ParameterMetaData.java 1151 2025-10-01 21:32:15Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public sealed interface ParameterMetaData
     permits org.tquadrat.foundation.sql.internal.ParameterMetaDataBase
@@ -169,7 +169,7 @@ public sealed interface ParameterMetaData
     /**
      *  <p>{@summary Retrieves whether {@code NULL} values are allowed in the designated
      *  parameter.}</p>
-     *  <p>If the parameter with the the given name is used multiple times in
+     *  <p>If the parameter with the given name is used multiple times in
      *  the underlying
      *  {@link java.sql.PreparedStatement},
      *  this method returns

@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2024 by Thomas Thrien.
+ *  Copyright © 2002-2026 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -56,12 +56,12 @@ import org.tquadrat.foundation.sql.internal.ResultSetSpliterator;
  *  <p>{@summary Several utilities for the work with databases that will be
  *  accessed through plain JDBC.}
  *
- *  @version $Id: DatabaseUtils.java 1132 2024-05-08 23:11:24Z tquadrat $
+ *  @version $Id: DatabaseUtils.java 1161 2026-03-16 21:00:45Z tquadrat $
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @UMLGraph.link
  *  @since 0.1.0
  */
-@ClassVersion( sourceVersion = "$Id: DatabaseUtils.java 1132 2024-05-08 23:11:24Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: DatabaseUtils.java 1161 2026-03-16 21:00:45Z tquadrat $" )
 @UtilityClass
 @API( status = STABLE, since = "0.1.0" )
 public final class DatabaseUtils
@@ -78,13 +78,18 @@ public final class DatabaseUtils
      *  @param  error   The exception that was thrown to indicate the failure.
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: DatabaseUtils.java 1132 2024-05-08 23:11:24Z tquadrat $
+     *  @version $Id: DatabaseUtils.java 1161 2026-03-16 21:00:45Z tquadrat $
      *  @since 0.0.1
      *
      *  @UMLGraph.link
      */
-    @ClassVersion( sourceVersion = "$Id: DatabaseUtils.java 1132 2024-05-08 23:11:24Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: DatabaseUtils.java 1161 2026-03-16 21:00:45Z tquadrat $" )
     @API( status = STABLE, since = "0.0.1" )
+    @SuppressWarnings( "doclint:missing" )
+    /*
+     * Due to a known bug in Javadoc will the fields of the record cause a
+     * warning about a missing @serial tag in the Javadoc comment.
+     */
     public record ExecStatus( String command, SQLException error ) implements Serializable
     {
             /*------------------------*\
@@ -135,10 +140,10 @@ public final class DatabaseUtils
      *  <p>This method works for any RDBMS.</p>
      *
      *  @param  connection  The connection to the database.
-     *  @param  catalog A catalog name; it must match the catalog name as it is
-     *      stored in the database. The empty String retrieves those tables
-     *      without a catalog, and {@code null} means that the catalog name
-     *      should not be used to narrow the search.
+     *  @param  catalog A catalogue name; it must match the catalogue name as
+     *      it is stored in the database. The empty String retrieves those
+     *      tables without a catalogue, and {@code null} means that the catalogue
+     *      name should not be used to narrow the search.
      *  @param  schemaPattern   A schema name pattern; it must match the schema
      *      name as it is stored in the database. The empty String retrieves
      *      those tables without a schema, and {@code null} means that the

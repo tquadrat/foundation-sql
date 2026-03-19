@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"m":"org.tquadrat.foundation.sql","l":"org.tquadrat.foundation.sql"},{"m":"org.tquadrat.foundation.sql","l":"org.tquadrat.foundation.sql.internal"}];updateSearchResults();
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html","k":"18"},{"m":"org.tquadrat.foundation.sql","l":"org.tquadrat.foundation.sql"},{"m":"org.tquadrat.foundation.sql","l":"org.tquadrat.foundation.sql.internal"}];updateSearchResults();

@@ -33,14 +33,14 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  holds two or more records.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: UniquenessViolationException.java 1093 2024-02-05 23:04:20Z tquadrat $
+ *  @version $Id: UniquenessViolationException.java 1150 2025-09-29 09:14:54Z tquadrat $
  *  @since 0.4.1
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: UniquenessViolationException.java 1093 2024-02-05 23:04:20Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: UniquenessViolationException.java 1150 2025-09-29 09:14:54Z tquadrat $" )
 @API( status = STABLE, since = "0.4.1" )
-public class UniquenessViolationException extends RuntimeException
+public final class UniquenessViolationException extends RuntimeException
 {
         /*------------------------*\
     ====** Static Initialisations **===========================================
@@ -63,7 +63,10 @@ public class UniquenessViolationException extends RuntimeException
      */
     public UniquenessViolationException( final String key )
     {
-        super( STR."Key '\{isNull( key ) ? "<?>" : key}' is not unqiue!"  );
+//        super( STR."Key '\{isNull( key ) ? "<?>" : key}' is not unique!"  );
+
+        final var message = "Key %s is not unique!".formatted( isNull( key) ? "<?>" : key );
+        super( message );
     }   //  UniquenessViolationException()
 }
 //  class UniquenessViolationException
