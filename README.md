@@ -9,7 +9,7 @@ This library provides some utilities for the work with RDBMS through JDBC.
     <dependency>
       <groupId>org.tquadrat.library</groupId>
       <artifactId>org.tquadrat.foundation.sql</artifactId>
-      <version>0.25.4</version>
+      <version>0.25.5</version>
     </dependency>
     ```
 - Gradle
@@ -18,9 +18,9 @@ This library provides some utilities for the work with RDBMS through JDBC.
       …
   
       //---* The tquadrat Foundation SQL/JDBC stuff *-------------------------
-      implementation 'org.tquadrat.library:org.tquadrat.foundation.sql:0.25.4
+      implementation 'org.tquadrat.library:org.tquadrat.foundation.sql:0.25.5
       …
     }  //  dependencies
     ```
 ---  
-Last updated: 2026-05-17T13:13:54.241505834+02:00[Europe/Berlin]
+Last updated: 2026-05-25T22:29:37.928691418+02:00[Europe/Berlin]
