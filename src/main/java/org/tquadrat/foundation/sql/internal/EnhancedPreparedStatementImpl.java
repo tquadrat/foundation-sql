@@ -46,12 +46,12 @@ import org.tquadrat.foundation.stream.MapStream;
  *  The implementation for
  *  {@link org.tquadrat.foundation.sql.EnhancedPreparedStatement}.
  *
- *  @version $Id: EnhancedPreparedStatementImpl.java 1100 2024-02-16 23:33:45Z tquadrat $
+ *  @version $Id: EnhancedPreparedStatementImpl.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @UMLGraph.link
  *  @since 0.1.0
  */
-@ClassVersion( sourceVersion = "$Id: EnhancedPreparedStatementImpl.java 1100 2024-02-16 23:33:45Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: EnhancedPreparedStatementImpl.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = INTERNAL, since = "0.1.0" )
 public final class EnhancedPreparedStatementImpl extends EnhancedPreparedStatementBase
 {
@@ -193,18 +193,18 @@ public final class EnhancedPreparedStatementImpl extends EnhancedPreparedStateme
      *      or
      *      {@link java.io.Reader})
      *      only the class is given instead of the real value.</li>
-     *      <li>{@code stacktrace} – The stacktrace; will be {@code null} if
-     *      {@code addStacktrace} is {@code false}.</li>
+     *      <li>{@code stacktrace} – The stacktrace; will be {@null} if
+     *      {@code addStacktrace} is {@false}.</li>
      *  </ol>
-     *  <p>The {@code logCheck} method returns {@code true} only when logging
+     *  <p>The {@code logCheck} method returns {@true} only when logging
      *  should be done. No information is collected while it returns
-     *  {@code false}. As the method is called for nearly any operation, its
+     *  {@false}. As the method is called for nearly any operation, its
      *  implementation should be as efficient as possible.</p>
      *
      *  @param  logger  The method that takes the logging information.
      *  @param  logCheck    The method that returns a flag whether log output
      *      is desired.
-     *  @param  addStacktrace   {@code true} if the stacktrace should be added
+     *  @param  addStacktrace   {@true} if the stacktrace should be added
      *      to the log output.
      */
     @SuppressWarnings( "MethodOverridesStaticMethodOfSuperclass" )

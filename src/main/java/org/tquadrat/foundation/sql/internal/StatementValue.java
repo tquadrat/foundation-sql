@@ -34,17 +34,17 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  @param  parameterName   The name of the parameter.
  *  @param  type    The SQL type.
  *  @param  value   A String representation of the value; it can be
- *      {@code null} if the value is {@code null}, but it could be also the
+ *      {@null} if the value is {@null}, but it could be also the
  *      value of
  *      {@link org.tquadrat.foundation.lang.CommonConstants#NULL_STRING}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: StatementValue.java 1161 2026-03-16 21:00:45Z tquadrat $
+ *  @version $Id: StatementValue.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: StatementValue.java 1161 2026-03-16 21:00:45Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: StatementValue.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.1" )
 @SuppressWarnings( "doclint:missing" )
 /*

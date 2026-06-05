@@ -106,13 +106,13 @@
 <span class="source-line-no">093</span><span id="line-93"> *  The base class for implementations of</span>
 <span class="source-line-no">094</span><span id="line-94"> *  {@link EnhancedPreparedStatement}.</span>
 <span class="source-line-no">095</span><span id="line-95"> *</span>
-<span class="source-line-no">096</span><span id="line-96"> *  @version $Id: EnhancedPreparedStatementBase.java 1100 2024-02-16 23:33:45Z tquadrat $</span>
+<span class="source-line-no">096</span><span id="line-96"> *  @version $Id: EnhancedPreparedStatementBase.java 1258 2026-06-04 18:33:06Z tquadrat $</span>
 <span class="source-line-no">097</span><span id="line-97"> *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org</span>
 <span class="source-line-no">098</span><span id="line-98"> *  @UMLGraph.link</span>
 <span class="source-line-no">099</span><span id="line-99"> *  @since 0.1.0</span>
 <span class="source-line-no">100</span><span id="line-100"> */</span>
 <span class="source-line-no">101</span><span id="line-101">@SuppressWarnings( "OverlyComplexClass" )</span>
-<span class="source-line-no">102</span><span id="line-102">@ClassVersion( sourceVersion = "$Id: EnhancedPreparedStatementBase.java 1100 2024-02-16 23:33:45Z tquadrat $" )</span>
+<span class="source-line-no">102</span><span id="line-102">@ClassVersion( sourceVersion = "$Id: EnhancedPreparedStatementBase.java 1258 2026-06-04 18:33:06Z tquadrat $" )</span>
 <span class="source-line-no">103</span><span id="line-103">@API( status = STABLE, since = "0.1.0" )</span>
 <span class="source-line-no">104</span><span id="line-104">public abstract sealed class EnhancedPreparedStatementBase implements EnhancedPreparedStatement</span>
 <span class="source-line-no">105</span><span id="line-105">    permits EnhancedPreparedStatementImpl</span>
@@ -126,13 +126,13 @@
 <span class="source-line-no">113</span><span id="line-113">     *  that is used by</span>
 <span class="source-line-no">114</span><span id="line-114">     *  {@link org.tquadrat.foundation.sql.EnhancedPreparedStatement}.</span>
 <span class="source-line-no">115</span><span id="line-115">     *</span>
-<span class="source-line-no">116</span><span id="line-116">     *  @version $Id: EnhancedPreparedStatementBase.java 1100 2024-02-16 23:33:45Z tquadrat $</span>
+<span class="source-line-no">116</span><span id="line-116">     *  @version $Id: EnhancedPreparedStatementBase.java 1258 2026-06-04 18:33:06Z tquadrat $</span>
 <span class="source-line-no">117</span><span id="line-117">     *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org</span>
 <span class="source-line-no">118</span><span id="line-118">     *  @UMLGraph.link</span>
 <span class="source-line-no">119</span><span id="line-119">     *  @since 0.1.0</span>
 <span class="source-line-no">120</span><span id="line-120">     */</span>
 <span class="source-line-no">121</span><span id="line-121">    @SuppressWarnings( "ProtectedInnerClass" )</span>
-<span class="source-line-no">122</span><span id="line-122">    @ClassVersion( sourceVersion = "$Id: EnhancedPreparedStatementBase.java 1100 2024-02-16 23:33:45Z tquadrat $" )</span>
+<span class="source-line-no">122</span><span id="line-122">    @ClassVersion( sourceVersion = "$Id: EnhancedPreparedStatementBase.java 1258 2026-06-04 18:33:06Z tquadrat $" )</span>
 <span class="source-line-no">123</span><span id="line-123">    @API( status = INTERNAL, since = "0.1.0" )</span>
 <span class="source-line-no">124</span><span id="line-124">    protected final class ParameterMetaDataImpl extends ParameterMetaDataBase</span>
 <span class="source-line-no">125</span><span id="line-125">    {</span>
@@ -255,8 +255,8 @@
 <span class="source-line-no">242</span><span id="line-242">     *  Returns a flag that indicates whether a stacktrace should be added to</span>
 <span class="source-line-no">243</span><span id="line-243">     *  the logging.</span>
 <span class="source-line-no">244</span><span id="line-244">     *</span>
-<span class="source-line-no">245</span><span id="line-245">     *  @return {@code true} if the stacktrace should be created and added,</span>
-<span class="source-line-no">246</span><span id="line-246">     *      {@code false} otherwise.</span>
+<span class="source-line-no">245</span><span id="line-245">     *  @return {@true} if the stacktrace should be created and added,</span>
+<span class="source-line-no">246</span><span id="line-246">     *      {@false} otherwise.</span>
 <span class="source-line-no">247</span><span id="line-247">     */</span>
 <span class="source-line-no">248</span><span id="line-248">    @SuppressWarnings( "BooleanMethodNameMustStartWithQuestion" )</span>
 <span class="source-line-no">249</span><span id="line-249">    protected abstract boolean addStacktrace();</span>
@@ -310,7 +310,7 @@
 <span class="source-line-no">297</span><span id="line-297">     *  Composes the log information and sends it.</span>
 <span class="source-line-no">298</span><span id="line-298">     *</span>
 <span class="source-line-no">299</span><span id="line-299">     *  @param  operation   The operation that logs.</span>
-<span class="source-line-no">300</span><span id="line-300">     *  @param  stackTrace  The stack trace; can be {@code null}.</span>
+<span class="source-line-no">300</span><span id="line-300">     *  @param  stackTrace  The stack trace; can be {@null}.</span>
 <span class="source-line-no">301</span><span id="line-301">     */</span>
 <span class="source-line-no">302</span><span id="line-302">    @SuppressWarnings( "MethodCanBeVariableArityMethod" )</span>
 <span class="source-line-no">303</span><span id="line-303">    protected abstract void doLogging( final String operation, final StackTraceElement [] stackTrace );</span>

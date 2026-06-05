@@ -93,13 +93,13 @@ import org.tquadrat.foundation.util.LazyMap;
  *  The base class for implementations of
  *  {@link EnhancedPreparedStatement}.
  *
- *  @version $Id: EnhancedPreparedStatementBase.java 1100 2024-02-16 23:33:45Z tquadrat $
+ *  @version $Id: EnhancedPreparedStatementBase.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @UMLGraph.link
  *  @since 0.1.0
  */
 @SuppressWarnings( "OverlyComplexClass" )
-@ClassVersion( sourceVersion = "$Id: EnhancedPreparedStatementBase.java 1100 2024-02-16 23:33:45Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: EnhancedPreparedStatementBase.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public abstract sealed class EnhancedPreparedStatementBase implements EnhancedPreparedStatement
     permits EnhancedPreparedStatementImpl
@@ -113,13 +113,13 @@ public abstract sealed class EnhancedPreparedStatementBase implements EnhancedPr
      *  that is used by
      *  {@link org.tquadrat.foundation.sql.EnhancedPreparedStatement}.
      *
-     *  @version $Id: EnhancedPreparedStatementBase.java 1100 2024-02-16 23:33:45Z tquadrat $
+     *  @version $Id: EnhancedPreparedStatementBase.java 1258 2026-06-04 18:33:06Z tquadrat $
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
      *  @UMLGraph.link
      *  @since 0.1.0
      */
     @SuppressWarnings( "ProtectedInnerClass" )
-    @ClassVersion( sourceVersion = "$Id: EnhancedPreparedStatementBase.java 1100 2024-02-16 23:33:45Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: EnhancedPreparedStatementBase.java 1258 2026-06-04 18:33:06Z tquadrat $" )
     @API( status = INTERNAL, since = "0.1.0" )
     protected final class ParameterMetaDataImpl extends ParameterMetaDataBase
     {
@@ -242,8 +242,8 @@ public abstract sealed class EnhancedPreparedStatementBase implements EnhancedPr
      *  Returns a flag that indicates whether a stacktrace should be added to
      *  the logging.
      *
-     *  @return {@code true} if the stacktrace should be created and added,
-     *      {@code false} otherwise.
+     *  @return {@true} if the stacktrace should be created and added,
+     *      {@false} otherwise.
      */
     @SuppressWarnings( "BooleanMethodNameMustStartWithQuestion" )
     protected abstract boolean addStacktrace();
@@ -297,7 +297,7 @@ public abstract sealed class EnhancedPreparedStatementBase implements EnhancedPr
      *  Composes the log information and sends it.
      *
      *  @param  operation   The operation that logs.
-     *  @param  stackTrace  The stack trace; can be {@code null}.
+     *  @param  stackTrace  The stack trace; can be {@null}.
      */
     @SuppressWarnings( "MethodCanBeVariableArityMethod" )
     protected abstract void doLogging( final String operation, final StackTraceElement [] stackTrace );

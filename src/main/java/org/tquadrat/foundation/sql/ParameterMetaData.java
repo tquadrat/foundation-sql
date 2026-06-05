@@ -44,14 +44,14 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  occurrences
  *  {@linkplain #isNullable(String) will be checked}.</p>
  *
- *  @version $Id: ParameterMetaData.java 1151 2025-10-01 21:32:15Z tquadrat $
+ *  @version $Id: ParameterMetaData.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @UMLGraph.link
  *  @since 0.1.0
  *
  *  @see java.sql.ParameterMetaData
  */
-@ClassVersion( sourceVersion = "$Id: ParameterMetaData.java 1151 2025-10-01 21:32:15Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ParameterMetaData.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public sealed interface ParameterMetaData
     permits org.tquadrat.foundation.sql.internal.ParameterMetaDataBase
@@ -192,7 +192,7 @@ public sealed interface ParameterMetaData
      *  numbers.
      *
      *  @param  parameterName   The name of the parameter, prefixed by a colon.
-     *  @return {@code true} if a value can be a signed number, {@code false}
+     *  @return {@true} if a value can be a signed number, {@false}
      *      otherwise.
      *  @throws SQLException    A database access error occurred.
      */

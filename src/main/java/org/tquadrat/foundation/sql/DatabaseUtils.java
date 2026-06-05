@@ -56,12 +56,12 @@ import org.tquadrat.foundation.sql.internal.ResultSetSpliterator;
  *  <p>{@summary Several utilities for the work with databases that will be
  *  accessed through plain JDBC.}
  *
- *  @version $Id: DatabaseUtils.java 1161 2026-03-16 21:00:45Z tquadrat $
+ *  @version $Id: DatabaseUtils.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @UMLGraph.link
  *  @since 0.1.0
  */
-@ClassVersion( sourceVersion = "$Id: DatabaseUtils.java 1161 2026-03-16 21:00:45Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: DatabaseUtils.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @UtilityClass
 @API( status = STABLE, since = "0.1.0" )
 public final class DatabaseUtils
@@ -78,12 +78,12 @@ public final class DatabaseUtils
      *  @param  error   The exception that was thrown to indicate the failure.
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: DatabaseUtils.java 1161 2026-03-16 21:00:45Z tquadrat $
+     *  @version $Id: DatabaseUtils.java 1258 2026-06-04 18:33:06Z tquadrat $
      *  @since 0.0.1
      *
      *  @UMLGraph.link
      */
-    @ClassVersion( sourceVersion = "$Id: DatabaseUtils.java 1161 2026-03-16 21:00:45Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: DatabaseUtils.java 1258 2026-06-04 18:33:06Z tquadrat $" )
     @API( status = STABLE, since = "0.0.1" )
     @SuppressWarnings( "doclint:missing" )
     /*
@@ -142,11 +142,11 @@ public final class DatabaseUtils
      *  @param  connection  The connection to the database.
      *  @param  catalog A catalogue name; it must match the catalogue name as
      *      it is stored in the database. The empty String retrieves those
-     *      tables without a catalogue, and {@code null} means that the catalogue
+     *      tables without a catalogue, and {@null} means that the catalogue
      *      name should not be used to narrow the search.
      *  @param  schemaPattern   A schema name pattern; it must match the schema
      *      name as it is stored in the database. The empty String retrieves
-     *      those tables without a schema, and {@code null} means that the
+     *      those tables without a schema, and {@null} means that the
      *      schema name should not be used to narrow the search.
      *  @param  tableNamePattern    A table name pattern; it must match the
      *      table name as it is stored in the database.
@@ -154,7 +154,7 @@ public final class DatabaseUtils
      *      of table types returned from
      *      {@link DatabaseMetaData#getTableTypes()},
      *      to include. It can be omitted to return all types.
-     *  @return {@code true} if the specified table exists, {@code false}
+     *  @return {@true} if the specified table exists, {@false}
      *      otherwise.
      *  @throws SQLException    A database access error occurred.
      */
@@ -508,12 +508,12 @@ public final class DatabaseUtils
 
     /**
      *  <p>{@summary This method checks whether the given connection is not
-     *  {@code null} and that it is open.} Otherwise it will throw a
+     *  {@null} and that it is open.} Otherwise it will throw a
      *  {@link ValidationException}.</p>
      *  <p>This method will test the method by calling
      *  {@link Connection#isValid(int)}.</p>
      *
-     *  @param  connection  The connection to check; can be {@code null}.
+     *  @param  connection  The connection to check; can be {@null}.
      *  @param  name    The name of the argument; this is used for the error
      *      message.
      *  @param  validationTimeout   The validation timeout in seconds, with -1
@@ -524,7 +524,7 @@ public final class DatabaseUtils
      *  @throws ValidationException The connection is closed or otherwise not
      *      valid.
      *  @throws NullArgumentException   {@code name} or the connection is
-     *      {@code null}.
+     *      {@null}.
      *  @throws EmptyArgumentException  {@code name} is the empty String.
      *
      *  @since 0.4.1
@@ -561,7 +561,7 @@ public final class DatabaseUtils
      *
      *  @param  resultSet   The result set to dump.
      *  @return The contents of the result set; maybe empty, but will never be
-     *      {@code null}.
+     *      {@null}.
      *  @throws SQLException    Something went wrong when reading the result
      *      set.
      *

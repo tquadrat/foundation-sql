@@ -59,12 +59,12 @@
 <span class="source-line-no">046</span><span id="line-46"> *  The implementation for</span>
 <span class="source-line-no">047</span><span id="line-47"> *  {@link org.tquadrat.foundation.sql.EnhancedPreparedStatement}.</span>
 <span class="source-line-no">048</span><span id="line-48"> *</span>
-<span class="source-line-no">049</span><span id="line-49"> *  @version $Id: EnhancedPreparedStatementImpl.java 1100 2024-02-16 23:33:45Z tquadrat $</span>
+<span class="source-line-no">049</span><span id="line-49"> *  @version $Id: EnhancedPreparedStatementImpl.java 1258 2026-06-04 18:33:06Z tquadrat $</span>
 <span class="source-line-no">050</span><span id="line-50"> *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org</span>
 <span class="source-line-no">051</span><span id="line-51"> *  @UMLGraph.link</span>
 <span class="source-line-no">052</span><span id="line-52"> *  @since 0.1.0</span>
 <span class="source-line-no">053</span><span id="line-53"> */</span>
-<span class="source-line-no">054</span><span id="line-54">@ClassVersion( sourceVersion = "$Id: EnhancedPreparedStatementImpl.java 1100 2024-02-16 23:33:45Z tquadrat $" )</span>
+<span class="source-line-no">054</span><span id="line-54">@ClassVersion( sourceVersion = "$Id: EnhancedPreparedStatementImpl.java 1258 2026-06-04 18:33:06Z tquadrat $" )</span>
 <span class="source-line-no">055</span><span id="line-55">@API( status = INTERNAL, since = "0.1.0" )</span>
 <span class="source-line-no">056</span><span id="line-56">public final class EnhancedPreparedStatementImpl extends EnhancedPreparedStatementBase</span>
 <span class="source-line-no">057</span><span id="line-57">{</span>
@@ -206,18 +206,18 @@
 <span class="source-line-no">193</span><span id="line-193">     *      or</span>
 <span class="source-line-no">194</span><span id="line-194">     *      {@link java.io.Reader})</span>
 <span class="source-line-no">195</span><span id="line-195">     *      only the class is given instead of the real value.&lt;/li&gt;</span>
-<span class="source-line-no">196</span><span id="line-196">     *      &lt;li&gt;{@code stacktrace} – The stacktrace; will be {@code null} if</span>
-<span class="source-line-no">197</span><span id="line-197">     *      {@code addStacktrace} is {@code false}.&lt;/li&gt;</span>
+<span class="source-line-no">196</span><span id="line-196">     *      &lt;li&gt;{@code stacktrace} – The stacktrace; will be {@null} if</span>
+<span class="source-line-no">197</span><span id="line-197">     *      {@code addStacktrace} is {@false}.&lt;/li&gt;</span>
 <span class="source-line-no">198</span><span id="line-198">     *  &lt;/ol&gt;</span>
-<span class="source-line-no">199</span><span id="line-199">     *  &lt;p&gt;The {@code logCheck} method returns {@code true} only when logging</span>
+<span class="source-line-no">199</span><span id="line-199">     *  &lt;p&gt;The {@code logCheck} method returns {@true} only when logging</span>
 <span class="source-line-no">200</span><span id="line-200">     *  should be done. No information is collected while it returns</span>
-<span class="source-line-no">201</span><span id="line-201">     *  {@code false}. As the method is called for nearly any operation, its</span>
+<span class="source-line-no">201</span><span id="line-201">     *  {@false}. As the method is called for nearly any operation, its</span>
 <span class="source-line-no">202</span><span id="line-202">     *  implementation should be as efficient as possible.&lt;/p&gt;</span>
 <span class="source-line-no">203</span><span id="line-203">     *</span>
 <span class="source-line-no">204</span><span id="line-204">     *  @param  logger  The method that takes the logging information.</span>
 <span class="source-line-no">205</span><span id="line-205">     *  @param  logCheck    The method that returns a flag whether log output</span>
 <span class="source-line-no">206</span><span id="line-206">     *      is desired.</span>
-<span class="source-line-no">207</span><span id="line-207">     *  @param  addStacktrace   {@code true} if the stacktrace should be added</span>
+<span class="source-line-no">207</span><span id="line-207">     *  @param  addStacktrace   {@true} if the stacktrace should be added</span>
 <span class="source-line-no">208</span><span id="line-208">     *      to the log output.</span>
 <span class="source-line-no">209</span><span id="line-209">     */</span>
 <span class="source-line-no">210</span><span id="line-210">    @SuppressWarnings( "MethodOverridesStaticMethodOfSuperclass" )</span>

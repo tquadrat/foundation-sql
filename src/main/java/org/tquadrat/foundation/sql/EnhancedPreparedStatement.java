@@ -86,7 +86,7 @@ import org.tquadrat.foundation.sql.internal.EnhancedPreparedStatementImpl;
  *      interface {@code java.sql.PreparedStatement}!
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: EnhancedPreparedStatement.java 1151 2025-10-01 21:32:15Z tquadrat $
+ *  @version $Id: EnhancedPreparedStatement.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
@@ -94,7 +94,7 @@ import org.tquadrat.foundation.sql.internal.EnhancedPreparedStatementImpl;
  *  @see    java.sql.PreparedStatement
  */
 @SuppressWarnings( {"ClassWithTooManyMethods", "OverlyComplexClass"} )
-@ClassVersion( sourceVersion = "$Id: EnhancedPreparedStatement.java 1151 2025-10-01 21:32:15Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: EnhancedPreparedStatement.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public sealed interface EnhancedPreparedStatement extends AutoCloseable
     permits org.tquadrat.foundation.sql.internal.EnhancedPreparedStatementBase
@@ -109,7 +109,7 @@ public sealed interface EnhancedPreparedStatement extends AutoCloseable
      *  {@link #log(String,String,List,StackTraceElement[])}.</p>
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: EnhancedPreparedStatement.java 1151 2025-10-01 21:32:15Z tquadrat $
+     *  @version $Id: EnhancedPreparedStatement.java 1258 2026-06-04 18:33:06Z tquadrat $
      *  @since 0.1.0
      *
      *  @UMLGraph.link
@@ -117,7 +117,7 @@ public sealed interface EnhancedPreparedStatement extends AutoCloseable
      *  @see    java.sql.PreparedStatement
      */
     @SuppressWarnings( "InnerClassOfInterface" )
-    @ClassVersion( sourceVersion = "$Id: EnhancedPreparedStatement.java 1151 2025-10-01 21:32:15Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: EnhancedPreparedStatement.java 1258 2026-06-04 18:33:06Z tquadrat $" )
     @API( status = STABLE, since = "0.1.0" )
     @FunctionalInterface
     public interface StatementLogger
@@ -128,7 +128,7 @@ public sealed interface EnhancedPreparedStatement extends AutoCloseable
          *  @param  operation   The name of the operation that logs.
          *  @param  statement   The source of the prepared statement.
          *  @param  values  The values.
-         *  @param  stackTrace  The stacktrace; can be {@code null}.
+         *  @param  stackTrace  The stacktrace; can be {@null}.
          */
         @SuppressWarnings( "MethodCanBeVariableArityMethod" )
         public void log( final String operation, final String statement, final List<String> values, final StackTraceElement [] stackTrace );
@@ -204,7 +204,7 @@ public sealed interface EnhancedPreparedStatement extends AutoCloseable
      *  {@code EnhancedPreparedStatement} instance.} After a call to this
      *  method, the method
      *  {@link #getWarnings()}
-     *  will return {@code null} until a new warning is reported for this
+     *  will return {@null} until a new warning is reported for this
      *  {@code EnhancedPreparedStatement} instance.</p>
      *
      *  @throws SQLException    A database access error occurred or this method
@@ -262,18 +262,18 @@ public sealed interface EnhancedPreparedStatement extends AutoCloseable
      *      or
      *      {@link java.io.Reader})
      *      only the class is given instead of the real value.</li>
-     *      <li>{@code stacktrace} – The stacktrace; will be {@code null} if
-     *      {@code addStacktrace} is {@code false}.</li>
+     *      <li>{@code stacktrace} – The stacktrace; will be {@null} if
+     *      {@code addStacktrace} is {@false}.</li>
      *  </ol>
-     *  <p>The {@code logCheck} method returns {@code true} only when logging
+     *  <p>The {@code logCheck} method returns {@true} only when logging
      *  should be done. No information is collected while it returns
-     *  {@code false}. As the method is called for nearly any operation, its
+     *  {@false}. As the method is called for nearly any operation, its
      *  implementation should be as efficient as possible.</p>
      *
      *  @param  logger  The method that takes the logging information.
      *  @param  logCheck    The method that returns a flag whether log output
      *      is desired.
-     *  @param  addStacktrace   {@code true} if the stacktrace should be added
+     *  @param  addStacktrace   {@true} if the stacktrace should be added
      *      to the log output.
      */
     public static void enableLogging( final StatementLogger logger, final BooleanSupplier logCheck, final boolean addStacktrace )
@@ -286,9 +286,9 @@ public sealed interface EnhancedPreparedStatement extends AutoCloseable
      *  simple SQL identifier:</p>
      *  <ul>
      *      <li>Return the original value if {@code alwaysQuote} is
-     *      {@code false}</li>
+     *      {@false}</li>
      *      <li>Return a delimited identifier if {@code alwaysQuote} is
-     *      {@code true}</li>
+     *      {@true}</li>
      *  </ul>
      *  <p>If {@code identifier} is not a simple SQL identifier,
      *  {@code identifier} will be enclosed in double quotes if not already
@@ -309,7 +309,7 @@ public sealed interface EnhancedPreparedStatement extends AutoCloseable
      *  @throws SQLException    The identifier was not a valid identifier.
      *  @throws SQLFeatureNotSupportedException The datasource does not support
      *      delimited identifiers.
-     *  @throws NullPointerException    The identifier was {@code null}.
+     *  @throws NullPointerException    The identifier was {@null}.
      */
     public String enquoteIdentifier(String identifier, boolean alwaysQuote) throws SQLException;
 
@@ -353,7 +353,7 @@ public sealed interface EnhancedPreparedStatement extends AutoCloseable
      *  @return A string enclosed by single quotes with every single quote
      *      converted to two single quotes
      *  @throws NullPointerException    The {@code value} argument was
-     *      {@code null}.
+     *      {@null}.
      *  @throws SQLException    A database access error occurred.
      */
     public String enquoteLiteral( String value ) throws SQLException;
@@ -427,9 +427,9 @@ public sealed interface EnhancedPreparedStatement extends AutoCloseable
      *  {@link #getMoreResults()}
      *  to move to any subsequent result(s).</p>
      *
-     *  @return {@code true} if the first result is a
+     *  @return {@true} if the first result is a
      *      {@link ResultSet}
-     *      instance; {@code false} if the first result is an update count or
+     *      instance; {@false} if the first result is an update count or
      *      there is no result.
      *  @throws SQLException    A database access error occurred, this method
      *      was called on a closed {@code EnhancedPreparedStatement} or no
@@ -604,7 +604,7 @@ public sealed interface EnhancedPreparedStatement extends AutoCloseable
      *  @return A
      *      {@link ResultSet}
      *      instance that contains the data produced by the query; never
-     *      {@code null}.
+     *      {@null}.
      *  @throws SQLException    A database access error occurred, this method
      *      was called on a closed {@code EnhancedPreparedStatement} or the SQL
      *      statement did not return a {@code ResultSet} object.
@@ -823,7 +823,7 @@ public sealed interface EnhancedPreparedStatement extends AutoCloseable
      *      lack of underlying DBMS support.
      *
      *  @return The description of a {@code ResultSet} object's columns or
-     *      {@code null} if the driver cannot return a
+     *      {@null} if the driver cannot return a
      *      {@code ResultSetMetaData} object.
      *  @throws SQLException    A database access error occurred or this method
      *      was called on a closed {@code PreparedStatement}.
@@ -834,7 +834,7 @@ public sealed interface EnhancedPreparedStatement extends AutoCloseable
 
     /**
      *  <p>{@summary Moves to this {@code EnhancedPreparedStatement} instance's
-     *  next result, returns {@code true} if it is a
+     *  next result, returns {@true} if it is a
      *  {@link ResultSet}
      *  instance, and implicitly closes any current {@code ResultSet}
      *  instance(s) previously obtained with the method
@@ -845,8 +845,8 @@ public sealed interface EnhancedPreparedStatement extends AutoCloseable
      *     ((stmt.getMoreResults() == false) &amp;&amp; (stmt.getUpdateCount() == -1))
      *  </code></pre>
      *
-     *  @return {@code true} if the next result is a {@code ResultSet}
-     *      instance; {@code false} if it is an update count or there are no
+     *  @return {@true} if the next result is a {@code ResultSet}
+     *      instance; {@false} if it is an update count or there are no
      *      more results.
      *  @throws SQLException    A database access error occurred or this method
      *      was called on a closed {@code EnhancedPreparedStatement}.
@@ -861,7 +861,7 @@ public sealed interface EnhancedPreparedStatement extends AutoCloseable
      *  next result, deals with any current
      *  {@link java.sql.ResultSet}
      *  instance(s) according  to the instructions specified by the given flag,
-     *  and returns {@code true} if the next result is a {@code ResultSet}
+     *  and returns {@true} if the next result is a {@code ResultSet}
      *  object.}</p>
      *  <p>There are no more results when the following is true:</p>
      *  <pre><code>
@@ -878,8 +878,8 @@ public sealed interface EnhancedPreparedStatement extends AutoCloseable
      *      {@link java.sql.Statement#KEEP_CURRENT_RESULT},
      *      or
      *      {@link java.sql.Statement#CLOSE_ALL_RESULTS}.
-     *  @return {@code true} if the next result is a {@code ResultSet}
-     *      instance, {@code false} if it is an update count or there are no
+     *  @return {@true} if the next result is a {@code ResultSet}
+     *      instance, {@false} if it is an update count or there are no
      *      more results
      *  @throws SQLException    A database access error occurred, this method
      *      was called on a closed {@code EnhancedPreparedStatement} or the
@@ -890,7 +890,7 @@ public sealed interface EnhancedPreparedStatement extends AutoCloseable
      *      {@link java.sql.Statement#CLOSE_ALL_RESULTS}.
      *  @throws SQLFeatureNotSupportedException
      *      {@link java.sql.DatabaseMetaData#supportsMultipleOpenResults()}
-     *      returned {@code false} and either
+     *      returned {@false} and either
      *      {@link java.sql.Statement#KEEP_CURRENT_RESULT}
      *      or
      *      {@link java.sql.Statement#CLOSE_ALL_RESULTS}
@@ -942,7 +942,7 @@ public sealed interface EnhancedPreparedStatement extends AutoCloseable
      *  @note   This method should be called only once per result.
      *
      *  @return The current result as a {@code ResultSet} instance or
-     *      {@code null} if the result is an update count or there are no more
+     *      {@null} if the result is an update count or there are no more
      *      results.
      *  @throws SQLException    A database access error occurred or this method
      *      was called on a closed {@code EnhancedPreparedStatement}.
@@ -1032,7 +1032,7 @@ public sealed interface EnhancedPreparedStatement extends AutoCloseable
      *      will be chained on it rather than on the statement instance that
      *      produced it.
      *
-     *  @return The first {@code SQLWarning} object or {@code null} if there
+     *  @return The first {@code SQLWarning} object or {@null} if there
      *      are no warnings.
      *  @throws SQLException    A database access error occurred or this method
      *      was called on a closed {@code EnhancedPreparedStatement}.
@@ -1048,8 +1048,8 @@ public sealed interface EnhancedPreparedStatement extends AutoCloseable
      *  {@link #close()} has been called on it, or if it is automatically
      *  closed.</p>
      *
-     *  @return {@code true} if this {@code EnhancedPreparedStatement} object
-     *      is closed; {@code false} if it is still open.
+     *  @return {@true} if this {@code EnhancedPreparedStatement} object
+     *      is closed; {@false} if it is still open.
      *
      *  @throws SQLException    A database access error occurred.
      */
@@ -1060,9 +1060,9 @@ public sealed interface EnhancedPreparedStatement extends AutoCloseable
      *  {@code EnhancedPreparedStatement} will be closed when all its dependent
      *  result sets are closed.}</p>
      *
-     *  @return {@code true} if this {@code EnhancedPreparedStatement} will be
+     *  @return {@true} if this {@code EnhancedPreparedStatement} will be
      *      closed when all of its dependent result sets are closed,
-     *      {@code false} otherwise.
+     *      {@false} otherwise.
      *
      *  @throws SQLException    This method was called on a closed
      *      {@code EnhancedPreparedStatement}.
@@ -1072,8 +1072,8 @@ public sealed interface EnhancedPreparedStatement extends AutoCloseable
     /**
      *  Checks whether logging is currently enabled.
      *
-     *  @return {@code true} if logging is enabled and log information have to
-     *      be collected, {@code false} otherwise.
+     *  @return {@true} if logging is enabled and log information have to
+     *      be collected, {@false} otherwise.
      */
     public boolean isLoggingEnabled();
 
@@ -1082,8 +1082,8 @@ public sealed interface EnhancedPreparedStatement extends AutoCloseable
      *  {@link java.sql.PreparedStatement}
      *  is poolable or not.
      *
-     *  @return {@code true} if the {@code PreparedStatement} is poolable,
-     *      {@code false} otherwise
+     *  @return {@true} if the {@code PreparedStatement} is poolable,
+     *      {@false} otherwise
      *  @throws SQLException    This method was called on a closed
      *      {@code EnhancedPreparedStatement}
      *
@@ -1095,8 +1095,8 @@ public sealed interface EnhancedPreparedStatement extends AutoCloseable
      *  Retrieves whether {@code identifier} is a simple SQL identifier.
      *
      *  @param  identifier  An SQL identifier
-     *  @return {@code true} if the given value is a simple SQL identifier,
-     *      {@code false} otherwise
+     *  @return {@true} if the given value is a simple SQL identifier,
+     *      {@false} otherwise
      *  @throws SQLException    A database access error occurred.
      */
     public boolean isSimpleIdentifier( final String identifier) throws SQLException;
@@ -2011,7 +2011,7 @@ public sealed interface EnhancedPreparedStatement extends AutoCloseable
      *  types include: {@code STRUCT}, {@code DISTINCT}, {@code JAVA_OBJECT},
      *  and named array types.</p>
      *  <p>Although this method is intended for user-defined and {@code REF}
-     *  parameters, this method may be used to set a {@code null} parameter of
+     *  parameters, this method may be used to set a {@null} parameter of
      *  any JDBC type. If the parameter does not have a user-defined or
      *  {@code REF} type, the given {@code typeName} is ignored.</p>
      *
@@ -2081,7 +2081,7 @@ public sealed interface EnhancedPreparedStatement extends AutoCloseable
      *  to the backend. For maximum portability, the {@code setNull()} or the
      *  {@code setObject( final String parameterName, final Object x, int sqlType )}
      *  method should be used instead of {@code setObject( final String parameterName, final Object value )}
-     *  with {@code value} set to {@code null}
+     *  with {@code value} set to {@null}
      *
      *  @note   This method throws an exception if there is an ambiguity, for
      *      example, if the object is of a class implementing more than one of
