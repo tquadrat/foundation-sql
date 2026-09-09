@@ -23,4 +23,4 @@ This library provides some utilities for the work with RDBMS through JDBC.
     }  //  dependencies
     ```
 ---  
-Last updated: 2026-06-05T23:01:25.233036125+02:00[Europe/Berlin]
+Last updated: 2026-09-09T11:38:22.143728618+02:00[Europe/Berlin]
