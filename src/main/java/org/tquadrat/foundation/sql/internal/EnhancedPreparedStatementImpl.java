@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2023 by Thomas Thrien.
+ *  Copyright © 2002-2026 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -39,12 +39,13 @@ import java.util.regex.PatternSyntaxException;
 
 import org.apiguardian.api.API;
 import org.tquadrat.foundation.annotation.ClassVersion;
-import org.tquadrat.foundation.exception.UnexpectedExceptionError;
+import org.tquadrat.foundation.exception.UnlikelyExceptionError;
+import org.tquadrat.foundation.sql.EnhancedPreparedStatement;
 import org.tquadrat.foundation.stream.MapStream;
 
 /**
- *  The implementation for
- *  {@link org.tquadrat.foundation.sql.EnhancedPreparedStatement}.
+ *  <p>{@summary The implementation for
+ *  {@link EnhancedPreparedStatement}.}</p>
  *
  *  @version $Id: EnhancedPreparedStatementImpl.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
@@ -91,11 +92,10 @@ public final class EnhancedPreparedStatementImpl extends EnhancedPreparedStateme
         }
         catch( final PatternSyntaxException e )
         {
-            /*
-             * The provided pattern is a constant and should be properly
-             * tested. Therefore, a PatternSyntaxException is unlikely.
-             */
-            throw new UnexpectedExceptionError( e );
+            throw new UnlikelyExceptionError( """
+                The provided pattern "%s" is a constant and should be properly tested.
+                Therefore, a PatternSyntaxException is unlikely.\
+                """.formatted( VARIABLE_PATTERN ), e );
         }
     }
 
@@ -103,7 +103,7 @@ public final class EnhancedPreparedStatementImpl extends EnhancedPreparedStateme
     ====** Constructors **=====================================================
         \*--------------*/
     /**
-     *  Creates a new instance of {@code EnhancedPreparedStatementImpl}.
+     *  <p>{@summary {@constructor}}</p>
      *
      *  @param  sourceStatement The original SQL statement with the
      *      placeholders; mainly used for logging purposes.
@@ -134,6 +134,7 @@ public final class EnhancedPreparedStatementImpl extends EnhancedPreparedStateme
      *
      *  @note   The method is public to allow simpler Unit tests.
      */
+    @SuppressWarnings( "NewMethodNamingConvention" )
     @API( status = INTERNAL, since = "0.1.0" )
     public static final Map<String,int []> convertIndexBufferToParameterIndex( final Map<String, ? extends List<Integer>> indexBuffer )
     {
@@ -158,6 +159,7 @@ public final class EnhancedPreparedStatementImpl extends EnhancedPreparedStateme
     public static final EnhancedPreparedStatementImpl create( final Connection connection, final String sql ) throws SQLException
     {
         final Map<String, List<Integer>> indexBuffer = new HashMap<>();
+        @SuppressWarnings( "JDBCPrepareStatementWithNonConstantString" )
         final var preparedStatement = requireNonNullArgument( connection, "connection" ).prepareStatement( parseSQL( sql, indexBuffer ) );
         final var retValue = new EnhancedPreparedStatementImpl( sql, preparedStatement, convertIndexBufferToParameterIndex( indexBuffer ) );
 
@@ -244,7 +246,7 @@ public final class EnhancedPreparedStatementImpl extends EnhancedPreparedStateme
         while( matcher.find() )
         {
             final var variableName = matcher.group( 1 );
-            indexBuffer.computeIfAbsent( variableName, $ -> new ArrayList<>() ).add( Integer.valueOf( ++index ) );
+            indexBuffer.computeIfAbsent( variableName, _ -> new ArrayList<>() ).add( Integer.valueOf( ++index ) );
             matcher.appendReplacement( buffer, " ?" );
         }
         matcher.appendTail( buffer );
