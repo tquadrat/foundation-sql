@@ -47,12 +47,12 @@ import org.tquadrat.foundation.stream.MapStream;
  *  <p>{@summary The implementation for
  *  {@link EnhancedPreparedStatement}.}</p>
  *
- *  @version $Id: EnhancedPreparedStatementImpl.java 1258 2026-06-04 18:33:06Z tquadrat $
+ *  @version $Id: EnhancedPreparedStatementImpl.java 1297 2026-11-07 17:15:43Z tquadrat $
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @UMLGraph.link
  *  @since 0.1.0
  */
-@ClassVersion( sourceVersion = "$Id: EnhancedPreparedStatementImpl.java 1258 2026-06-04 18:33:06Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: EnhancedPreparedStatementImpl.java 1297 2026-11-07 17:15:43Z tquadrat $" )
 @API( status = INTERNAL, since = "0.1.0" )
 public final class EnhancedPreparedStatementImpl extends EnhancedPreparedStatementBase
 {
