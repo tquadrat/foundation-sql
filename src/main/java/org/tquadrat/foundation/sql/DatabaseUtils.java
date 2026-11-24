@@ -54,10 +54,10 @@ import org.tquadrat.foundation.sql.internal.ResultSetSpliterator;
 
 /**
  *  <p>{@summary Several utilities for the work with databases that will be
- *  accessed through plain JDBC.}
+ *  accessed through plain JDBC.}</p>
  *
  *  @version $Id: DatabaseUtils.java 1258 2026-06-04 18:33:06Z tquadrat $
- *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
+ *  @author Thomas Thrien - thomas.thrien@tquadrat.org
  *  @UMLGraph.link
  *  @since 0.1.0
  */
@@ -521,7 +521,7 @@ public final class DatabaseUtils
      *      {@link Connection#isClosed()}
      *      is called); a value of 0 means no timeout.
      *  @return The value if the validation succeeds.
-     *  @throws ValidationException The connection is closed or otherwise not
+     *  @throws IllegalArgumentException The connection is closed or otherwise not
      *      valid.
      *  @throws NullArgumentException   {@code name} or the connection is
      *      {@null}.
@@ -530,7 +530,7 @@ public final class DatabaseUtils
      *  @since 0.4.1
      */
     @API( status = STABLE, since = "0.4.1" )
-    public static final Connection requireValidConnectionArgument( final Connection connection, final String name, final int validationTimeout ) throws ValidationException
+    public static final Connection requireValidConnectionArgument( final Connection connection, final String name, final int validationTimeout ) throws IllegalArgumentException
     {
         final var message = "The connection in argument '%s' is not valid".formatted( requireNotEmptyArgument( name, "name" ) );
         requireNonNullArgument( connection, "connection" );
@@ -538,11 +538,11 @@ public final class DatabaseUtils
         try
         {
             final var validationResult = (validationTimeout < 0) ? !connection.isClosed() : connection.isValid( validationTimeout );
-            if( !validationResult ) throw new ValidationException( message );
+            if( !validationResult ) throw new IllegalArgumentException( message );
         }
         catch( final SQLException e )
         {
-            throw new ValidationException( message, e );
+            throw new IllegalArgumentException( message, e );
         }
 
         //---* Done *----------------------------------------------------------

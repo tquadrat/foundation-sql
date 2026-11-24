@@ -67,10 +67,10 @@
 <span class="source-line-no">054</span><span id="line-54"></span>
 <span class="source-line-no">055</span><span id="line-55">/**</span>
 <span class="source-line-no">056</span><span id="line-56"> *  &lt;p&gt;{@summary Several utilities for the work with databases that will be</span>
-<span class="source-line-no">057</span><span id="line-57"> *  accessed through plain JDBC.}</span>
+<span class="source-line-no">057</span><span id="line-57"> *  accessed through plain JDBC.}&lt;/p&gt;</span>
 <span class="source-line-no">058</span><span id="line-58"> *</span>
 <span class="source-line-no">059</span><span id="line-59"> *  @version $Id: DatabaseUtils.java 1258 2026-06-04 18:33:06Z tquadrat $</span>
-<span class="source-line-no">060</span><span id="line-60"> *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org</span>
+<span class="source-line-no">060</span><span id="line-60"> *  @author Thomas Thrien - thomas.thrien@tquadrat.org</span>
 <span class="source-line-no">061</span><span id="line-61"> *  @UMLGraph.link</span>
 <span class="source-line-no">062</span><span id="line-62"> *  @since 0.1.0</span>
 <span class="source-line-no">063</span><span id="line-63"> */</span>
@@ -534,7 +534,7 @@
 <span class="source-line-no">521</span><span id="line-521">     *      {@link Connection#isClosed()}</span>
 <span class="source-line-no">522</span><span id="line-522">     *      is called); a value of 0 means no timeout.</span>
 <span class="source-line-no">523</span><span id="line-523">     *  @return The value if the validation succeeds.</span>
-<span class="source-line-no">524</span><span id="line-524">     *  @throws ValidationException The connection is closed or otherwise not</span>
+<span class="source-line-no">524</span><span id="line-524">     *  @throws IllegalArgumentException The connection is closed or otherwise not</span>
 <span class="source-line-no">525</span><span id="line-525">     *      valid.</span>
 <span class="source-line-no">526</span><span id="line-526">     *  @throws NullArgumentException   {@code name} or the connection is</span>
 <span class="source-line-no">527</span><span id="line-527">     *      {@null}.</span>
@@ -543,7 +543,7 @@
 <span class="source-line-no">530</span><span id="line-530">     *  @since 0.4.1</span>
 <span class="source-line-no">531</span><span id="line-531">     */</span>
 <span class="source-line-no">532</span><span id="line-532">    @API( status = STABLE, since = "0.4.1" )</span>
-<span class="source-line-no">533</span><span id="line-533">    public static final Connection requireValidConnectionArgument( final Connection connection, final String name, final int validationTimeout ) throws ValidationException</span>
+<span class="source-line-no">533</span><span id="line-533">    public static final Connection requireValidConnectionArgument( final Connection connection, final String name, final int validationTimeout ) throws IllegalArgumentException</span>
 <span class="source-line-no">534</span><span id="line-534">    {</span>
 <span class="source-line-no">535</span><span id="line-535">        final var message = "The connection in argument '%s' is not valid".formatted( requireNotEmptyArgument( name, "name" ) );</span>
 <span class="source-line-no">536</span><span id="line-536">        requireNonNullArgument( connection, "connection" );</span>
@@ -551,11 +551,11 @@
 <span class="source-line-no">538</span><span id="line-538">        try</span>
 <span class="source-line-no">539</span><span id="line-539">        {</span>
 <span class="source-line-no">540</span><span id="line-540">            final var validationResult = (validationTimeout &lt; 0) ? !connection.isClosed() : connection.isValid( validationTimeout );</span>
-<span class="source-line-no">541</span><span id="line-541">            if( !validationResult ) throw new ValidationException( message );</span>
+<span class="source-line-no">541</span><span id="line-541">            if( !validationResult ) throw new IllegalArgumentException( message );</span>
 <span class="source-line-no">542</span><span id="line-542">        }</span>
 <span class="source-line-no">543</span><span id="line-543">        catch( final SQLException e )</span>
 <span class="source-line-no">544</span><span id="line-544">        {</span>
-<span class="source-line-no">545</span><span id="line-545">            throw new ValidationException( message, e );</span>
+<span class="source-line-no">545</span><span id="line-545">            throw new IllegalArgumentException( message, e );</span>
 <span class="source-line-no">546</span><span id="line-546">        }</span>
 <span class="source-line-no">547</span><span id="line-547"></span>
 <span class="source-line-no">548</span><span id="line-548">        //---* Done *----------------------------------------------------------</span>
